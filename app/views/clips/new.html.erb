@@ -1,0 +1,142 @@
+<!doctype html>
+
+<noscript>
+  "<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKJTV3W&gtm_auth=0PZIrSaOkwbiT0Ma1EIW0g&gtm_preview=env-44&gtm_cookies_win=x"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe>"
+</noscript>
+<header id="l-header" class="l-header">
+  ALOHA!
+  ヘッダー部分はレンダー
+</header>
+
+<section id="Upload-navigation">
+  <section id="Stage-caption">
+    <div class="first">1. 写真を選択しましょう</div>
+    <div class="second">2. 写真を編集しましょう</div>
+    <div class="third">3. コメントやタグを追加しましょう</div>
+  </section>
+  <nav id="Stage-navi">
+    <div class="second">
+      <button id="Return-post" class="radius-min button-color-white">戻る</button>
+      <button id="Move-caption" class="radius-min button-color-red">進む</button>
+    </div>
+    <div class="third">
+      <button id="Return-edit" class="radius-min button-color-white">編集へ戻る</button>
+      <button id="Done" class="radius-min button-color-white">投稿</button>
+    </div>
+  </nav>
+</section>
+
+<article id="Contents">
+  <!-- js１番目の左写真選択 -->
+  <section id="Contents-left" class="upload-left radius-mid">
+      <div id="Image-upload-button">
+        <span class="color-light-middle">
+          写真を選択
+          <br>
+          <font size="-1" class="browse-ie">（ 投稿に失敗する場合はこちらから ）</font>
+        </span>
+      </div>
+      <div id="Thumb-field" style="display: none;">
+        <img src="" id="Thumb-image">
+      </div>
+   </section>
+  <!-- js２番目の右写真・３番目の写真プレビュー -->
+  <section id="Contents-right" class="upload-right radius-mid">
+      <div id="Preview" class="border-light"><span class="color-light-middle ">プレビュー</span></div>
+      <div id="Preview-field" style="display: none;">
+        <img src="" id="Preview-image">
+      </div>
+  </section>
+  <!-- js３番目の右側コメントとタグとか -->
+<section id="Contents-extra" class="upload-extra radius-mid" style="display: block;">
+      <div class="contents-extra-wrapper">
+        <h1 class="color-light-middle">コメント</h1>
+        <textarea id="Comment-input" class="border-light color-middle"></textarea>
+
+        <h1 class="color-light-middle">タグ</h1>
+        <div id="Tag-field">
+          <input type="text" id="Tag-input" class="border-light color-middle tag-autocomplete">
+          <button id="Tag-input-button" class="border-light button-color-white add-tag-button">追加</button>
+          <div id="Tag-input-list" class="color-light border-light">追加されたタグはここに表示されます</div>
+        </div>
+        <h2 class="color-light-middle">コンテスト用のタグ</h2>
+                      <div class="select2-container select2" id="s2id_Contest-select" style="width: 240px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span class="select2-chosen">コンテストリスト</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow"><b></b></span></a><input class="select2-focusser select2-offscreen" type="text" readonly="readonly" id="s2id_autogen1"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" readonly="readonly">   </div>   <ul class="select2-results">   </ul></div></div><select class="select2 select2-offscreen" id="Contest-select" tabindex="-1">
+              <option value="">コンテストリスト</option>
+                          <option value="637">パナソニックとわが家のこだわり空間</option>
+                          <option value="631">ソファーのある暮らし</option>
+                          <option value="635">ナチュラルインテリア</option>
+                          <option value="638">10分でできる100均リメイク
+【RoomClip mag連動企画】</option>
+                          <option value="628">「アイテムタグつけてね」アロマディフューザー</option>
+                          <option value="633">ティンパネル</option>
+                          <option value="619">サンキュ！×RoomClipコラボ企画
+「プチプラ☆インテリア大賞」</option>
+                          <option value="622">初投稿ユーザーさん対象！RoomClipで初投稿 PART14 </option>
+                          <option value="623">みんなでシェアしよう！あの新商品買ったよ</option>
+                          <option value="634">わが家のタニタ</option>
+                          <option value="627">あ！わが家のNODAみつけた！</option>
+                          <option value="614">子供部屋&amp;キッズスペース</option>
+                          <option value="617">漆喰壁DIY！</option>
+                          <option value="618">趣味部屋で暮らす</option>
+                        </select>
+                        <input type="hidden" id="contest_637" data-contest_id="637" data-tag_value="パナソニック">
+                        <input type="hidden" id="contest_631" data-contest_id="631" data-tag_value="ソファ">
+                        <input type="hidden" id="contest_635" data-contest_id="635" data-tag_value="ナチュラルインテリア">
+                        <input type="hidden" id="contest_638" data-contest_id="638" data-tag_value="10分でできる">
+                        <input type="hidden" id="contest_628" data-contest_id="628" data-tag_value="アロマディフューザー">
+                        <input type="hidden" id="contest_633" data-contest_id="633" data-tag_value="ティンパネル">
+                        <input type="hidden" id="contest_619" data-contest_id="619" data-tag_value="プチプラインテリア">
+                        <input type="hidden" id="contest_622" data-contest_id="622" data-tag_value="初投稿">
+                        <input type="hidden" id="contest_623" data-contest_id="623" data-tag_value="1805新商品">
+                        <input type="hidden" id="contest_634" data-contest_id="634" data-tag_value="タニタ">
+                        <input type="hidden" id="contest_627" data-contest_id="627" data-tag_value="NODA">
+                        <input type="hidden" id="contest_614" data-contest_id="614" data-tag_value="子供部屋&amp;キッズスペース">
+                        <input type="hidden" id="contest_617" data-contest_id="617" data-tag_value="漆喰壁DIY">
+                        <input type="hidden" id="contest_618" data-contest_id="618" data-tag_value="趣味部屋">
+                              <h2 class="color-light-middle">プロフィールタグ</h2>
+        <div id="Tag-profile">
+                      <div class="tag-back radius-min tag-insert" data-tag="Overview">部屋全体</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="My Desk">机</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="Lounge">リビング</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="Bedroom">ベッド周り</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="My Shelf">棚</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="Kitchen">キッチン</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="On Walls">壁/天井</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="Entrance">玄関/入り口</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="Bathroom">バス/トイレ</div>
+                  </div>
+        <h2 class="color-light-middle">最近使用したタグ</h2>
+        <div id="Tag-recent">
+                      <div class="tag-back radius-min tag-insert" data-tag="雑貨">雑貨</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="下駄箱">下駄箱</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="玄関収納">玄関収納</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="フクロウ">フクロウ</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="ふくろう">ふくろう</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="梟">梟</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="玄関棚">玄関棚</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="シューズクローゼット">シューズクローゼット</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="稼働棚">稼働棚</div>
+                      <div class="tag-back radius-min tag-insert" data-tag="立つほうき">立つほうき</div>
+                  </div>
+
+        <h1 class="color-light-middle">SNS連携</h1>
+        <div class="sns-button-field">
+          <button data-site="fb" class="fb sns-button fontello color-light ">F</button>
+          <button data-site="tw" class="tw sns-button fontello color-light ">T</button>
+        </div>
+      </div>
+    </section>
+
+
+</article>
+
+<input type="hidden" id="user_id" value="3429062">
+<input type="file" id="photo-file" id="Image-file">
+<div id=SNS-event-holder">
+</div>
+
+<footer id="l-footer" class="l-footer">
+  MAHALO!
+  フッダー部分もレンダー
+</footer>
