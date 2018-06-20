@@ -15,14 +15,14 @@
     <div class="second">2. 写真を編集しましょう</div>
     <div class="third">3. コメントやタグを追加しましょう</div>
   </section>
-  <nav id="Stage-navi">
+  <nav id="Stage-navi" style="display: block">
     <div class="second">
       <button id="Return-post" class="radius-min button-color-white">戻る</button>
       <button id="Move-caption" class="radius-min button-color-red">進む</button>
     </div>
     <div class="third">
       <button id="Return-edit" class="radius-min button-color-white">編集へ戻る</button>
-      <button id="Done" class="radius-min button-color-white">投稿</button>
+      <button id="Done" class="radius-min button-color-red">投稿</button>
     </div>
   </nav>
 </section>
@@ -37,15 +37,15 @@
           <font size="-1" class="browse-ie">（ 投稿に失敗する場合はこちらから ）</font>
         </span>
       </div>
-      <div id="Thumb-field" style="display: none;">
+      <div id="Thumb-field" style>
         <img src="" id="Thumb-image">
       </div>
    </section>
   <!-- js２番目の右写真・３番目の写真プレビュー -->
   <section id="Contents-right" class="upload-right radius-mid">
       <div id="Preview" class="border-light"><span class="color-light-middle ">プレビュー</span></div>
-      <div id="Preview-field" style="display: none;">
-        <img src="" id="Preview-image">
+      <div id="Preview-field" style="">
+        <img src="" id="Preview-image" style="width: 430px; height: 430px; margin-left: 0px; margin-top: 0px;">
       </div>
   </section>
   <!-- js３番目の右側コメントとタグとか -->
