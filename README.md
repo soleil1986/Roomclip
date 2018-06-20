@@ -25,4 +25,304 @@ Things you may want to cover:
 
 * ...
 
-123
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|password|varchar|null: false|
+|room_number|integer|null: false|
+|e-mail|varchar|""
+|image|text|
+add_index :users, [:name,:password,:room_number], unique: true
+
+### Association
+- has_many :clips
+- has_many :likes
+- has_many :comments
+- has_many :folders
+- has_many :tag_clips
+- has_one :profile
+- has_one :count
+- has_many :followers
+- has_many :follows
+- validates :name, length: {minimun: 3 maximum: 10}, presence: true
+- validates :password, length {minimu: 3 maximum: 10}, presenve: true
+
+
+## clipsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|image|text|null: false|
+|likes_count|integer|
+add_index :clips, [:user, :image]
+
+### Association
+- belongs_to :user, counter_cache: :clips_count
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :folder, through: :folder_clip
+- has_many :folder_clips, dependent: :destroy
+- has_many :main_tag, thorugh: :tag_clip
+- has_many :sub_tag, thorugh: :tag_clip
+- has_many :tag_clips, dependent: :destroy
+- has_many :item_tag, thorugh: :itemtag_clip
+- has_many :itemtag_clips, dependent: :destroy
+- validates :image, presence: true
+
+
+## commentsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|clip|references|null: false, foreign_key: true|
+|text|text|
+### Association
+- belongs_to :user
+- has_many :clips
+
+
+## likesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|clip|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user, counter_cache: :likes_count
+- belongs_to :clips, counter_cache: :likes_count
+
+
+## flodersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|name|string|null: false|
+
+### Association
+- belongs_to :user, counter_cache: :folders_count
+- has_many :clips, thorugh: :folder_clip
+- has_many :folder_clips
+
+
+## folder_clipsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|folder|references|null: false, foreign_key: true|
+|clip|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :folder
+- belongs_to :clip
+
+
+## tag_clipsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|clip|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true, unique: true|
+|main_tag|references|null: false, foreign_key: true|
+|sub_tag|references|null: false, foreign_key: true|
+add_index :tag_clips [:user,:main_tag,:sub_tag]
+
+### Association
+- belongs_to :clip
+_ belongs_to :user, counter_cache: :tags_count
+- belongs_to :main_tag
+- belongs_to :sub_tag
+
+
+## main_tagsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true, index: true|
+
+### Association
+- has_many :tag_clips, dependent: :destroy
+- has_many :clips, thorugh: :tag_clip
+
+
+## sub_tagsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true, index: true|
+
+### Association
+- has_many :tag_clips, dependent: :destroy
+- has_many :clips, thorugh: :tag_clip
+
+
+## itemtag_clipsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|clip|references|null: false, foreign_key: true|
+|item_tag|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :clip
+- belongs_to :item_tag
+
+
+## item_tagsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true, index: true|
+
+### Association
+- has_many :itemtag_clips, dependent: :destroy
+- has_many :clips, thorugh: :itemtag_clip
+
+
+## profilesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true, unique: true|
+|religion|references|foreign_key: true|
+|country|references|foreign_key: true|
+|style|references|foreign_key: true|
+|job|references|foreign_key: true|
+|gender|references|foreign_key: true|
+|year|references|foreign_key: true|
+|layout|references|foreign_key: true|
+|area|string|
+|website|varchar|
+|introduction|text|
+
+### Association
+- belongs_to :user
+- has_one :country
+- has_one :religion
+- has_one :style
+- has_one :job
+- has_one :gender
+- has_one :year
+- has_one :layout
+
+
+## countriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belongs_to :profile
+
+
+## religionsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belongs_to :profile
+
+
+## stylesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belongs_to :profile
+
+
+## jobsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belongs_to :profile
+
+
+## gendersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belongs_to :profile
+
+
+## yearsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|year|null: false|
+
+### Association
+- belongs_to :profile
+
+
+## layoutsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belongs_to :profile
+
+
+## areasテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belongs_to :profile
+
+
+## countsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|clips_count|integer|
+|follows_count|integer|
+|followers_count|integer|
+|likes_count|integer|
+|tags_count|integer|
+|folders_count|integer|
+
+### Association
+- belongs_to :user
+
+
+## followersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+user|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user, counter_cache: :follows_count
+
+
+## followsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user, counter_cache: :follows_count
+
