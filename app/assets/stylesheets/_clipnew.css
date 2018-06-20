@@ -1,0 +1,159 @@
+/*section*/
+section#Upload-navigation {
+  width: 960px;
+  height: 80px;
+  margin: auto;
+  padding: 20px 0px 0px 0px;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+section#Stage-caption {
+  width: 470px;
+  margin-right: 20px;
+  overflow: hidden;
+  float: left;
+}
+
+nav#Stage-navi {
+  width: 470px;
+  overflow: hidden;
+  float: left;
+}
+
+#Stage-navi button {
+  width: 160px;
+  margin-left: 20px;
+  float: left;
+  font-size: 14px;
+  padding: 5px 0px;
+  border: none;
+  color: #fff;
+}
+
+.radius-min {
+  border-radius: 3px;
+}
+
+.button-color-white {
+  background: #ccc;
+}
+
+.button-color-red {
+  background: #DB4A37;
+}
+/*article*/
+#Contents {
+  overflow: hidden;
+  width: 960px;
+  margin: 20px auto;
+  }
+
+#Contents .upload-left {
+  width: 470px;
+  height: 470px;
+  margin-right: 20px;
+  float: left;
+  background-color: #fff !important;
+  position: relative;
+  z-index: 89;
+}
+
+#Contents-left {
+  margin: 0px;
+  padding: 0px;
+}
+
+#Image-upload-button {
+  width: 430px;
+  height: 430px;
+  margin: 20px auto;
+  cursor: pointer;
+  background-color: #ccc;
+  background-image: url("upload_button.png");
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-position: 50% 50%;
+}
+
+#Image-upload-button span {
+  width: 400px;
+  margin: 0px auto;
+  padding: 300px 0px 0px 0px;
+  font-size: 16px;
+  overflow-y: auto;
+  display: block;
+  text-align: center;
+}
+
+#Thumb-field {
+  width: 430px;
+  height: 430px;
+  margin: 20px auto;
+}
+
+.color-light-middle {
+  color: #666;
+}
+.radius-mid {
+  border-radius: 5px;
+}
+.img {
+  vertical-align: bottom;
+}
+
+#Contents .upload-right {
+  width: 470px;
+  height: 470px;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  background-color: #fff !important;
+  position: relative;
+  z-index: 89;
+}
+
+#Preview {
+  width: 430px;
+  height: 430px;
+  margin: 20px auto;
+}
+
+.border-light {
+  border: 1px solid #999;
+}
+
+#Preview span {
+  width: 400px;
+  margin: 0px auto;
+  padding: 200px 0px 0px 0px;
+  font-size: 16px;
+  overflow-y: auto;
+  display: block;
+  text-align: center;
+}
+
+#Preview-field {
+  width: 430px;
+  height: 430px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+#Contents-extra {
+  width: 470px;
+  height: 470px;
+  margin-left: : 20px;
+  background-color: #fff;
+}
+
+#Contents .upload-extra {
+  float: left;
+}
+
+#Contents-extra .contents-extra-wrapper {
+  width: 430px;
+  height: 430px;
+  margin: 10px 20px;
+}
+
