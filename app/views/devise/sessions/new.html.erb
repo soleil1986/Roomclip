@@ -51,7 +51,7 @@ src="https://www.facebook.com/tr?id=235060970222367&ev=PageView&noscript=1"
 
 <h1>RoomClip（ルームクリップ） | ログイン</h1>
 
-<a href="/"><img src="/assets/img/v3/logo/logo-pc-login.png" alt="RoomClip（ルームクリップ） ログイン画面"></a>
+<a href="/"><img src="https://roomclip.jp/assets/img/v3/logo/logo-pc-login.png" alt="RoomClip（ルームクリップ） ログイン画面"></a>
 
 <div class="clearfix login-wrapper">
 
@@ -84,11 +84,13 @@ src="https://www.facebook.com/tr?id=235060970222367&ev=PageView&noscript=1"
         このパスワードは不正です。
       </span>
       <input type="text" name="pass" id="Auth-pass" class="color-light" maxlength="256" placeholder= "パスワードを入力">
+    <% if devise_mapping.rememberable? -%>
       <div class="auth-checkbox">
-        <input type="checkbox" name="auto" id="Auth-auto" value="1" checked="">
-        <span>次回から自動的にログイン</span>
+        <%= f.check_box :remember_me %>
+        <%= f.label :次回から自動的にログイン %>
       </div>
-      <button id="Auth-email-login" class="off_button ">
+    <% end -%>
+      <button id="Auth-email-lognin" class="off_button ">
       <%= f.submit "ログイン", :class=>"btn-submit" %>
       </button>
       <a href="/auth/forgot_password" class="forget-ipass">
@@ -117,8 +119,7 @@ src="https://www.facebook.com/tr?id=235060970222367&ev=PageView&noscript=1"
     </section>
   </div>
 
-  
-  <section class="applink-pc-login">
+  <section class="applink-pc-login"><img src="https://roomclip.jp/assets/img/v3/applink/pc-login-qr03.png" alt="スマホアプリ 広告">
   </section>
 
 </div>
