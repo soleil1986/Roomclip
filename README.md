@@ -31,10 +31,9 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |password|varchar|null: false|
-|room_number|integer|null: false|
 |e-mail|varchar|
 |image|text|
-add_index :users, [:name, :room_number], unique: true
+<!-- add_index :users, [:name], unique: true -->
 
 ### Association
 - has_many :clips
@@ -48,7 +47,7 @@ add_index :users, [:name, :room_number], unique: true
 - has_many :followers
 - has_many :follows
 - validates :name, length: {minimun: 3 maximum: 10}, presence: true
-- validates :password, length {minimu: 3 maximum: 10}, presenve: true
+- validates :password, length {minimum: 3 maximum: 10}, presenve: true
 
 
 ## clipsテーブル
@@ -58,7 +57,7 @@ add_index :users, [:name, :room_number], unique: true
 |user_id|references|null: false, foreign_key: true|
 |image|text|null: false|
 |likes_count|integer|
-add_index :clips, [:user, :image]
+<!-- add_index :clips, [:user_id, :image] -->
 
 ### Association
 - belongs_to :user, counter_cache: :clips_count
@@ -66,11 +65,11 @@ add_index :clips, [:user, :image]
 - has_many :likes, dependent: :destroy
 - has_many :folder_clips, dependent: :destroy
 - has_many :folders, through: :folder_clip
+- has_many :tag_clips, dependent: :destroy
 - has_many :main_tag, thorugh: :tag_clip
 - has_many :sub_tag, thorugh: :tag_clip
-- has_many :tag_clips, dependent: :destroy
-- has_many :item_tag, thorugh: :itemtag_clip
 - has_many :itemtag_clips, dependent: :destroy
+- has_many :item_tag, thorugh: :itemtag_clip
 - validates :image, presence: true
 
 
@@ -131,7 +130,7 @@ add_index :clips, [:user, :image]
 |user|references|null: false, foreign_key: true, unique: true|
 |main_tag|references|null: false, foreign_key: true|
 |sub_tag|references|null: false, foreign_key: true|
-add_index :tag_clips [:user,:main_tag,:sub_tag]
+<!-- add_index :tag_clips, [:user,:main_tag,:sub_tag] -->
 
 ### Association
 - belongs_to :clip
@@ -148,7 +147,7 @@ _ belongs_to :user, counter_cache: :tags_count
 
 ### Association
 - has_many :tag_clips, dependent: :destroy
-- has_many :clips, thorugh: :tag_clip
+- has_many :clips, through: :tag_clip
 
 
 ## sub_tagsテーブル
@@ -159,7 +158,7 @@ _ belongs_to :user, counter_cache: :tags_count
 
 ### Association
 - has_many :tag_clips, dependent: :destroy
-- has_many :clips, thorugh: :tag_clip
+- has_many :clips, through: :tag_clip
 
 
 ## itemtag_clipsテーブル
@@ -230,7 +229,7 @@ _ belongs_to :user, counter_cache: :tags_count
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user, counter_cache: :follows_count
+- belongs_to :user, counter_cache: :followers_count
 
 
 ## followsテーブル
