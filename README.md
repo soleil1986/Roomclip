@@ -32,14 +32,15 @@ Things you may want to cover:
 |name|string|null: false|
 |password|varchar|null: false|
 |room_number|integer|null: false|
-|e-mail|varchar|""
+|e-mail|varchar|
 |image|text|
-add_index :users, [:name,:password,:room_number], unique: true
+add_index :users, [:name, :room_number], unique: true
 
 ### Association
 - has_many :clips
 - has_many :likes
 - has_many :comments
+- has_many :folder_clips, dependent: :destroy
 - has_many :folders
 - has_many :tag_clips
 - has_one :profile
@@ -54,7 +55,7 @@ add_index :users, [:name,:password,:room_number], unique: true
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |image|text|null: false|
 |likes_count|integer|
 add_index :clips, [:user, :image]
@@ -63,8 +64,8 @@ add_index :clips, [:user, :image]
 - belongs_to :user, counter_cache: :clips_count
 - has_many :comments, dependent: :destroy
 - has_many :likes, dependent: :destroy
-- has_many :folder, through: :folder_clip
 - has_many :folder_clips, dependent: :destroy
+- has_many :folders, through: :folder_clip
 - has_many :main_tag, thorugh: :tag_clip
 - has_many :sub_tag, thorugh: :tag_clip
 - has_many :tag_clips, dependent: :destroy
@@ -77,7 +78,7 @@ add_index :clips, [:user, :image]
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |clip|references|null: false, foreign_key: true|
 |text|text|
 ### Association
@@ -89,7 +90,7 @@ add_index :clips, [:user, :image]
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |clip|references|null: false, foreign_key: true|
 
 ### Association
@@ -97,16 +98,16 @@ add_index :clips, [:user, :image]
 - belongs_to :clips, counter_cache: :likes_count
 
 
-## flodersテーブル
+## foldersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |name|string|null: false|
 
 ### Association
 - belongs_to :user, counter_cache: :folders_count
-- has_many :clips, thorugh: :folder_clip
+- has_many :clips, through: :folder_clip
 - has_many :folder_clips
 
 
@@ -188,9 +189,9 @@ _ belongs_to :user, counter_cache: :tags_count
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true, unique: true|
-|religion|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true, unique: true|
 |country|references|foreign_key: true|
+|religion|references|foreign_key: true|
 |style|references|foreign_key: true|
 |job|references|foreign_key: true|
 |gender|references|foreign_key: true|
@@ -202,100 +203,15 @@ _ belongs_to :user, counter_cache: :tags_count
 
 ### Association
 - belongs_to :user
-- has_one :country
-- has_one :religion
-- has_one :style
-- has_one :job
-- has_one :gender
-- has_one :year
-- has_one :layout
-
-
-## countriesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- belongs_to :profile
-
-
-## religionsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- belongs_to :profile
-
-
-## stylesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- belongs_to :profile
-
-
-## jobsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- belongs_to :profile
-
-
-## gendersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- belongs_to :profile
-
-
-## yearsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|year|null: false|
-
-### Association
-- belongs_to :profile
-
-
-## layoutsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- belongs_to :profile
-
-
-## areasテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- belongs_to :profile
+<!-- country,religion,style,job,gender,year,layout,areaはenumを使用。日本語にする場合はenum_helpのjemを使用 -->
+<!-- countryとreligionはgemを使う -->
 
 
 ## countsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |clips_count|integer|
 |follows_count|integer|
 |followers_count|integer|
@@ -311,7 +227,7 @@ _ belongs_to :user, counter_cache: :tags_count
 
 |Column|Type|Options|
 |------|----|-------|
-user|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user, counter_cache: :follows_count
@@ -321,8 +237,7 @@ user|references|null: false, foreign_key: true|
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user, counter_cache: :follows_count
-
