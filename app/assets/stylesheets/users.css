@@ -3119,7 +3119,7 @@ background : #ee2f19;
   background-color: #9a8e7d;
   height: 4rem;
   width: 20rem;
-  /*margin: 2rem auto 1rem;*/
+  margin: 0rem 7rem 1rem;;
   font-size: 1.6rem;
   font-weight: bold;
   display: block;
@@ -3200,7 +3200,7 @@ padding : 0;
 margin : 1.5rem auto;
 background-color : #f6f5f4;
 }
-.mail-login > h2 {
+.mail-login h2 {
 margin : 3rem auto;
 display : block;
 font-size : 1.6rem;
