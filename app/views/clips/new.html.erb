@@ -17,7 +17,6 @@
     <nav id="Stage-navi" style="display: block">
       <div class="third">
         <%= f.submit '投稿', :class => 'radius-min button-color-red' %>
-        <!-- <button id="Done" class="radius-min button-color-red">投稿</button> -->
       </div>
     </nav>
   </section>
@@ -25,14 +24,14 @@
   <article id="Contents">
     <section id="Contents-left" class="upload-left radius-mid" style="display: ">
         <div id="Image-upload-button">
-          <%= f.file_field :image, required: true %>
+          <%= f.file_field :image, required: true, :class => 'clip-preview' %>
+          <div class="clip-auto-preview"></previw>
           <span class="color-light-middle">
             写真を選択
             <br>
             <font size="-1" class="browse-ie">（ 投稿に失敗する場合はこちらから ）</font>
           </span>
         </div>
-        <previw></previw>
         <div id="Thumb-field" style>
           <img src="" id="Thumb-image">
         </div>
