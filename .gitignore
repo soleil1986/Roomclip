@@ -16,6 +16,10 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/image
+*.jpg
+*.jpeg
+*.png
 
 /node_modules
 /yarn-error.log
