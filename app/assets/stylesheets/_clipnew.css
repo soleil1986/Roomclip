@@ -72,8 +72,20 @@ nav#Stage-navi {
   background-color: #ccc;
   background-image: url("upload_button.png");
   background-repeat: no-repeat;
-  background-size: 50% 50%;
+  background-size: 40% 40%;
   background-position: 50% 50%;
+}
+
+#Image-upload-button input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  cursor: pointer;
 }
 
 #Image-upload-button span {
