@@ -5,7 +5,8 @@ class ClipsController < ApplicationController
   end
 
   def create
-    @clip = Clip.new(clip_params)
+    @clip = Clip.create(clip_params)
+    redirect_to new_clip_path
   end
 
   def show
@@ -18,9 +19,7 @@ class ClipsController < ApplicationController
   private
 
   def clip_params
-    params.require(:clip).permit(
-      :image
-    )
+    params.required(:clip).permit(:image)
   end
 
 end
