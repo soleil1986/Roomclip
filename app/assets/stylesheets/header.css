@@ -1,0 +1,198 @@
+html {
+    font-family: "Quicksand","游ゴシック体","Yu Gothic",YuGothic,"ヒラギノ角ゴシック Pro","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+    font-size: 62.5%;
+}
+body {
+    padding: 0 0 0 0;
+}
+div {
+    display: block;
+}
+script {
+    display: none;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+    color: #DC3C36;
+    text-decoration: underline;
+}
+
+#l-header {
+    height: 6.4rem;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.09);
+}
+.u-maxwidth-pc-outer {
+    max-width: 104rem;
+    margin: 0 auto;
+}
+.l-header__top-bar-inner {
+    position: relative;
+}
+.u-minwidth-pc-inner {
+    min-width: 100rem;
+    margin: 0 2rem 0 2rem;
+}
+.u-clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.l-header__left {
+    float: left;
+    margin: 1.6rem 0 1.6rem 0;
+}
+fieldset, img {
+    border: 0;
+}
+.l-header__logo-image {
+width : 13.1rem;
+}
+
+
+.l-header__center {
+    position: absolute;
+    left: 25rem;
+    top: 1.5rem;
+}
+  div {
+    margin: 0;
+    padding: 0;
+  }
+.l-header__search-image {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: auto;
+}
+img {
+    border: 0;
+}
+.l-header__search-input {
+    height: 3.2rem;
+    width: 50rem;
+    border-radius: 0.8rem;
+    border: solid 1px #eae7e2;
+    background-color: #fbfbfb;
+    padding: 0 0 0 3rem;
+    font-size: 1.4rem;
+}
+#l-header :placeholder-shown {
+    color: rgba(68, 51, 17, 0.35);
+}
+.l-header__search-result {
+    position: relative;
+    z-index: 100;
+    background-color: #ffffff;
+    box-shadow: 0 0.5rem 1rem -0.5rem rgba(0, 0, 0, 0.25);
+    border: solid 1px #eae7e2;
+    border-top: none;
+    top: -0.5rem;
+    padding-top: 1rem;
+    display: none;
+}
+
+
+.l-header__right {
+    float: right;
+}
+.l-header__search-room {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url(https://roomclip.jp/assets/img/1703/pc_header/icon_search_pc_off@2x.png);
+    background-size: 100%;
+    margin: 0 0 0 1.6rem;
+}
+a {
+  cursor: pointer !important;
+}
+.l-header__timeline {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url(https://roomclip.jp/assets/img/1703/pc_header/icon_timeline_pc_off@2x.png);
+    background-size: 100%;
+    margin: 0 0 0 1.6rem;
+}
+.l-header__news {
+    display: inline-block;
+    margin: 0 0 0 1.6rem;
+    cursor: pointer;
+    position: relative;
+}
+.c-post {
+    display: none;
+    width: 3rem;
+    height: 2.4rem;
+    background: url(https://roomclip.jp/assets/img/1703/pc_header/icon_news_pc_off@2x.png);
+    background-size: 100%;
+}
+.c-post--notice {
+    width: 3rem;
+    height: 2.4rem;
+    background: url(https://roomclip.jp/assets/img/1703/pc_header/icon_news_pc_off@2x.png);
+    background-size: 100%;
+}
+.l-header__dropdown-news {
+    position: absolute;
+    width: 36rem;
+    right: -0.5rem;
+    top: 3rem;
+}
+.l-header__user {
+    display: inline-block;
+    margin: 1.2rem 1.2rem 0 1.6rem;
+    position: relative;
+    cursor: pointer;
+}
+.l-header__user-image {
+    border-radius: 1.6rem;
+    height: 3.2rem;
+    width: 3.2rem;
+    border: solid 1px #cfcabf;
+}
+.l-header__dropdown-menu {
+    position: absolute;
+    width: 20rem;
+    right: 0;
+    top: 4rem;
+    z-index: 100;
+}
+.c-dropdown-menu {
+    display: none;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 1px 2px 6px 0 rgba(0, 0, 0, 0.25);
+    border: solid 1px #eae7e2;
+    z-index: 100;
+}
+.c-dropdown-menu:before {
+    position: absolute;
+    top: -6px;
+    right: 11px;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #FFF;
+    display: inline-block;
+    z-index: 11;
+}
+.c-dropdown-menu:after {
+    position: absolute;
+    top: -7px;
+    right: 10px;
+    content: '';
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #CCC;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+.c-dropdown-menu-row-link {
+    height: 4.6rem;
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
