@@ -84,7 +84,6 @@ nav#Stage-navi {
   bottom: 0;
   width: 100%;
   opacity: 0;
-  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
   cursor: pointer;
 }
 
