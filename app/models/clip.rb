@@ -1,5 +1,5 @@
 class Clip < ApplicationRecord
-# マージする際にはコメントアウトを戻す
+# ユーザー機能の開発終後にuser_idを追加予定_その後コメント削除
   # belogns_to :user
 
   mount_uploader :image, ClipImageUploader
