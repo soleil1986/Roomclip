@@ -1,0 +1,366 @@
+html {
+color : #000;
+background : #FFF;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, figure, figcaption {
+margin : 0;
+padding : 0;
+}
+table {
+border-collapse : collapse;
+border-spacing : 0;
+}
+fieldset, img {
+border : 0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+font-style : normal;
+font-weight : normal;
+}
+ol, ul {
+list-style : none;
+}
+caption, th {
+text-align : left;
+}
+h1, h2, h3, h4, h5, h6 {
+font-size : 100%;
+font-weight : normal;
+}
+q:before, q:after {
+content : '';
+}
+abbr, acronym {
+border : 0;
+font-variant : normal;
+}
+sup {
+vertical-align : text-top;
+}
+sub {
+vertical-align : text-bottom;
+}
+input, textarea, select {
+font-family : inherit;
+font-size : inherit;
+font-weight : inherit;
+}
+legend {
+color : #000;
+}
+#yui3-css-stamp.cssreset {
+display : none;
+}
+html {
+font-family : "Quicksand", "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+font-size : 62.5%;
+}
+body {
+background-color : #fff;
+}
+button {
+border : none;
+background : transparent;
+}
+a {
+color : inherit;
+text-decoration : inherit;
+cursor : inherit;
+color : #DC3C36;
+text-decoration : underline;
+}
+a:active, a:focus {
+outline : none;
+}
+¥
+.p-category-links {
+float : left;
+font-size : 1.8rem;
+line-height : 2rem;
+color : #443311;
+font-weight : bold;
+margin : 0 2rem 0 0;
+}
+.p-category-links__link {
+text-decoration : none;
+color : #443311;
+}
+.p-category-links-sep {
+border : #cfc5b8 solid 0.1rem;
+margin : 0;
+padding : 0;
+position : relative;
+top : 1rem;
+}
+.p-category-links-wrap {
+margin : 2.4rem 0 0 0;
+}
+.hidden {
+display : none;
+visibility : hidden;
+opacity : 0;
+}
+.show {
+display : block;
+visibility : visible;
+opacity : 1;
+display : block;
+}
+.auth-alert {
+width : 30rem;
+margin : 1rem auto;
+font-size : 1.2rem;
+color : #ee2f19;
+}
+.on_button {
+background : #ee2f19;
+}
+
+.btn-submit{
+  background-color: #9a8e7d;
+  height: 4rem;
+  width: 20rem;
+  margin: 0rem 7rem 1rem;;
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: block;
+  cursor: pointer;
+  color: #fff;
+  border-style: none;
+  border-radius: 0.6rem;
+}
+.clearfix:before, .clearfix:after {
+content : " ";
+display : table;
+}
+.clearfix:after {
+clear : both;
+}
+body {
+padding : 8rem 0 4rem;
+}
+h1 {
+position : absolute;
+top : 1rem;
+right : 1rem;
+color : #443311;
+}
+img {
+margin : 0 auto;
+display : block;
+}
+.sns-login {
+width : 35rem;
+margin : 2rem auto 0;
+text-align : center;
+}
+.sns-login button {
+border-radius : 0.6rem;
+transition : 0.2s 0s ease-out;
+width : 100%;
+height : 6rem;
+margin : 0 0 2rem 0;
+font-size : 1.6rem;
+color : #fff;
+position : relative;
+cursor : pointer;
+}
+.sns-login button.facebook {
+background : #3b539b;
+}
+.sns-login button.facebook > span {
+background : url('/assets/img/v3/dev/sprite/daily.png') 0 0 no-repeat;
+width : 17px;
+height : 32px;
+display : block;
+position : absolute;
+left : 2.5rem;
+top : 1.4rem;
+}
+.sns-login button.facebook:hover {
+opacity : 0.60000002384185791015625;
+}
+.sns-login button.twitter {
+background : #39a8f1;
+}
+.sns-login button.twitter > span {
+background : url('/assets/img/v3/dev/sprite/daily.png') 0 -72px no-repeat;
+width : 36px;
+height : 30px;
+display : block;
+position : absolute;
+left : 2rem;
+}
+.sns-login button.twitter:hover {
+opacity : 0.60000002384185791015625;
+}
+.mail-login {
+width : 34.8rem;
+border : #cfcabf solid 0.1rem;
+padding : 0;
+margin : 1.5rem auto;
+background-color : #f6f5f4;
+}
+.mail-login h2 {
+margin : 3rem auto;
+display : block;
+font-size : 1.6rem;
+font-weight : bold;
+color : #362e2b;
+text-align : center;
+}
+.mail-login #Auth-email, .mail-login #Auth-pass {
+width : 27rem;
+height : 4rem;
+padding : 0 1.5rem;
+margin : 0 auto 1rem;
+border : #9a8e7d solid 0.1rem;
+color : #362e2b;
+background : #fefcf7;
+display : block;
+font-size : 1.6rem;
+box-shadow : 0.1rem 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.15) inset;
+border-radius : 0.6rem;
+}
+.mail-login #Auth-pass {
+margin : 0 auto 2rem;
+}
+.mail-login .auth-checkbox {
+margin : 0 auto 2rem;
+font-size : 1.6rem;
+color : #362e2b;
+text-align : center;
+}
+.mail-login #Auth-email-login {
+transition : 0.2s 0s ease-out;
+height : 4rem;
+width : 20rem;
+margin : 2rem auto 1rem;
+font-size : 1.6rem;
+font-weight : bold;
+color : #fff;
+display : block;
+cursor : pointer;
+border-radius : 0.6rem;
+}
+.mail-login #Auth-email-login:hover {
+opacity : 0.60000002384185791015625;
+}
+.mail-login .forget-ipass {
+display : block;
+margin : 0 auto 1.5rem;
+padding : 1rem 0;
+font-size : 1.6rem;
+color : #362e2b;
+width : 35rem;
+text-align : center;
+}
+.mail-login .forget-ipass a {
+text-decoration : none;
+color : #db4a37;
+}
+.mail-login .forget-ipass a:hover {
+text-decoration : underline;
+}
+.login-wrapper {
+width : 82rem;
+margin : 4rem auto 0;
+}
+.pc_form_container {
+float : left;
+}
+.applink-pc-login {
+float : right;
+background : url(/assets/img/v3/applink/pc-login-qr03.png) 0 0 no-repeat;
+display : block;
+position : relative;
+width : 44rem;
+height : 56.5rem;
+margin : 1rem auto 0;
+border-radius : 0.8rem;
+}
+.applink-pc-login .pc-login-btnset {
+position : absolute;
+bottom : 1.9rem;
+left : 2.7rem;
+}
+.applink-pc-login .pc-login-btnset a.applink-btn {
+border-radius : 0.6rem;
+transition : 0.2s 0s ease-out;
+display : inline-block;
+background : #222;
+width : 14rem;
+height : 4rem;
+margin : 0 2.6rem;
+}
+.applink-pc-login .pc-login-btnset a.applink-btn img {
+display : block;
+width : 65%;
+margin : 1rem auto 0;
+}
+.applink-pc-login .pc-login-btnset a.applink-btn:hover {
+background : #999;
+}
+.applink-pc-login:before, .applink-pc-login:after {
+content : " ";
+display : table;
+}
+.applink-pc-login:after {
+clear : both;
+}
+.term {
+color : rgba(68, 51, 17, 0.6);
+}
+
+.register #user_name {
+  width: 18rem;
+  height: 4rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border: .1rem solid #9a8e7d;
+  color: #362e2b;
+  background: #fefcf7;
+  display: block;
+  font-size: 1.6rem;
+  border-radius: 0.6rem;
+}
+.register #user_email {
+  width: 18rem;
+  height: 4rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border: .1rem solid #9a8e7d;
+  color: #362e2b;
+  background: #fefcf7;
+  display: block;
+  font-size: 1.6rem;
+  border-radius: 0.6rem;
+}
+.register #user_password {
+  width: 18rem;
+  height: 4rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border: .1rem solid #9a8e7d;
+  color: #362e2b;
+  background: #fefcf7;
+  display: block;
+  font-size: 1.6rem;
+  border-radius: 0.6rem;
+}
+.register #user_password_confirmation {
+  width: 18rem;
+  height: 4rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border: .1rem solid #9a8e7d;
+  color: #362e2b;
+  background: #fefcf7;
+  display: block;
+  font-size: 1.6rem;
+  border-radius: 0.6rem;
+}
