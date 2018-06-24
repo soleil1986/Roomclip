@@ -1,0 +1,316 @@
+/*section*/
+section#Upload-navigation {
+  width: 960px;
+  height: 80px;
+  margin: auto;
+  padding: 20px 0px 0px 0px;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+section#Stage-caption {
+  width: 470px;
+  margin-right: 20px;
+  overflow: hidden;
+  float: left;
+}
+
+nav#Stage-navi {
+  width: 470px;
+  overflow: hidden;
+  float: left;
+}
+
+#Stage-navi input {
+  width: 160px;
+  margin-left: 20px;
+  float: left;
+  font-size: 14px;
+  padding: 5px 0px;
+  border: none;
+  color: #fff;
+}
+
+.radius-min {
+  border-radius: 3px;
+}
+
+.button-color-white {
+  background: #ccc;
+}
+
+.button-color-red {
+  background: #DB4A37;
+}
+/*article*/
+#Contents {
+  overflow: hidden;
+  width: 960px;
+  margin: 20px auto;
+  }
+
+#Contents .upload-left {
+  width: 470px;
+  height: 470px;
+  margin-right: 20px;
+  float: left;
+  background-color: #fff !important;
+  position: relative;
+  z-index: 89;
+}
+
+#Contents-left {
+  margin: 0px;
+  padding: 0px;
+}
+
+#Image-upload-button {
+  width: 430px;
+  height: 430px;
+  margin: 20px auto;
+  cursor: pointer;
+  background-color: #ccc;
+  background-image: url("upload_button.png");
+  background-repeat: no-repeat;
+  background-size: 40% 40%;
+  background-position: 50% 50%;
+}
+
+#Image-upload-button input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#Image-upload-button span {
+  width: 400px;
+  margin: 0px auto;
+  padding: 300px 0px 0px 0px;
+  font-size: 16px;
+  overflow-y: auto;
+  display: block;
+  text-align: center;
+}
+
+#Thumb-field {
+  width: 430px;
+  height: 430px;
+  margin: 20px auto;
+}
+
+.color-light-middle {
+  color: #666;
+}
+.radius-mid {
+  border-radius: 5px;
+}
+.img {
+  vertical-align: bottom;
+}
+
+#Contents .upload-right {
+  width: 470px;
+  height: 470px;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  background-color: #fff !important;
+  position: relative;
+  z-index: 89;
+}
+
+#Preview {
+  width: 430px;
+  height: 430px;
+  margin: 20px auto;
+}
+
+.border-light {
+  border: 1px solid #999;
+}
+
+#Preview span {
+  width: 400px;
+  margin: 0px auto;
+  padding: 200px 0px 0px 0px;
+  font-size: 16px;
+  overflow-y: auto;
+  display: block;
+  text-align: center;
+}
+
+#Preview-field {
+  width: 430px;
+  height: 430px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+#Contents-extra {
+  width: 470px;
+  height: 470px;
+  margin-left: : 20px;
+  background-color: #fff;
+}
+
+#Contents .upload-extra {
+  float: left;
+}
+
+#Contents-extra .contents-extra-wrapper {
+  width: 430px;
+  height: 430px;
+  margin: 10px 20px;
+}
+
+#Contents .upload-extra .contents-extra-wrapper h1, h2 {
+    font-size: 14px;
+    margin: 0px 0px 2px;
+}
+
+.color-light-middle {
+  color: #666 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+#Contents .upload-extra .contents-extra-wrapper #Comment-input {
+    width: 390px;
+    height: 20px;
+    padding: 10px;
+    margin: 0px 0px 5px 20px;
+}
+
+#Contents .upload-extra .contents-extra-wrapper #Tag-field {
+    width: 420px;
+    overflow-y: auto;
+    margin: 0px 0px 0px 20px;
+}
+
+#Contents .upload-extra .contents-extra-wrapper #Tag-field #Tag-input {
+    width: 160px;
+    height: 10px;
+    float: left;
+}
+
+input[type='text'] {
+    padding: 5px;
+    display: block;
+}
+
+#Contents .upload-extra .contents-extra-wrapper #Tag-field #Tag-input-button {
+    width: 80px;
+    height: 22px;
+    padding: 3px 10px;
+    font-size: 14px;
+    border: none;
+    color: #fff;
+    clear: both;
+}
+
+.color-middle {
+    color: #333 !important;
+}
+
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+button, input {
+    line-height: normal;
+}
+
+utton, select {
+    text-transform: none;
+}
+
+#Contents .upload-extra .contents-extra-wrapper #Tag-field #Tag-input-list {
+    width: 390px;
+    height: 30px;
+    overflow-y: scroll;
+    margin: 5px 0px 0px;
+    padding: 10px;
+    font-style: oblique;
+    font-size: 65%;
+}
+
+.color-light {
+    color: #999 !important;
+}
+
+#Contents .upload-extra .contents-extra-wrapper h2 {
+    font-size: 13px;
+    margin: 5px 0px 5px 20px;
+}
+
+.select2 {
+    margin: 0px 0px 0px 20px;
+    height: 30px;
+    font-size: 12px !important;
+}
+
+#Contents .upload-extra .contents-extra-wrapper #Tag-profile, #Tag-recent {
+    width: 410px;
+    margin: 0px 10px 5px 20px;
+    overflow: auto;
+}
+
+.tag-back {
+    color: #555;
+    cursor: pointer;
+    background: #f4f4f4;
+    border: 1px solid #e1e1e1;
+    padding: 3px 5px;
+    margin: 2px;
+    text-align: center;
+    float: left;
+    font-size: 12px;
+    line-height: 100%;
+    max-width: 180px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/*.tag-back:after {
+    font-family: 'fontello';
+    content: '4';
+    padding: 0em 0.1em 0em 0.3em;
+}*/
+
+#Contents .upload-extra .contents-extra-wrapper .sns-button-field {
+    margin: 0px 0px 0px 20px;
+    overflow: auto;
+}
+
+#Contents .upload-extra .contents-extra-wrapper .sns-button {
+    margin: 0px 0px 0px 5px;
+    padding: 0px;
+    background-color: #fff;
+    font-size: 18px;
+    border: none;
+    float: left;
+}
+
+#Contents .upload-extra .contents-extra-wrapper .sns-button-field .tw {
+    margin: 1px 20px 0px 15px;
+    padding: 0px;
+    background-color: #fff;
+    font-size: 18px;
+    border: none;
+    float: left;
+}
