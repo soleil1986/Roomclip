@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
 # マージする前に不要な記述を削除する
   root to: "clips#index"
-  resources :clips, only:[:index, :new, :create, :destroy, :edit, :update] do
+  resources :clips, only:[:index, :new, :create, :destroy, :show] do
 ]
 end
