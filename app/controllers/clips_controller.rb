@@ -1,4 +1,7 @@
 class ClipsController < ApplicationController
+  def index
+
+  end
 
   def new
     @clip = Clip.new
