@@ -1,6 +1,8 @@
 class ClipsController < ApplicationController
-  before_action :authenticate_user!, except: :index
-  
+  def index
+
+  end
+
   def new
     @clip = Clip.new
   end
