@@ -145,10 +145,6 @@ top : 1rem;
 right : 1rem;
 color : #443311;
 }
-img {
-margin : 0 auto;
-display : block;
-}
 .sns-login {
 width : 35rem;
 margin : 2rem auto 0;
