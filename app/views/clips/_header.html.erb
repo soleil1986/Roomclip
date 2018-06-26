@@ -1,12 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
-    <link rel="stylesheet" href="../assets/stylesheets/header.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="UTF-8">
-    <meta name="msvalidate.01" content="06CFEECC6B1C43586559681DF5E98190">
-  </head>
-  <body>
+  <%= stylesheet_link_tag "_header", :media => "all" %>
     <header id="l-header" class="l-header">
       <div class="u-maxwidth-pc-outer">
         <div class="u-minwidth-pc-inner l-header__top-bar-inner u-clearfix">
@@ -40,7 +33,7 @@
             </div>
             <div class="l-header__user js-dropdown-button" href="javascript:void(0)">
               <img class="l-header__user-image js-top-bar-user" src="" >
-              <div class="l-header__dropdown-menu c-dropdown-menu js-top-bar-menu js-dropdown-window">
+              <div class="l-header__dropdown-menu c-dropdown-menu js-top-bar-menu js-dropdown-window" style="display: block;">
                   <a class="c-dropdown-menu-row-link" href="/myroom/3429048">
                     <span class="c-dropdown-menu-row-link-text">
                      マイルーム
@@ -72,5 +65,5 @@
         </div>
       </div>
     </header>
-  </body>
-</html>
+<!--   </body>
+</html> -->
