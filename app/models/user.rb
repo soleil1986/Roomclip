@@ -6,6 +6,5 @@ class User < ApplicationRecord
          :confirmable, :lockable
 
   validates :name, presence: true
-  validates :email, uniqueness: true
-  validates :password, confirmation: true
+
 end
