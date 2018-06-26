@@ -56,30 +56,7 @@ src="https://www.facebook.com/tr?id=235060970222367&ev=PageView&noscript=1"
     <section class="mail-login">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <h2>メールアドレスでログイン</h2>
-      <span class="auth-alert hidden color-alert" id="Alert-total-invalid">
-        入力された情報に誤りがあります。再度ご入力下さい。
-      </span>
-      <span class="auth-alert hidden color-alert" id="Alert-email-invalid">
-        メールアドレスが不正です。
-      </span>
-      <span class="auth-alert hidden color-alert" id="Alert-email-blank">
-        メールアドレスが空白です。
-      </span>
-      <span class="auth-alert hidden color-alert" id="Alert-email-defVal">
-        メールアドレスが不正です。
-      </span>
-
       <input type="text" name="email" id="Auth-email" class="color-light" maxlength="256" placeholder= "メールアドレスを入力">
-
-      <span class="auth-alert hidden color-alert" id="Alert-pass-invalid">
-        このパスワードは不正です。
-      </span>
-      <span class="auth-alert hidden color-alert" id="Alert-pass-blank">
-        パスワードが空欄です。
-      </span>
-      <span class="auth-alert hidden color-alert" id="Alert-pass-defVal">
-        このパスワードは不正です。
-      </span>
       <input type="text" name="pass" id="Auth-pass" class="color-light" maxlength="256" placeholder= "パスワードを入力">
     <% if devise_mapping.rememberable? -%>
       <div class="auth-checkbox">
@@ -90,7 +67,7 @@ src="https://www.facebook.com/tr?id=235060970222367&ev=PageView&noscript=1"
       <button id="Auth-email-lognin" class="off_button ">
       <%= f.submit "ログイン", :class=>"btn-submit" %>
       </button>
-      <a href="/auth/forgot_password" class="forget-ipass">
+      <a href="/users/password/new" class="forget-ipass">
         パスワードを忘れた方はこちら
       </a>
     </section>
@@ -115,10 +92,8 @@ src="https://www.facebook.com/tr?id=235060970222367&ev=PageView&noscript=1"
       </p>
     </section>
   </div>
-
   <section class="applink-pc-login"><img src="https://roomclip.jp/assets/img/v3/applink/pc-login-qr03.png" alt="スマホアプリ 広告">
   </section>
-
 </div>
 
 <input type="hidden" id="server-params" data-ref="https://roomclip.jp/doc/entry">
