@@ -18,7 +18,6 @@
             </div>
           </div>
             <div class="l-header__right">
-              <%if user_signed_in? %>
                 <a class="l-header__search-room" href="/myroom/search"></a>
                 <a class="l-header__timeline" href="/timeline"></a>
                 <div class="l-header__news  ">
@@ -35,13 +34,13 @@
                 </div>
                 <div class="l-header__user js-dropdown-button" href="javascript:void(0)">
                   <img class="l-header__user-image js-top-bar-user" src="" >
-                  <div class="l-header__dropdown-menu c-dropdown-menu js-top-bar-menu js-dropdown-window" style="display: block;">
+                  <div class="l-header__dropdown-menu c-dropdown-menu js-top-bar-menu js-dropdown-window" >
                       <a class="c-dropdown-menu-row-link" href="/myroom/3429048">
                         <span class="c-dropdown-menu-row-link-text">
                          マイルーム
                         </span>
                       </a>
-                      <a class="c-dropdown-menu-row-link" href="/upload/">
+                      <a class="c-dropdown-menu-row-link" href="/clips/new">
                         <span class="c-dropdown-menu-row-link-text">
                          投稿
                         </span>
@@ -61,11 +60,9 @@
                           ログアウト
                         </span>
                       </a>
-                    <% else %>
-                      <div class="l-header__login">
+ <!--                   <div class="l-header__login">
                         <a class="l-header__login-link" href="/users/sign_in">ログイン</a>
-                      </div>
-                    <% end %>
+                      </div> -->
                 </div>
             </div>
           </div>
