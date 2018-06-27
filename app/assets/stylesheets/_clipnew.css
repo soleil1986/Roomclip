@@ -205,7 +205,7 @@ h1, h2 {
     float: left;
 }
 
-input[type='text'] {
+#Tag-input {
     padding: 5px;
     display: block;
 }
