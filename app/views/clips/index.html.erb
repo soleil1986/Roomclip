@@ -55,11 +55,6 @@ src="https://www.facebook.com/tr?id=235060970222367&ev=PageView&noscript=1"
 <!-- ヘッダーの呼び出し -->
 <%= render partial: 'shared/header' %>
 
-<!-- welcome画面ーの呼び出し -->
-<% unless user_signed_in? %>
-<%= render partial: 'welcome' %>
-<% end %>
-
 <!-- daily画面ーの呼び出し -->
 <%= render partial: 'daily' %>
 
