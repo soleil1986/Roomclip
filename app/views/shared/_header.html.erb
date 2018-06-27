@@ -17,49 +17,55 @@
               </ul>
             </div>
           </div>
-          <div class="l-header__right">
-            <a class="l-header__search-room" href="/myroom/search"></a>
-            <a class="l-header__timeline" href="/timeline"></a>
-            <div class="l-header__news  ">
-              <div class="js-dropdown-button js-top-bar-post">
-                <div class="c-post">
+            <div class="l-header__right">
+              <%if user_signed_in? %>
+                <a class="l-header__search-room" href="/myroom/search"></a>
+                <a class="l-header__timeline" href="/timeline"></a>
+                <div class="l-header__news  ">
+                  <div class="js-dropdown-button js-top-bar-post">
+                    <div class="c-post">
+                    </div>
+                    <div class="c-post--notice">
+                      <div class="c-notice-batch" style="display: none;"></div>
+                    </div>
+                  </div>
+                  <div class="l-header__dropdown-news c-dropdown-menu js-top-bar-news js-dropdown-window">
+                    <ul class="js-top-bar-news-container"></ul>
+                  </div>
                 </div>
-                <div class="c-post--notice">
-                  <div class="c-notice-batch" style="display: none;"></div>
-                </div>
-              </div>
-              <div class="l-header__dropdown-news c-dropdown-menu js-top-bar-news js-dropdown-window">
-                <ul class="js-top-bar-news-container"></ul>
-              </div>
-            </div>
-            <div class="l-header__user js-dropdown-button" href="javascript:void(0)">
-              <img class="l-header__user-image js-top-bar-user" src="" >
-              <div class="l-header__dropdown-menu c-dropdown-menu js-top-bar-menu js-dropdown-window" style="display: block;">
-                  <a class="c-dropdown-menu-row-link" href="/myroom/3429048">
-                    <span class="c-dropdown-menu-row-link-text">
-                     マイルーム
-                    </span>
-                  </a>
-                  <a class="c-dropdown-menu-row-link" href="/upload/">
-                    <span class="c-dropdown-menu-row-link-text">
-                     投稿
-                    </span>
-                  </a>
-                  <a class="c-dropdown-menu-row-link" href="/timeline">
-                    <span class="c-dropdown-menu-row-link-text">
-                      タイムライン
-                    </span>
-                  </a>
-                  <a class="c-dropdown-menu-row-link" href="/myroom/settings">
-                    <span class="c-dropdown-menu-row-link-text">
-                      設定
-                    </span>
-                  </a>
-                  <a class="c-dropdown-menu-row-link" href="/auth/logout/?type=web">
-                    <span class="c-dropdown-menu-row-link-text">
-                      ログアウト
-                    </span>
-                  </a>
+                <div class="l-header__user js-dropdown-button" href="javascript:void(0)">
+                  <img class="l-header__user-image js-top-bar-user" src="" >
+                  <div class="l-header__dropdown-menu c-dropdown-menu js-top-bar-menu js-dropdown-window" style="display: block;">
+                      <a class="c-dropdown-menu-row-link" href="/myroom/3429048">
+                        <span class="c-dropdown-menu-row-link-text">
+                         マイルーム
+                        </span>
+                      </a>
+                      <a class="c-dropdown-menu-row-link" href="/upload/">
+                        <span class="c-dropdown-menu-row-link-text">
+                         投稿
+                        </span>
+                      </a>
+                      <a class="c-dropdown-menu-row-link" href="/timeline">
+                        <span class="c-dropdown-menu-row-link-text">
+                          タイムライン
+                        </span>
+                      </a>
+                      <a class="c-dropdown-menu-row-link" href="/myroom/settings">
+                        <span class="c-dropdown-menu-row-link-text">
+                          設定
+                        </span>
+                      </a>
+                      <a class="c-dropdown-menu-row-link" href="/auth/logout/?type=web">
+                        <span class="c-dropdown-menu-row-link-text">
+                          ログアウト
+                        </span>
+                      </a>
+                    <% else %>
+                      <div class="l-header__login">
+                        <a class="l-header__login-link" href="/users/sign_in">ログイン</a>
+                      </div>
+                    <% end %>
                 </div>
             </div>
           </div>

@@ -158,6 +158,7 @@ width : 13.1rem;
     border: solid 1px #cfcabf;
 }
 .l-header__dropdown-menu {
+    display: none;
     position: absolute;
     width: 20rem;
     right: 0;
@@ -207,6 +208,13 @@ width : 13.1rem;
     border-bottom: 7px solid #CCC;
     border-bottom-color: rgba(0, 0, 0, 0.2);
     display: inline-block;
+}
+.l-header__login {
+    margin: 2.4rem 1.2rem 0 0;
+}
+.l-header__login-link {
+    font-size: 1.4rem;
+    text-decoration: none;
 }
 
 
