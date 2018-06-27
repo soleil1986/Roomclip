@@ -55,8 +55,9 @@ html {
 font-family : "Quicksand", "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 font-size : 62.5%;
 }
-body {
+body.login-body {
 background-color : #fff;
+padding: 8rem 0 4rem;
 }
 button {
 border : none;
@@ -72,7 +73,6 @@ text-decoration : underline;
 a:active, a:focus {
 outline : none;
 }
-¥
 .p-category-links {
 float : left;
 font-size : 1.8rem;
@@ -139,11 +139,15 @@ clear : both;
 body {
 padding : 8rem 0 4rem;
 }
-h1 {
+h1.menu-login {
 position : absolute;
 top : 1rem;
 right : 1rem;
 color : #443311;
+}
+img.login-clip{
+  margin: 0 auto;
+  display: block;
 }
 .sns-login {
 width : 35rem;
