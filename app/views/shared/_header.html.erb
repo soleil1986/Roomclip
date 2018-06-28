@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <%= stylesheet_link_tag "_header", :media => "all" %>
+  <%= javascript_include_tag 'header_drop_menu.js' %>
+    <header id="l-header" class="l-header">
+      <div class="u-maxwidth-pc-outer">
+        <div class="u-minwidth-pc-inner l-header__top-bar-inner u-clearfix">
+          <div class="l-header__left">
+            <a class="l-header__logo" href="/">
+              <img class="l-header__logo-image" src="https://roomclip.jp/assets/img/1703/logo/logo_roomclip@4x.png" alt="みんなの部屋の実例集 RoomClip ルームクリップ">
+            </a>
+          </div>
+          <div class="l-header__center js-header-center">
+            <img class="l-header__search-image" src="https://roomclip.jp/assets/img/1703/search/icon_search_sp@2x.png" width="14" height="14" alt="キーワードで部屋写真を検索">
+            <input type="text" class="l-header__search-input js-search-input" value="" autocomplete="off" placeholder="キーワードで写真を検索">
+            <div class="l-header__search-result js-dropdown-search">
+              <ul class="l-header__search-result-box js-dropdown-search-box">
+              </ul>
+            </div>
+          </div>
+            <div class="l-header__right">
+                <a class="l-header__search-room" href="/myroom/search"></a>
+                <a class="l-header__timeline" href="/timeline"></a>
+                <div class="l-header__news  ">
+                  <div class="js-dropdown-button js-top-bar-post">
+                    <div class="c-post">
+                    </div>
+                    <div class="c-post--notice">
+                      <div class="c-notice-batch" style="display: none;"></div>
+                    </div>
+                  </div>
+                  <div class="l-header__dropdown-news c-dropdown-menu js-top-bar-news js-dropdown-window">
+                    <ul class="js-top-bar-news-container"></ul>
+                  </div>
+                </div>
+                <div class="l-header__user js-dropdown-button" href="javascript:void(0)">
+                  <img class="l-header__user-image js-top-bar-user" src="" >
+                  <div class="l-header__dropdown-menu c-dropdown-menu js-top-bar-menu js-dropdown-window" >
+                      <a class="c-dropdown-menu-row-link" href="/myroom/3429048">
+                        <span class="c-dropdown-menu-row-link-text">
+                         マイルーム
+                        </span>
+                      </a>
+                      <a class="c-dropdown-menu-row-link" href="/clips/new">
+                        <span class="c-dropdown-menu-row-link-text">
+                         投稿
+                        </span>
+                      </a>
+                      <a class="c-dropdown-menu-row-link" href="/timeline">
+                        <span class="c-dropdown-menu-row-link-text">
+                          タイムライン
+                        </span>
+                      </a>
+                      <a class="c-dropdown-menu-row-link" href="/myroom/settings">
+                        <span class="c-dropdown-menu-row-link-text">
+                          設定
+                        </span>
+                      </a>
+                      <a class="c-dropdown-menu-row-link" href="/auth/logout/?type=web">
+                        <span class="c-dropdown-menu-row-link-text">
+                          ログアウト
+                        </span>
+                      </a>
+<!--                        <div class="l-header__login">
+                          <a class="l-header__login-link" href="/users/sign_in">ログイン</a>
+                        </div> -->
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+<!--   </body>
+</html> -->
