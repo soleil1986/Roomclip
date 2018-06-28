@@ -6,6 +6,7 @@
   position: relative;
   margin: 4rem auto 8rem !important;
   h1 {
+    position: static;
     text-align: right;
     color: #362e2b;
     font-size: 1rem;
@@ -277,12 +278,105 @@
         font-weight: bold;
         color: #db4a37;
       }
+      img {
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
     a {
       color: inherit;
       text-decoration: inherit;
       cursor: inherit;
       cursor: pointer;
+    }
+    .actions {
+      padding: 0 0 2rem 0;
+      .like-button {
+        float: left;
+        button {
+          width: 14rem;
+          height: 5rem;
+          padding: 0 0 0 6rem;
+          text-align: left;
+          line-height: 1.5rem;
+          font-size: 1.4rem;
+          display: block;
+          float: left;
+          position: relative;
+          margin: 0 1rem 0 0;
+          cursor: pointer;
+          // -moz-border-radius: 0.3rem;
+          // -webkit-border-radius: 0.3rem;
+          border-radius: 0.3rem;
+        }
+        .like{
+          color: #fff;
+          background: #ef8376;
+          span {
+            background-image: url(heart.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: 50% 50%;
+            background-color: #fff;
+            width: 33px;
+            height: 30px;
+          }
+        }
+      }
+      .folder-button {
+        float: left;
+        .folder {
+          color: #fff;
+          margin: 0;
+          background: #d9462a;
+          span {
+            width: 3.3rem;
+            height: 3rem;
+            margin-top: 0.3rem;
+            background: url(/assets/img/v3/folder/folder_button_photo_detail_pc.png) no-repeat;
+          }
+        }
+        button {
+          margin: 0;
+          overflow: hidden;
+          width: 14rem;
+          height: 5rem;
+          padding: 0 0 0 6rem;
+          text-align: left;
+          line-height: 1.5rem;
+          font-size: 1.4rem;
+          display: block;
+          float: left;
+          position: relative;
+          margin: 0 1rem 0 0;
+          cursor: pointer;
+          -moz-border-radius: 0.3rem;
+          -webkit-border-radius: 0.3rem;
+          border-radius: 0.3rem;
+          span {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+          }
+        }
+      }
+    }
+    aside {
+      font-size: 1.4rem;
+      color: #362e2b;
+      float: none;
+      clear: both;
+      padding: 2rem 0 0;
+      span {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #db4a37;
+        padding: 0 1rem 0 .5rem;
+        cursor: pointer;
+      }
     }
   }
 }
