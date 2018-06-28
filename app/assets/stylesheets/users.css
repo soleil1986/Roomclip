@@ -209,7 +209,7 @@ font-weight : bold;
 color : #362e2b;
 text-align : center;
 }
-.mail-login #Auth-email, .mail-login #Auth-pass {
+.mail-login #user_email, .mail-login #user_password {
 width : 27rem;
 height : 4rem;
 padding : 0 1.5rem;
