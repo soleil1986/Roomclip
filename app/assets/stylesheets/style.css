@@ -1,4 +1,4 @@
-/* @charset "UTF-8";
+/*/*/*/* @charset "UTF-8";
 html {
 color : #000;
 background : #FFF;
@@ -731,7 +731,7 @@ border : 0;
 background-position : 0 0;
 }
 .ui-slider.ui-state-disabled .ui-slider-handle, .ui-slider.ui-state-disabled .ui-slider-range {
-/* filter : ; */
+/* filter : ;
 }
 .ui-slider-horizontal {
 height : 0.8em;
@@ -3295,3 +3295,4 @@ display : inline-block;
 .c-top-sidebar__banner-img{
   width: 290px;
 } */
+*/*/*/*/
