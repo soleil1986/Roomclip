@@ -378,9 +378,117 @@
         cursor: pointer;
       }
     }
+    .tags {
+      padding: 2rem 0 0 0;
+      border-top: .1rem solid #cfc5b8;
+      h2 {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #362e2b;
+        padding: 0 0 1.5rem .5rem;
+      }
+      .entry-tags {
+        clear: both;
+        width: 22.4rem;
+        padding: 0.5rem 0 0 0.4rem;
+        background: #f3f0eb;
+        ul {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          overflow: hidden;
+          li {
+            height: 3.3rem;
+            display: inline;
+            float: left;
+            .tag-delete-button {
+              background-color: #675d54;
+              padding: .5rem;
+              display: inline-block;
+              float: left;
+              margin: 0 -0.3rem 0 .2rem;
+              height: 1.4rem;
+              -moz-border-radius: 0.5rem 0rem 0rem 0.5rem;
+              -webkit-border-radius: 0.5rem;
+              border-radius: 0.5rem 0rem 0rem 0.5rem;
+              border: .1rem solid #cfc5b8;
+              border-right: 0;
+              position: relative;
+              z-index: 100;
+              cursor: pointer;
+              span {
+                background: url(/assets/img/v3/sprite/photo.png) 0 -301px no-repeat;
+                width: 11px;
+                height: 11px;
+                display: block;
+                margin: 0.1rem 0 0 0;
+              }
+            }
+          }
+        }
+        button {
+          width: 15rem;
+          height: 3rem;
+          line-height: 3rem;
+          margin: 0 .5rem 0 .5rem;
+          padding: 0;
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #fff;
+          text-align: center;
+          position: relative;
+          background-color: #ac9776;
+          cursor: pointer;
+          -moz-border-radius: 0.3rem;
+          -webkit-border-radius: 0.3rem;
+          border-radius: 0.3rem;
+          span {
+            position: absolute;
+            left: 1rem;
+            top: 0.8rem;
+            background: url(/assets/img/v3/sprite/photo.png) 0 -66px no-repeat;
+            width: 11px;
+            height: 11px;
+          }
+        }
+        .sendtag-element {
+          width: 15rem;
+          display: none;
+          position: relative;
+          input {
+            width: 13rem;
+            height: 2.8rem;
+            color: #ac9776;
+            border: .1rem solid #ac9776;
+            padding: 0 1rem;
+            font-size: 1.6rem;
+            -moz-border-radius: 0.3rem;
+            -webkit-border-radius: 0.3rem;
+            border-radius: 0.3rem;
+          }
+          .tag-add-close-button {
+            position: absolute;
+            right: .5rem;
+            top: -0.2rem;
+            color: #ac9776;
+            font-size: 1.8rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
 }
-
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
 
 
 
