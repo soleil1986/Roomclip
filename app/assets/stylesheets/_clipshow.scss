@@ -532,6 +532,55 @@
         }
       }
     }
+    .contests {
+      margin: 0 0 0 0;
+      border-top: .1rem solid #cfc5b8;
+      h2 {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #362e2b;
+        padding: 1.5rem 0 1.5rem .5rem;
+      }
+      section {
+        background: #fff;
+        margin: 0 1rem 1rem 0;
+        border: .1rem solid #cfc5b8;
+        padding: .3rem;
+        float: left;
+        color: inherit;
+        text-decoration: inherit;
+        cursor: inherit;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          div {
+            background: #fff;
+            img {
+              width: 28rem;
+              height: auto;
+              margin: 0;
+              display: block;
+            }
+            h3 {
+              margin: .8rem 0 .3rem .8rem;
+              font-size: 1.4rem;
+              font-weight: bold;
+              color: #362e2b;
+            }
+            div {
+              padding: 0 0 0 .8rem;
+              font-size: 1.2rem;
+              color: #362e2b;
+            }
+            aside {
+              padding: 0 0 0 .8rem;
+              font-size: 1.2rem;
+              color: #362e2b;
+            }
+          }
+        }
+      }
+    }
   }
 }
 .ui-helper-hidden-accessible {
