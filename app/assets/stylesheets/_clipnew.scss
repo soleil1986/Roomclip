@@ -1,24 +1,41 @@
 /*section*/
-section#Upload-navigation {
+#Upload-navigation {
   width: 960px;
   height: 80px;
   margin: auto;
   padding: 20px 0px 0px 0px;
   font-size: 18px;
   overflow: hidden;
-}
-
-section#Stage-caption {
-  width: 470px;
-  margin-right: 20px;
-  overflow: hidden;
-  float: left;
-}
-
-nav#Stage-navi {
-  width: 470px;
-  overflow: hidden;
-  float: left;
+  #Stage-caption {
+    width: 470px;
+    margin-right: 20px;
+    overflow: hidden;
+    float: left;
+    div {
+      width: 470px;
+      height: 40px;
+    }
+  }
+  #Stage-navi {
+    width: 470px;
+    overflow: hidden;
+    float: left;
+    div {
+      width: 470px;
+      height: 40px;
+      margin: 0px;
+      float: left;
+      button {
+        width: 160px;
+        margin: 0px 20px 0px 0px;
+        float: left;
+        font-size: 14px;
+        padding: 5px 0px;
+        border: none;
+        color: #fff;
+      }
+    }
+  }
 }
 
 #Stage-navi input {
@@ -47,21 +64,43 @@ nav#Stage-navi {
   overflow: hidden;
   width: 960px;
   margin: 20px auto;
+  .upload-left {
+    width: 470px;
+    height: 470px;
+    margin-right: 20px;
+    float: left;
+    background-color: #fff !important;
+    position: relative;
+    z-index: 89;
   }
-
-#Contents .upload-left {
-  width: 470px;
-  height: 470px;
-  margin-right: 20px;
-  float: left;
-  background-color: #fff !important;
-  position: relative;
-  z-index: 89;
-}
-
-#Contents-left {
-  margin: 0px;
-  padding: 0px;
+  #Contents-left {
+    margin: 0px;
+    padding: 0px;
+  }
+  #Contents-extra {
+    width: 470px;
+    height: 470px;
+    margin-left: 20px;
+    background-color: #fff;
+    .upload-extra {
+      .contents-extra-wrapper {
+        width: 430px;
+        height: 430px;
+        margin: 10px 20px;
+        h2, h3 {
+          position: static;
+          font-size: 16px;
+          margin: 0px 0px 2px;
+        }
+        .color-light-middle {
+          color: #666;
+        }
+      }
+    }
+  }
+  .upload-extra {
+    float: left;
+  }
 }
 
 #Image-upload-button {
@@ -103,9 +142,6 @@ nav#Stage-navi {
   margin: 20px auto;
 }
 
-.color-light-middle {
-  color: #666;
-}
 .radius-mid {
   border-radius: 5px;
 }
@@ -151,27 +187,6 @@ nav#Stage-navi {
   overflow: hidden;
 }
 
-#Contents-extra {
-  width: 470px;
-  height: 470px;
-  margin-left: 20px;
-  background-color: #fff;
-}
-
-#Contents .upload-extra {
-  float: left;
-}
-
-#Contents-extra .contents-extra-wrapper {
-  width: 430px;
-  height: 430px;
-  margin: 10px 20px;
-}
-
-#Contents .upload-extra .contents-extra-wrapper h1, h2 {
-    font-size: 14px;
-    margin: 0px 0px 2px;
-}
 
 .color-light-middle {
   color: #666 !important;
@@ -182,8 +197,9 @@ h1, h2, h3, h4, h5, h6 {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2 {
+h3, h2 {
   font-weight: normal;
+  font-size: 14px;
 }
 
 #Contents .upload-extra .contents-extra-wrapper #Comment-input {
@@ -285,12 +301,6 @@ utton, select {
     overflow: hidden;
     white-space: nowrap;
 }
-
-/*.tag-back:after {
-    font-family: 'fontello';
-    content: '4';
-    padding: 0em 0.1em 0em 0.3em;
-}*/
 
 #Contents .upload-extra .contents-extra-wrapper .sns-button-field {
     margin: 0px 0px 0px 20px;
