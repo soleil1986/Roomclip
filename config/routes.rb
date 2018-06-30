@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   root "clips#index"
   resources :users, only: [:show]
   resources :clips, only:[:index, :new, :create, :destroy, :show] do
+  resources :likes, only: [:create, :destroy]
   end
 end
