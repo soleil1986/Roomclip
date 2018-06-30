@@ -31,6 +31,8 @@
       .preview-image {
         width: 62rem;
         height: 62rem;
+        background-color: black;
+        object-fit: contain;
       }
       figcaption {
         height: 3.3rem;
