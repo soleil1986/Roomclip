@@ -24,7 +24,7 @@ class ClipsController < ApplicationController
   private
 
   def clip_params
-    params.required(:clip).permit(:image)
+    params.required(:clip).permit(:image, :tag_list)
   end
 
 end

@@ -33,9 +33,11 @@
           <h3 class="color-light-middle">コメント</h3>
           <textarea id="Comment-input" class="border-light color-middle"></textarea>
 
-          <h3 class="color-light-middle">タグ</h3>
+          <!-- <h3 class="color-light-middle">タグ</h3> -->
+          <%= f.label :tag_list, class: "color-light-middle"%>
           <div id="Tag-field">
-            <input type="text" id="Tag-input" class="border-light color-middle tag-autocomplete">
+          <%= text_field_tag 'clip[tag_list]', @clip.tag_list.join(""), class: "border-light color-middle tag-autocomplete" %>
+           <!--  <input type="text" id="Tag-input" class="border-light color-middle tag-autocomplete"> -->
             <button id="Tag-input-button" class="border-light button-color-white add-tag-button">追加</button>
             <div id="Tag-input-list" class="color-light border-light">追加されたタグはここに表示されます</div>
           </div>
