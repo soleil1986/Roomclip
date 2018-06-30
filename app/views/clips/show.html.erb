@@ -5,7 +5,9 @@
 <article id="main">
 <!--  user_idが取れるようになったらlogin user_idで表示されるように変更する -->
 <h1>
-  稼働棚/シューズクローゼット/玄関棚/玄関収納/下駄箱/初投稿…などのインテリア実例 - HideOnuの部屋 - <br>2018-06-14 14:33:17
+  タグ情報・・稼働棚/シューズクローゼット/玄関棚/玄関収納/下駄箱/初投稿…などのインテリア実例
+  - <%= @clip.user.name %>の部屋 -
+  <br><%= @clip.created_at.strftime('%Y/%m/%d %H:%M') %>
 </h1>
 
 
@@ -143,7 +145,10 @@
 
   <section class="user">
     <h2>
-      <a href="/myroom/3429062">ログインユーザー</a>
+      <a href="/myroom/3429062">
+        <%= @clip.user.name %>
+        <br> ユーザー画像設定画面作成後
+      </a>
     </h2>
     <a href="/myroom/3429062"><img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_user/2aa8c862ea7fe267ac8912fce34e1c2a0d9cd4d8.jpg" alt="HideOnuさん"></a>
   </section>
