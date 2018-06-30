@@ -44,8 +44,10 @@ Things you may want to cover:
 - has_many :tag_clips
 - has_one :profile
 - has_one :count
-- has_many :followers
-- has_many :follows
+- has_many :active_relationships, class_name: "Relationship", dependent: :destroy
+- has_many :passive_relationships, class_name: "Relationship", dependent: :destroy
+- has_many :follows, through: :active_relationship
+- has_many :followers, through: :passive_relationships
 - validates :name, length: {minimun: 3 maximum: 10}, presence: true
 - validates :password, length {minimum: 3 maximum: 10}, presenve: true
 
@@ -221,22 +223,17 @@ _ belongs_to :user, counter_cache: :tags_count
 ### Association
 - belongs_to :user
 
-
-## followersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user, counter_cache: :followers_count
-
-
-## followsテーブル
+## relationshipsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
+ active_relationships
+|follower_id|references|null: false, foreign_key: true|
+ passive_relationships
+|follow_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user, counter_cache: :follows_count
+- belongs_to :follow, class_name: 'User'
+- belongs_to :follower, class_name: 'User'
+- validates :follower_id, presence: true
+- validates :follow_id, presence: true
