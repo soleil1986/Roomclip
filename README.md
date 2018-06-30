@@ -47,7 +47,8 @@ Things you may want to cover:
 - has_many :followers
 - has_many :follows
 - validates :name, length: {minimun: 3 maximum: 10}, presence: true
-- validates :password, length {minimum: 3 maximum: 10}, presenve: true
+- validates :email, uniqueness: true
+- validates :password, length {minimum: 3 maximum: 10}, confirmation: true, presenve: true
 
 
 ## clipsテーブル
