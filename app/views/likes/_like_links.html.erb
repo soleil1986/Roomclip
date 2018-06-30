@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+  <% if current_user.likes.find_by(clip_id: clip.id)
+    <%= link_to clip_like_path(clip.id),method: :delete,remote:true do %>
+      <button class="btn btn-default">
+        <%= imag_tag()
