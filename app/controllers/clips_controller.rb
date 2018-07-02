@@ -7,7 +7,7 @@ class ClipsController < ApplicationController
   end
 
   def create
-    @clip = Clip.create(clip_params)
+    clip = current_user.clips.create(clip_params)
     redirect_to new_clip_path
   end
 
@@ -16,6 +16,9 @@ class ClipsController < ApplicationController
   end
 
   def destroy
+    clip = Clip.find(params[:id])
+    clip.destroy
+    redirect_to new_clip_path
   end
 
   private

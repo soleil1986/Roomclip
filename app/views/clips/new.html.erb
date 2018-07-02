@@ -1,10 +1,5 @@
 <!doctype html>
 
-<header id="l-header" class="l-header">
-  ALOHA!
-  ヘッダー部分はレンダーで対応予定
-</header>
-
 <%= form_for @clip do |f| %>
   <section id="Upload-navigation">
     <section id="Stage-caption">
@@ -35,10 +30,10 @@
 
     <section id="Contents-extra" class="upload-extra radius-mid" style="display: ">
         <div class="contents-extra-wrapper">
-          <h1 class="color-light-middle">コメント</h1>
+          <h3 class="color-light-middle">コメント</h3>
           <textarea id="Comment-input" class="border-light color-middle"></textarea>
 
-          <h1 class="color-light-middle">タグ</h1>
+          <h3 class="color-light-middle">タグ</h3>
           <div id="Tag-field">
             <input type="text" id="Tag-input" class="border-light color-middle tag-autocomplete">
             <button id="Tag-input-button" class="border-light button-color-white add-tag-button">追加</button>
@@ -90,8 +85,8 @@
           </div>
           <h1 class="color-light-middle">SNS連携</h1>
           <div class="sns-button-field">
-            <button data-site="fb" class="fb sns-button fontello color-light ">F</button>
-            <button data-site="tw" class="tw sns-button fontello color-light ">T</button>
+            <button data-site="fb" class="fb sns-button fontello color-light "></button>
+            <button data-site="tw" class="tw sns-button fontello color-light "></button>
           </div>
         </div>
     </section>
@@ -100,8 +95,3 @@
 
 <div id=SNS-event-holder">
 </div>
-
-<footer id="l-footer" class="l-footer">
-  MAHALO!
-  フッダー部分もレンダーで対応予定
-</footer>

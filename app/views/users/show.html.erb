@@ -42,7 +42,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="c-top__container">
     <div class="c-top__container-wrap">
                   <h1 class="c-top__subject">
-        HiroakiSanoの部屋
+        <%= "#{@user.name}の部屋" %>
       </h1>
                       </div>
   </div>
@@ -56,13 +56,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </li>
                 <li class="c-bread__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a href="/myroom/search/?gender=0&area=0&age=0&layout=3&style=0&region=0&job=0&country=0" class="c-bread__item-link" itemprop="url">
-            <span class="c-bread__item-label" itemprop="title">1DK</span>
+          <a href="/" class="c-bread__item-link" itemprop="url">
+            <span class="c-bread__item-label" itemprop="title">1LDK</span>
+						<!-- 部屋検索未実装のため便宜的にindexに遷移 -->
+						<!-- /users/#{@current_user.id} -->
           </a>
         </li>
                 <li class="c-bread__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a href="/myroom/3464798" class="c-bread__item-link" itemprop="url">
-            <span class="c-bread__item-label" itemprop="title">HiroakiSanoの部屋</span>
+          <a href= "user_path(@user.id)" class="c-bread__item-link" itemprop="url">
+            <span class="c-bread__item-label" itemprop="title"><%= "#{@user.name}の部屋" %></span>
           </a>
         </li>
               </ul>
@@ -207,7 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="right">
 
     <section id="user-image">
-      <h2>HiroakiSano</h2>
+      <h2><%= @user.name %></h2>
       <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_user/d67f13b4321318beb28f223afb69c7c2311581ce.jpg" alt="HiroakiSanoさんのお部屋">
                         </section>
 
