@@ -13,6 +13,7 @@ class ClipsController < ApplicationController
 
   def show
     @clip = Clip.find(params[:id])
+    @clips = Clip.where(user_id: @clip.user).order("created_at DESC").limit(12)
   end
 
   def destroy

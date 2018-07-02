@@ -363,21 +363,11 @@
   <section class="side-option pop-user-photo">
     <h2>このユーザの人気の部屋写真</h2>
     <ul>
+      <% @clips.each do |clip| %>
       <li>
-        <a href="/photo/cu3R">
-          <img src="https://cdn10.roomclip.jp/v1/180/roomclip-bucket/img_180/6c541067aaf93e3d62e77c0b7fff3fce3540f5ae.jpg" alt="玄関/入り口/ふくろう/梟/フクロウ/雑貨…などのインテリア実例">
-        </a>
+        <%= link_to image_tag(clip.image),clip_path(clip), alt: "タグの内容・・玄関/入り口/ふくろう/梟/フクロウ/雑貨…などのインテリア実例"%>
       </li>
-      <li>
-        <a href="/photo/cujd">
-          <img src="https://cdn4.roomclip.jp/v1/180/roomclip-bucket/img_180/61da32d1b0ef35a461eab70a240a42e5058d1525.jpg" alt="稼働棚/シューズクローゼット/玄関棚/玄関収納/下駄箱/初投稿…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cuyz">
-          <img src="https://cdn23.roomclip.jp/v1/180/roomclip-bucket/img_180/d4c8d0a1c66835947e9ffbd6857e39892559fa58.jpg" alt="稼働棚/初投稿/下駄箱/シューズクローゼット/玄関棚/玄関収納…などのインテリア実例">
-        </a>
-      </li>
+      <% end %>
     </ul>
     <aside class="more">
       <a href="/myphoto/3429062">
