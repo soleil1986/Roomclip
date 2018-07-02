@@ -134,11 +134,17 @@
       padding: 0 0 2rem 0;
       border-bottom: .1rem solid #cfc5b8;
       position: relative;
-      prev {
+      .prev {
         left: 3rem;
         span {
           left: -2rem;
           transform: scaleX(-1);
+        }
+      }
+      .next {
+        right: 3rem;
+        span {
+          right: -2rem;
         }
       }
       figure {
@@ -148,15 +154,20 @@
         span {
           position: absolute;
           top: 2rem;
-          background: url(/assets/img/v3/sprite/common.png) 0 -79px no-repeat;
-          width: 10px;
-          height: 16px;
+          background-image: url(矢印ボタン.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-position: 50% 50%;
+          width: 18px;
+          height: 18px;
         }
         a {
           img {
             width: 5.6rem;
             height: 5.6rem;
             border: .2rem solid #fff;
+            background-color: black;
+            object-fit: contain;
             display: block;
           }
         }
