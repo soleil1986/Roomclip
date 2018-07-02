@@ -39,11 +39,19 @@
 
   <nav>
     <figure class="prev">
-      <a href="/photo/cuyz">
-        <span></span>
-        <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_180/d4c8d0a1c66835947e9ffbd6857e39892559fa58.jpg" alt="前の部屋写真">
-      </a>
+      <% if @clip.previous.present? %>
+          <span></span>
+          <%= link_to image_tag(@clip.previous.image, class: "preview-image", alt: "前の投稿写真"), clip_path(@clip.previous) %>
+        </a>
+      <% end %>
       <input type="hidden" id="Move-to" value="cuyz">
+    </figure>
+    <figure class="next">
+      <% if @clip.next.present? %>
+        <span></span>
+        <%= link_to image_tag(@clip.next.image, class: "preview-image", alt: "の投稿写真"), clip_path(@clip.next) %>
+      </a>
+      <% end %>
     </figure>
   </nav>
 
