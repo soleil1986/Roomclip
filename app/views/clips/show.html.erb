@@ -363,14 +363,14 @@
   <section class="side-option pop-user-photo">
     <h2>このユーザの人気の部屋写真</h2>
     <ul>
-      <% @clips.each do |clip| %>
+      <% @clips_like.each do |clip| %>
       <li>
         <%= link_to image_tag(clip.image),clip_path(clip), alt: "タグの内容・・玄関/入り口/ふくろう/梟/フクロウ/雑貨…などのインテリア実例"%>
       </li>
       <% end %>
     </ul>
     <aside class="more">
-      <a href="/myphoto/3429062">
+      <a href="/users/<%= @clip.user.id %>">
         すべての写真を見る
         <img src="/assets/img/v3/sp/arrow_right_red.png" class="arrow">
       </a>
@@ -379,7 +379,7 @@
 
 
     <section class="side-option pop-tag-photo">
-    <h2>関連するインテリア実例</h2>
+    <h2>関連するインテリア実例<br>タグ機能実装後対応予定</h2>
     <ul>
       <li>
         <a href="/photo/cfno">
@@ -448,66 +448,11 @@
   <section class="side-option opt-daily">
     <h2>このインテリアが撮影された日の人気写真</h2>
     <ul>
+      <% @clips_day.each do |clip| %>
       <li>
-        <a href="/photo/cT0g">
-          <img src="https://cdn11.roomclip.jp/v1/180/roomclip-bucket/img_180/5c1b262d25ccca5da2811493c7495eb5c9e7f95a.jpg" alt="小鳥さん/セキセイインコ/オカメインコ/アスレチック/DIY/いつもいいね！押し逃げごめんなさい…などのインテリア実例">
-        </a>
+        <%= link_to image_tag(clip.image),clip_path(clip), alt: "タグの内容・・玄関/入り口/ふくろう/梟/フクロウ/雑貨…などのインテリア実例"%>
       </li>
-      <li>
-        <a href="/photo/cT46">
-          <img src="https://cdn3.roomclip.jp/v1/180/roomclip-bucket/img_180/6f7b8b576c3574613aa298c185f5d1fced84bbd0.jpg" alt="いいね❤300人感謝です❤/●今日のおすすめ30枚！⇒Thanks●/Daily roomclip1496❤…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cT3m">
-          <img src="https://cdn6.roomclip.jp/v1/180/roomclip-bucket/img_180/89adbd7ebbea9c337570dac4fa1efea57fe51825.jpg" alt="リビング/ヴィンテージ/珪藻土の壁/バリミ布教委員会/ミッドセンチュリー/ミッドセンチュリーモダン…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTAZ">
-          <img src="https://cdn10.roomclip.jp/v1/180/roomclip-bucket/img_180/7320cf6652e8594f4f53f036049a5f2a25372819.jpg" alt="リシェルSI/飛騨産業/ルイスポールセン/無印良品/ウッドデッキ/板張り天井…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTHX">
-          <img src="https://cdn19.roomclip.jp/v1/180/roomclip-bucket/img_180/b1daf5562b8cccd59f5d1a6578d78c127897538d.jpg" alt="コメントお構いなく♡/2018.6.11/押し逃げごめんなさい(´vωv`*)/今日もありがとぉ(*‘ω‘ *)♡…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTC4">
-          <img src="https://cdn15.roomclip.jp/v1/180/roomclip-bucket/img_180/8eea5d86b27cefed692b778f75f3cebd67b65705.jpg" alt="壁/天井/frame /Relaxing/くつろぎ空間/モノトーン/シンプルモダン…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cT4K">
-          <img src="https://cdn19.roomclip.jp/v1/180/roomclip-bucket/img_180/b5e04581048254ad84e874c8aa7ded8f62e06a49.jpg" alt="マリメッコ/戦利品/北欧ナチュラル/自己満足♡/花柄/北欧…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cT38">
-          <img src="https://cdn13.roomclip.jp/v1/180/roomclip-bucket/img_180/b8e20308b0720490b5df4053c3ce5ef35cf4cde6.jpg" alt="リビング/メタルラック/スチールラック/かご収納/山善/ペール缶スツール…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTcX">
-          <img src="https://cdn8.roomclip.jp/v1/180/roomclip-bucket/img_180/0bc748cf0a489ec97318c08f078e759e486169f6.jpg" alt="スパイダーマン/東方神起/KUFFS/DIY/机…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTB7">
-          <img src="https://cdn7.roomclip.jp/v1/180/roomclip-bucket/img_180/4650995372039a3a709dabc1048ff7f873efe392.jpg" alt="アルファベットタイル/ライダーとショッカーを探せ！！/S.H.フィギュアアーツ/仮面ライダー…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTBr">
-          <img src="https://cdn14.roomclip.jp/v1/180/roomclip-bucket/img_180/669687c7ae518477cdffa82f3bf4918f9c780838.jpg" alt="リビング/元和室をリビングに/スキレット♡/DIY/セルフリノベーション/カフェ風キッチン♡…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTau">
-          <img src="https://cdn10.roomclip.jp/v1/180/roomclip-bucket/img_180/e4e2232fdbb26e5b68696c0622d89c0c7b76c871.jpg" alt="ダイソー/フェイクグリーン/キャンドゥ/DIY/ホームエレクターヴィンテージ/無印良品…などのインテリア実例">
-        </a>
-      </li>
+      <% end %>
     </ul>
     <!-- ほぼこのまま使う -->
     <aside class="more">
@@ -520,7 +465,7 @@
 
 
   <section class="side-option pop-user-photo">
-    <h2>関連するタグの新着写真</h2>
+    <h2>関連するタグの新着写真<br>タグ機能実装後対応予定</h2>
       <div class="c-popular-tag-photo">
         <div class="c-popular-tag-photo__info">
           <div class="c-popular-tag-photo__tag">

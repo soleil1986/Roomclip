@@ -13,7 +13,8 @@ class ClipsController < ApplicationController
 
   def show
     @clip = Clip.find(params[:id])
-    @clips = Clip.where(user_id: @clip.user).order("created_at DESC").limit(12)
+    @clips_like = Clip.where(user_id: @clip.user).order("likes_count DESC").limit(12)
+    @clips_day =  Clip.where(created_at: @clip.created_at.all_day).order("likes_count DESC").limit(12)
   end
 
   def destroy
