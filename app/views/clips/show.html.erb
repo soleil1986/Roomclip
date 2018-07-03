@@ -42,7 +42,7 @@
   <nav>
     <figure class="prev">
       <% if @clip.previous.present? %>
-          <span></span>
+          <span class="prearrow"></span>
           <%= link_to image_tag(@clip.previous.image, class: "preview-image", alt: "前の投稿写真"), clip_path(@clip.previous) %>
         </a>
       <% end %>
@@ -50,7 +50,7 @@
     </figure>
     <figure class="next">
       <% if @clip.next.present? %>
-        <span></span>
+        <span class="prearrow"></span>
         <%= link_to image_tag(@clip.next.image, class: "preview-image", alt: "の投稿写真"), clip_path(@clip.next) %>
       </a>
       <% end %>
@@ -494,10 +494,7 @@
 
 <!-- 他タスクで対応 -->
   <section class="">
-    <div class="p-category-links-wrap">
-      Hola!
-      サイドアコーディオン部分もレンダーで対応予定
-    </div>
+    <%= render partial: 'accordion' %>
   </section>
 
 
