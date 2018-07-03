@@ -17,8 +17,8 @@
     <figcaption>
       <% if user_signed_in? && current_user.id == @clip.user_id %>
         <%= link_to '', "/clips/#{@clip.id}", method: :delete, class: "delete-photo-button" %>
-          <%= @clip.created_at.strftime('%Y/%m/%d %H:%M') %>
       <% end %>
+        <%= @clip.created_at.strftime('%Y/%m/%d %H:%M') %>
       <aside>
         <span>この写真をシェア</span>
         <ul>
