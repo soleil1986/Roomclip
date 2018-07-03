@@ -1,4 +1,5 @@
 class ClipsController < ApplicationController
+
   def index
   end
 
@@ -24,7 +25,13 @@ class ClipsController < ApplicationController
   def destroy
     clip = Clip.find(params[:id])
     clip.destroy
-    redirect_to new_clip_path
+    #自分の投稿したデータのうち、削除したデータの次に小さいIDを表示
+    #一番小さいIDを削除使用とした時、次に小さいIDは無いので、その時はマイルームへ遷移
+      if clip.previous.blank?
+        redirect_to user_path(clip.user.id)
+      else
+        redirect_to clip_path(clip.previous)
+      end
   end
 
   private
