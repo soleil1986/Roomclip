@@ -15,8 +15,10 @@
   <figure class="main">
     <%= image_tag(@clip.image, class: "preview-image", alt: "タグつけした内容＋...などのインテリア実例を", title: "タグつけした内容＋...などのインテリア実例 - 2018-06-14 12:34:56 | RoomClip（ルームクリップ）") %>
     <figcaption>
+      <% if user_signed_in? && current_user.id == @clip.user_id %>
         <%= link_to '', "/clips/#{@clip.id}", method: :delete, class: "delete-photo-button" %>
           <%= @clip.created_at.strftime('%Y/%m/%d %H:%M') %>
+      <% end %>
       <aside>
         <span>この写真をシェア</span>
         <ul>
