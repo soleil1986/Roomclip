@@ -8,7 +8,7 @@ class ClipsController < ApplicationController
 
   def create
     clip = current_user.clips.create(clip_params)
-    redirect_to new_clip_path
+    redirect_to clip_path(clip.id)
   end
 
   def show
