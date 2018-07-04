@@ -46,7 +46,6 @@
       <% if @clip.previous.present? %>
           <span class="prearrow"></span>
           <%= link_to image_tag(@clip.previous.image, class: "preview-image", alt: "前の投稿写真"), clip_path(@clip.previous) %>
-        </a>
       <% end %>
       <input type="hidden" id="Move-to" value="cuyz">
     </figure>
@@ -54,7 +53,6 @@
       <% if @clip.next.present? %>
         <span class="prearrow"></span>
         <%= link_to image_tag(@clip.next.image, class: "preview-image", alt: "の投稿写真"), clip_path(@clip.next) %>
-      </a>
       <% end %>
     </figure>
   </nav>
@@ -380,8 +378,10 @@
       <% end %>
     </ul>
     <aside class="more">
-      <%= link_to "すべての写真を見る", user_path(@clip.user.id) %>
-        <img src="/assets/img/v3/sp/arrow_right_red.png" class="arrow">
+      <%= link_to user_path(@clip.user.id) do %>
+        すべての写真を見る
+        <%= image_tag "prearrow.png" %>
+      <% end %>
     </aside>
   </section>
 
@@ -408,10 +408,10 @@
       <% end %>
     </ul>
     <aside class="more">
-      <a href="/daily/1496">
+      <%= link_to user_path(@clip.user.id) do %>
         他のDaily RoomClipも見る<br>今未対応画面のリンク
-        <img src="/assets/img/v3/sp/arrow_right_red.png" class="arrow">
-      </a>
+        <%= image_tag "prearrow.png" %>
+      <% end %>
     </aside>
   </section>
 
