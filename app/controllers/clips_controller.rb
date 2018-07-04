@@ -8,8 +8,13 @@ class ClipsController < ApplicationController
   end
 
   def create
-    clip = current_user.clips.create(clip_params)
-    redirect_to clip_path(clip.id)
+    @clip = current_user.clips.new(clip_params)
+    if @clip.save
+      redirect_to clip_path(@clip)
+    else
+      flash[:alert] = '投稿できませんでした'
+      render :new
+    end
   end
 
   def show
