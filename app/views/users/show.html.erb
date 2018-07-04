@@ -210,9 +210,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section id="user-image">
       <h2><%= @user.name %></h2>
-      <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_user/d67f13b4321318beb28f223afb69c7c2311581ce.jpg" alt="HiroakiSanoさんのお部屋">
+      <img src="" alt="HiroakiSanoさんのお部屋">
 			<div class="follow-button">
-      <button class="follow sendfollow" data-target_id="1090827" data-user_id="3499430"><span>＋</span>フォローする</button>
+				<!-- binding.pry -->
+				<%= render 'follow_form' %>
+				<!-- binding.pry -->
+				<!-- if logged_in? -->
+      <button class="<%= render 'follow'%>"><span>＋</span>フォローする</button>
+
+			<!-- <script type="text/template" id="follow-tpl">
+            <button class="follow sendfollow" data-target_id="2" data-user_id="1"><span></span>フォローする</button>
+          </script>
+          <script type="text/template" id="unfollow-tpl">
+            <button class="unfollow sendfollow" data-target_id="2" data-user_id="1"><span></span>フォロー解除</button>
+          </script> -->
       </div>
                         </section>
 
