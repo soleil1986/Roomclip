@@ -3,6 +3,8 @@ class Clip < ApplicationRecord
 
   mount_uploader :image, ClipImageUploader
 
+  DISPLAY_NUMBER = 12
+
   def like_user(user_id)
     likes.find_by(user_id: user_id)
   end
@@ -20,7 +22,7 @@ class Clip < ApplicationRecord
 # いいねの多い写真順
   scope :popular_clip, -> { order("likes_count DESC") }
 # 表示する写真枚数
-  scope :displaynum_clip, -> { limit(12) }
+  scope :displaynum_clip, -> { limit(DISPLAY_NUMBER) }
 # 投稿ユーザーの写真
   scope :user_clip, -> (user){ where(user_id: user) }
 # 日毎の写真
