@@ -302,6 +302,27 @@ utton, select {
     white-space: nowrap;
 }
 
+.radius-min {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.tag-close {
+    display: inline;
+    margin-left: 5px;
+}
+
+.fontello {
+    font-family: 'fontello';
+}
+
+.tag-back:after {
+    font-family: 'fontello';
+    content: '>';
+    padding: 0em 0.1em 0em 0.3em;
+}
+
 #Contents .upload-extra .contents-extra-wrapper .sns-button-field {
     margin: 0px 0px 0px 20px;
     overflow: auto;
