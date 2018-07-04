@@ -7,7 +7,7 @@
 <h1>
   タグ情報・・稼働棚/シューズクローゼット/玄関棚/玄関収納/下駄箱/初投稿…などのインテリア実例
   - <%= @clip.user.name %>の部屋 -
-  <br><%= @clip.created_at.strftime('%Y/%m/%d %H:%M') %>
+  <br><%= @clip.created_at.to_s(:datetime) %>
 </h1>
 
 
