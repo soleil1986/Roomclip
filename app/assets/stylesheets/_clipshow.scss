@@ -41,16 +41,19 @@
         font-size: 1.2rem;
         color: #9b9994;
         .delete-photo-button {
-          background-image: url(trash.png);
-          background-repeat: no-repeat;
-          background-size: 110% 90%;
-          background-position: 50% 50%;
           width: 20px;
           height: 26px;
           display: block;
           float: left;
           margin: 0 1rem 0 0;
           cursor: pointer;
+          img {
+            width: 30px;
+            height: 30px;
+            background-repeat: no-repeat;
+            background-size: 100% 80%;
+            background-position: 50% 50%;
+          }
         }
         aside {
           width: 22.6rem;
