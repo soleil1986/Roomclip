@@ -16,4 +16,14 @@ class Clip < ApplicationRecord
   def next
     user.clips.order(id: :ASC).where("id > ?", id).first
   end
+
+# いいねの多い写真順
+  scope :popular_clip, -> { order("likes_count DESC") }
+# 表示する写真枚数
+  scope :displaynum_clip, -> { limit(12) }
+# 投稿ユーザーの写真
+  scope :user_clip, -> (user){ where(user_id: user) }
+# 日毎の写真
+  scope :dayly_clip,  -> (dayly){ where(created_at: dayly) }
+
 end
