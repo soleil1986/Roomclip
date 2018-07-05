@@ -31,3 +31,16 @@
     </div>
   </div>
 </div>
+
+<div id="main">
+  <section class="entry-photo-list" style="padding-bottom: 10px;">
+  <ul>
+    <% @user.clips.reverse_each do |clip| %>
+      <li>
+        <div class="month"><%= clip.created_at.to_s(:date) %></div>
+        <section class="entry-photo" id="pid3735369">
+          <%= link_to image_tag(clip.image), clip_path(clip) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
