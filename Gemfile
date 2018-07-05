@@ -33,6 +33,18 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'carrierwave'
+gem 'rmagick'
+gem "font-awesome-rails"
+gem 'jquery-rails'
+gem 'devise'
+gem 'acts-as-taggable-on'
+gem 'jquery-ui-rails'
+
+group :production do
+  gem 'unicorn'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -49,15 +61,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
-end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'carrierwave'
-gem 'rmagick'
-gem "font-awesome-rails"
-gem 'jquery-rails'
-gem 'devise'
-gem 'acts-as-taggable-on'
-gem 'jquery-ui-rails'
+end
