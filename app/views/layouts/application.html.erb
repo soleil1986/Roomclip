@@ -11,6 +11,10 @@
 
   <%= render partial: 'shared/header' %>
 
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+
   <%= yield %>
 
   <%= render partial: 'shared/fooder' %>
