@@ -27,5 +27,5 @@ production:
   <<: *default
   database: Roomclip_production
   username: root
-  password: <%= ENV['natsumi'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
