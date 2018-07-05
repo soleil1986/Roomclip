@@ -1,1 +1,33 @@
-hihihihihi
+<!DOCTYPE html>
+
+<div id="l-top" class="c-top">
+  <div class="c-top__container">
+    <div class="c-top__container-wrap">
+      <h1 class="c-top__subject">
+        <%= @user.name %>の写真一覧
+      </h1>
+    </div>
+  </div>
+
+  <div class="c-top__container">
+    <div class="c-top__container-wrap">
+      <ul class="c-top__bar c-bread">
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <a href="/" class="c-bread__item-link" itemprop="url">
+            <span class="c-bread__item-label" itemprop="title">部屋の実例</span>
+          </a>
+        </li>
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <a href="/myroom/775065" class="c-bread__item-link" itemprop="url">
+            <span class="c-bread__item-label" itemprop="title"><%= @user.name %>のお部屋</span>
+          </a>
+        </li>
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <a href="/myphoto/775065" class="c-bread__item-link" itemprop="url">
+            <span class="c-bread__item-label" itemprop="title"><%= @user.name %>の写真一覧</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
