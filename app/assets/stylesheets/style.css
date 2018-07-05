@@ -2048,7 +2048,7 @@ overflow : hidden;
 text-overflow : ellipsis;
 max-width : 20rem;
 /*line-height: 2.4rem;*/
-}
+/*}*/
 .entry-tags ul li a:after {
 position : relative;
 content : "";
