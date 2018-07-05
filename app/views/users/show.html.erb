@@ -211,7 +211,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <tbody>
       <tr>
         <td class="key">
-          <%= link_to "すべての写真", user_path(@user.id) %>
+          <%= link_to "すべての写真", userphoto_user_path(@user.id) %>
           </a>
         </td>
         <td class="value">
@@ -391,7 +391,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section id="my-photos">
     <div>
       <h2>すべての写真</h2>
-        <%= link_to "写真をすべて見る", user_path(@user.id), class: "all-photo" %>
+        <%= link_to "写真をすべて見る", userphoto_user_path(@user.id), class: "all-photo" %>
     </div>
       <ul>
         <% @user.clips.first(14).reverse_each do |clip| %>
