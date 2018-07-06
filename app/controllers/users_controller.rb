@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-  end
+  before_action :set_user, only: [:show, :photo_list]
 
-  def photo_list
+  def set_user
     @user = User.find(params[:id])
   end
 
