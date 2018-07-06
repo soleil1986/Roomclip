@@ -23,7 +23,7 @@
           <% end %>
         </li>
         <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-          <%= link_to userphoto_user_path(@user.id), class: "c-bread__item-link" do %>
+          <%= link_to photo_list_user_path(@user.id), class: "c-bread__item-link" do %>
             <span class="c-bread__item-label" itemprop="title"><%= @user.name %>の写真一覧</span>
           <% end %>
         </li>
