@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def userphoto
+  def photo_list
     @user = User.find(params[:id])
   end
 
