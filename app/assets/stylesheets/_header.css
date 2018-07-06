@@ -459,7 +459,7 @@ fieldset, img {
 .container-daily {
     margin: 0 0 5rem;
     background-color: #f2ede7;
-    background-image: url(/assets/img/v3/bg.png);
+    background-image: url();
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px inset;
 }
 .container-daily .daily > h1 {
