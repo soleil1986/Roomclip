@@ -51,20 +51,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="c-top__container-wrap">
       <ul class="c-top__bar c-bread">
         <li class="c-bread__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a href="/" class="c-bread__item-link" itemprop="url">
+          <%= link_to root_path, class: "c-bread__item-link" do %>
             <span class="c-bread__item-label" itemprop="title">部屋の実例</span>
+						<% end %>
           </a>
         </li>
         <li class="c-bread__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a href="/" class="c-bread__item-link" itemprop="url">
+          <%= link_to root_path, class: "c-bread__item-link" do %>
             <span class="c-bread__item-label" itemprop="title">1LDK</span>
+						<% end %>
 						<!-- 部屋検索未実装のため便宜的にindexに遷移 -->
 						<!-- /users/#{@current_user.id} -->
           </a>
         </li>
         <li class="c-bread__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a href= "user_path(@user.id)" class="c-bread__item-link" itemprop="url">
+            <%= link_to user_path(@user), class: "c-bread__item-link", method: :get do %>
             <span class="c-bread__item-label" itemprop="title"><%= "#{@user.name}の部屋" %></span>
+						<% end %>
           </a>
         </li>
       </ul>
