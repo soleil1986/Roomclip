@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get 'userphoto'
+      get 'photo_list'
     end
   end
 
