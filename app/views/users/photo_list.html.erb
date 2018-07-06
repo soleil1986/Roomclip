@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<div id="l-top" class="c-top">
+  <div class="c-top__container">
+    <div class="c-top__container-wrap">
+      <h1 class="c-top__subject">
+        <%= @user.name %>の写真一覧
+      </h1>
+    </div>
+  </div>
+
+  <div class="c-top__container">
+    <div class="c-top__container-wrap">
+      <ul class="c-top__bar c-bread">
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <%= link_to root_path, class: "c-bread__item-link", itemprop: "url" do %>
+            <span class="c-bread__item-label" itemprop="title">部屋の実例</span>
+          <% end %>
+        </li>
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <%= link_to user_path(@user.id), class: "c-bread__item-link", itemprop: "url" do %>
+            <span class="c-bread__item-label" itemprop="title"><%= @user.name %>のお部屋</span>
+          <% end %>
+        </li>
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <%= link_to photo_list_user_path(@user.id), class: "c-bread__item-link" do %>
+            <span class="c-bread__item-label" itemprop="title"><%= @user.name %>の写真一覧</span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="main">
+  <section class="entry-photo-list" style="padding-bottom: 10px;">
+  <ul>
+    <% @user.clips.reverse_each do |clip| %>
+      <li>
+        <div class="month"><%= clip.created_at.to_s(:date) %></div>
+        <section class="entry-photo" id="pid3735369">
+          <%= link_to image_tag(clip.image), clip_path(clip) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

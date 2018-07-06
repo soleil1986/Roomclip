@@ -9,4 +9,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :clips, only:[:index, :new, :create, :destroy, :show] do
   end
+
+  resources :users do
+    member do
+      get 'photo_list'
+    end
+  end
+
 end
