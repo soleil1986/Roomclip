@@ -18,14 +18,14 @@
           </a>
         </li>
         <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a href="/myroom/775065" class="c-bread__item-link" itemprop="url">
+          <%= link_to user_path(@user.id), class: "c-bread__item-link", itemprop: "url" do %>
             <span class="c-bread__item-label" itemprop="title"><%= @user.name %>のお部屋</span>
-          </a>
+          <% end %>
         </li>
         <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a href="/myphoto/775065" class="c-bread__item-link" itemprop="url">
+          <%= link_to userphoto_user_path(@user.id), class: "c-bread__item-link" do %>
             <span class="c-bread__item-label" itemprop="title"><%= @user.name %>の写真一覧</span>
-          </a>
+          <% end %>
         </li>
       </ul>
     </div>
