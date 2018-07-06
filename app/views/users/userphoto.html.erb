@@ -13,9 +13,9 @@
     <div class="c-top__container-wrap">
       <ul class="c-top__bar c-bread">
         <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-          <a href="/" class="c-bread__item-link" itemprop="url">
+          <%= link_to root_path, class: "c-bread__item-link", itemprop: "url" do %>
             <span class="c-bread__item-label" itemprop="title">部屋の実例</span>
-          </a>
+          <% end %>
         </li>
         <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
           <%= link_to user_path(@user.id), class: "c-bread__item-link", itemprop: "url" do %>
