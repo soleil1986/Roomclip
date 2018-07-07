@@ -272,21 +272,24 @@ fieldset, img {
             border-radius: 0.3rem;
           }
 
-       .follow {
+    //    .follow {
+    //     background-color: #bba180;
+    // }
+    .btn-primary{
         background-color: #bba180;
+        width: 11.5rem;
+        height: 2.5rem;
+        color: #fff;
+        top: 3rem;
+        left: 7rem;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 0.3rem;
     }
-    .follow span {
-    background: url("fa fa-plus") 0 -66px no-repeat;
-    width: 11px;
-    height: 11px;
-}
     button {
     position: absolute;
-    width: 11.5rem;
-    height: 2.5rem;
     top: 3rem;
     left: 7rem;
-    color: #fff;
     cursor: pointer;
     -moz-border-radius: 0.3rem;
     -webkit-border-radius: 0.3rem;
