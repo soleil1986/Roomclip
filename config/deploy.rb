@@ -1,8 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-lock '<Capistranoのバージョン>'
-
 set :application, 'Roomclip'
 set :repo_url,  'git@github.com:shukan0728/Roomclip.git'
 
