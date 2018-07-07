@@ -248,7 +248,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </td>
         <td class="value">
           <a href="/myfollow/3464798">
-          0
+          <%= @user.follows.count %>
           </a>
         </td>
       </tr>
@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </td>
         <td class="value">
           <a href="/myfollower/3464798">
-          0
+          <%= @user.followers.count %>
           </a>
         </td>
       </tr>
