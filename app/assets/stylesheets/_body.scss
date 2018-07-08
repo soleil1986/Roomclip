@@ -93,7 +93,7 @@ a {
   height: 7.0rem;
   line-height: 7.0rem;
   background-color: #e1d9ce;
-  background-image: url(/assets/img/v3/bg.png);
+  background-image: url();
   h1 {
     display: inline-block;
     height: 7.0rem;
@@ -102,7 +102,7 @@ a {
   }
 }
 #bread ul {
-  background-image: url(/assets/img/v3/bg.png);
+  background-image: url();
   width: 96rem;
   padding: 0 1rem;
   height: 3rem;
@@ -224,7 +224,7 @@ body .container {
           content: "";
           float: right;
           margin: 0.4rem 0 0 0.5rem;
-          background: url('https://roomclip.jp/img/1703/common/arrow_bread@2x.png') 0 -95px no-repeat;
+          background: url('') 0 -95px no-repeat;
           width: 8px;
           height: 14px;
         }
@@ -372,7 +372,7 @@ body .container {
       .arrow {
         position: absolute;
         right: 0;
-        background: url('/assets/img/v3/sprite/common.png') 0 -44px no-repeat;
+        background: url('') 0 -44px no-repeat;
         width: 12px;
         height: 16px;
         width: 12px;
@@ -394,7 +394,7 @@ body .container {
       .arrow {
         position: absolute;
         right: 0;
-        background: url('/assets/img/v3/sprite/common.png') 0 -44px no-repeat;
+        background: url('') 0 -44px no-repeat;
         width: 12px;
         height: 16px;
         width: 12px;
@@ -498,7 +498,7 @@ body .container {
         .arrow {
           position: absolute;
           right: 0;
-          background: url('/assets/img/v3/sprite/common.png') 0 -44px no-repeat;
+          background: url('') 0 -44px no-repeat;
           width: 12px;
           height: 16px;
           width: 12px;
@@ -604,7 +604,7 @@ body .container {
             .arrow {
               position: absolute;
               right: 0;
-              background: url('/assets/img/v3/sprite/common.png') 0 -44px no-repeat;
+              background: url('') 0 -44px no-repeat;
               width: 12px;
               height: 16px;
               width: 12px;

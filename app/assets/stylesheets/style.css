@@ -2048,7 +2048,7 @@ overflow : hidden;
 text-overflow : ellipsis;
 max-width : 20rem;
 /*line-height: 2.4rem;*/
-}
+/* }
 .entry-tags ul li a:after {
 position : relative;
 content : "";
@@ -2252,7 +2252,7 @@ background-image : linear-gradient(to top, #ffffff 0%, #eeeeee 50%);
 background : transparent;
 border-left : none;
 /* filter : ; */
-}
+/* }
 .select2-dropdown-open .select2-choice .select2-arrow b {
 background-position : -18px 1px;
 }
@@ -3294,5 +3294,4 @@ display : inline-block;
 
 .c-top-sidebar__banner-img{
   width: 290px;
-} */
-*/*/*/*/
+}  */ */
