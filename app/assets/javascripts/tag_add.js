@@ -4,7 +4,7 @@ $(function() {
 
  function buildTag(tag) {
     var html =`
-    <div class="tag-back radius-min" data-tag="${tag}">${tag}
+    <div class="tag-back radius-min" id=tag-back-${tag} data-tag="${tag}" >${tag}
     <span id="remove-icon" class="fontello tag-close" data-tag="${tag}">x</span></div>`
     return html
   }
@@ -13,7 +13,6 @@ $(function() {
     $('#Tag-input-button').on('click',function() {
       var tag = $('#Tag-input').val();
       var addTag = buildTag(tag);
-      console.log(addTag)
       $('#before-input').css('display', 'none');
       $('#Tag-input-list').append(addTag);
       $('#Tag-input').val('');
@@ -28,7 +27,19 @@ $(function() {
     })
 
     $(document).on('click','#remove-icon', function() {
-      $(this).parent().remove();
+      var tag = $(this).parent().attr('data-tag');
+      var a = $('#tag-send').val();
+
+      if (a.match(tag + ","))
+        var b = tag + ","
+      else if (a.match("," + tag)) {
+        var b = "," + tag
+      } else {
+        var b = tag
+      }
+      var c = a.replace(b, "")
+      $('#tag-send').val(c)
+      $(`#tag-back-${tag}`).remove();
     });
 });
 
@@ -44,11 +55,12 @@ $(function() {
   }
   $(function() {
     $('.tag-back,radius-min,tag-insert').on('click',function() {
-      var tag = $(this).data('tag');
+      var tag = $(this).attr('data-tag');
       var addTag = buildProfileTag(tag);
       $('#before-input').css('display', 'none');
       $('.profile,tag-back,radius-min').remove();
       $('#Tag-input-list').append(addTag);
+      $('#tag-send').val(tag);
     });
   })
 });
