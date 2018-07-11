@@ -207,8 +207,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="right">
     <section id="user-image">
       <h2><%= @user.name %></h2>
-        <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_user/d67f13b4321318beb28f223afb69c7c2311581ce.jpg" alt="HiroakiSanoさんのお部屋">
-    </section>
+
+      <img src="http://kai-you.net/r/img_words/844302/c688x516/b3e3e393c77e35a4a3f3cbd1e429b5dc.jpg" alt="HiroakiSanoさんのお部屋">
+
+			<!-- <div class="follow-button"> -->
+				<!-- if logged_in? -->
+			<button class="follow"><%= render 'follow_form'%></button>
+
+			<!-- <script type="text/template" id="follow-tpl">
+            <button class="follow sendfollow" data-target_id="2" data-user_id="1"><span></span>フォローする</button>
+          </script>
+          <script type="text/template" id="unfollow-tpl">
+            <button class="unfollow sendfollow" data-target_id="2" data-user_id="1"><span></span>フォロー解除</button>
+          </script>
+      </div> -->
+                        </section>
+
     <table id="user-scores">
       <caption>HiroakiSanoさんの撮影した写真数、フォロー数、フォロワー数、クリップ数、いいね数などをまとめたテーブルです。</caption>
       <tbody>
@@ -225,25 +239,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </tr>
       <tr>
         <td class="key">
-          <a href="/myfollow/3464798">
-          フォロー
+          <%= link_to "フォロー",follow_user_path(@user) %>
           </a>
         </td>
         <td class="value">
-          <a href="/myfollow/3464798">
-          0
+          <%= link_to @user.follows.count,follow_user_path(@user) %>
           </a>
         </td>
       </tr>
       <tr>
         <td class="key">
-          <a href="/myfollower/3464798">
-          フォロワー
+          <%= link_to "フォロワー",follower_user_path(@user) %>
           </a>
         </td>
         <td class="value">
-          <a href="/myfollower/3464798">
-          0
+          <%= link_to @user.followers.count,follower_user_path(@user) %>
           </a>
         </td>
       </tr>
@@ -427,7 +437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   data-user_id="3464798"
   data-name="HiroakiSano"
   data-image="d67f13b4321318beb28f223afb69c7c2311581ce.jpg"
-  data-is_followed=""
+  data-is_follow=""
  >
 
 </body>
