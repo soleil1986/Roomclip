@@ -242,25 +242,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </tr>
       <tr>
         <td class="key">
-          <a href="/myfollow/3464798">
-          フォロー
+          <%= link_to "フォロー",follow_user_path(@user) %>
           </a>
         </td>
         <td class="value">
-          <a href="/myfollow/3464798">
-          <%= @user.follows.count %>
+          <%= link_to @user.follows.count,follow_user_path(@user) %>
           </a>
         </td>
       </tr>
       <tr>
         <td class="key">
-          <a href="/myfollower/3464798">
-          フォロワー
+          <%= link_to "フォロワー",follower_user_path(@user) %>
           </a>
         </td>
         <td class="value">
-          <a href="/myfollower/3464798">
-          <%= @user.followers.count %>
+          <%= link_to @user.followers.count,follower_user_path(@user) %>
           </a>
         </td>
       </tr>
