@@ -1,5 +1,24 @@
 <% if user_signed_in? %>
-  <% if current_user.likes.find_by(clip_id: clip.id)
-    <%= link_to clip_like_path(clip.id),method: :delete,remote:true do %>
-      <button class="btn btn-default">
-        <%= imag_tag()
+  <% if current_user.likes.find_by(user_id: current_user.id, clip_id: clip.id) %>
+    <%= link_to clip_unlike_path(clip.id), method: :delete,remote: true do %>
+      <button class="like-unsendlike">
+        <span class="fas fa-heart red-heart"></span>いいね<br>を取り消す
+      </button>
+    <% end %>
+  <% else %>
+    <%= link_to clip_like_path(clip.id), method: :post,remote: true do %>
+      <button class="like-sendlike">
+        <span class="far fa-heart heart"></span>いいね
+      </button>
+    <% end %>
+  <% end %>
+<% else %>
+  <% link_to new_user_session_path do %>
+    <button class="like-sendlike">
+      <span class="far fa-heart heart"></span>いいね
+    </button>
+  <% end %>
+<% end %>
+
+
+
