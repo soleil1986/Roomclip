@@ -6,11 +6,18 @@ Rails.application.routes.draw do
 
 # マージする前に不要な記述を削除する
   root "clips#index"
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+      member do
+       get :follow,:follower,:photo_list
+      end
+  end
   resources :clips, only:[:index, :new, :create, :destroy, :show] do
     namespace :lists do
       resources :tags, param: :tag_id, only: [:index, :show]
     end
   end
+
+  resources :relationships, only: [:create, :destroy]
+
 end
 

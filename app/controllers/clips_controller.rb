@@ -4,7 +4,11 @@ class ClipsController < ApplicationController
   end
 
   def new
-    @clip = Clip.new
+    if user_signed_in?
+      @clip = Clip.new
+    else
+      redirect_to new_user_registration_path, alert: 'ご利用には無料登録が必要です。'
+    end
   end
 
   def create
