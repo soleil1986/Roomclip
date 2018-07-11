@@ -5,7 +5,9 @@
 <article id="main">
 <!--  user_idが取れるようになったらlogin user_idで表示されるように変更する -->
 <h1>
-  稼働棚/シューズクローゼット/玄関棚/玄関収納/下駄箱/初投稿…などのインテリア実例 - HideOnuの部屋 - <br>2018-06-14 14:33:17
+  タグ情報・・稼働棚/シューズクローゼット/玄関棚/玄関収納/下駄箱/初投稿…などのインテリア実例
+  - <%= @clip.user.name %>の部屋 -
+  <br><%= @clip.created_at.to_s(:datetime) %>
 </h1>
 
 
@@ -13,8 +15,12 @@
   <figure class="main">
     <%= image_tag(@clip.image, class: "preview-image", alt: "タグつけした内容＋...などのインテリア実例を", title: "タグつけした内容＋...などのインテリア実例 - 2018-06-14 12:34:56 | RoomClip（ルームクリップ）") %>
     <figcaption>
-        <%= link_to '', "/clips/#{@clip.id}", method: :delete, class: "delete-photo-button" %>
-          <%= @clip.created_at.strftime('%Y/%m/%d %H:%M') %>
+      <% if user_signed_in? && current_user.id == @clip.user_id %>
+        <%= link_to clip_path(@clip), method: :delete, class: "delete-photo-button" do %>
+          <%= image_tag "trash.png" %>
+        <% end %>
+      <% end %>
+        <%= @clip.created_at.to_s(:datetime) %>
       <aside>
         <span>この写真をシェア</span>
         <ul>
@@ -37,11 +43,17 @@
 
   <nav>
     <figure class="prev">
-      <a href="/photo/cuyz">
-        <span></span>
-        <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_180/d4c8d0a1c66835947e9ffbd6857e39892559fa58.jpg" alt="前の部屋写真">
-      </a>
+      <% if @clip.previous.present? %>
+          <span class="prearrow"></span>
+          <%= link_to image_tag(@clip.previous.image, class: "preview-image", alt: "前の投稿写真"), clip_path(@clip.previous) %>
+      <% end %>
       <input type="hidden" id="Move-to" value="cuyz">
+    </figure>
+    <figure class="next">
+      <% if @clip.next.present? %>
+        <span class="prearrow"></span>
+        <%= link_to image_tag(@clip.next.image, class: "preview-image", alt: "の投稿写真"), clip_path(@clip.next) %>
+      <% end %>
     </figure>
   </nav>
 
@@ -67,37 +79,9 @@
     </div>
   </div>
 
-        <!-- top_pc_main_3 -->
-        <style>
-          [id='1323097'] {
-             display:inline-block;
-          }
-        </style>
-        <!-- /9116787/1323097 -->
-        <div id='1323097' style='height:250px; width:300px;'>
-        <script>
-        googletag.cmd.push(function() { googletag.display('1323097'); });
-        </script>
-        </div>
-
-
-        <!-- photo_pc_main_4 -->
-        <style>
-          [id='1323099'] {
-             display:inline-block;
-             margin-left:20px;
-          }
-        </style>
-        <!-- /9116787/1323099 -->
-        <div id='1323099' style='height:250px; width:300px;'>
-        <script>
-        googletag.cmd.push(function() { googletag.display('1323099'); });
-        </script>
-        </div>
-
-
 
         <div class="c-bottom-bread__wrapper">
+          タグの実装後対応
           <ul class="c-bottom-bread">
             <li class="c-bottom-bread__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
               <a href="/" class="c-bottom-bread__item-link" itemprop="url">
@@ -141,7 +125,8 @@
 
   <section class="user">
     <h2>
-      <a href="/myroom/3429062">ログインユーザー</a>
+      <%= link_to "#{@clip.user.name }", user_path(@clip.user.id) %>
+        <br> ユーザー画像設定画面作成後
     </h2>
     <a href="/myroom/3429062"><img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_user/2aa8c862ea7fe267ac8912fce34e1c2a0d9cd4d8.jpg" alt="HideOnuさん"></a>
   </section>
@@ -328,122 +313,32 @@
     </ul>
   </section>
 
-
-<div class="google-adsense">グーグル広告<style>
-      .google-adsense {
-        width: 100%;
-        text-align: center;
-        padding-top: 1.0rem;
-        padding-bottom: 1.0rem;
-       }
-       .google-adsense .adsbygoogle ~ .adsbygoogle {
-        padding-left: 20px;
-       }
-       .google-adsense div {
-        display: inline-block;
-       }
-    </style><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- photo_pc_side_3 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:250px"
-     data-ad-client="ca-pub-3732446758258705"
-     data-ad-slot="6270856238"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script></div>
-
-
   <section class="side-option pop-user-photo">
     <h2>このユーザの人気の部屋写真</h2>
     <ul>
+      <% @clips_like.each do |clip| %>
       <li>
-        <a href="/photo/cu3R">
-          <img src="https://cdn10.roomclip.jp/v1/180/roomclip-bucket/img_180/6c541067aaf93e3d62e77c0b7fff3fce3540f5ae.jpg" alt="玄関/入り口/ふくろう/梟/フクロウ/雑貨…などのインテリア実例">
-        </a>
+        <%= link_to image_tag(clip.image),clip_path(clip), alt: "タグの内容・・玄関/入り口/ふくろう/梟/フクロウ/雑貨…などのインテリア実例"%>
       </li>
-      <li>
-        <a href="/photo/cujd">
-          <img src="https://cdn4.roomclip.jp/v1/180/roomclip-bucket/img_180/61da32d1b0ef35a461eab70a240a42e5058d1525.jpg" alt="稼働棚/シューズクローゼット/玄関棚/玄関収納/下駄箱/初投稿…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cuyz">
-          <img src="https://cdn23.roomclip.jp/v1/180/roomclip-bucket/img_180/d4c8d0a1c66835947e9ffbd6857e39892559fa58.jpg" alt="稼働棚/初投稿/下駄箱/シューズクローゼット/玄関棚/玄関収納…などのインテリア実例">
-        </a>
-      </li>
+      <% end %>
     </ul>
     <aside class="more">
-      <a href="/myphoto/3429062">
+      <%= link_to user_path(@clip.user.id) do %>
         すべての写真を見る
-        <img src="/assets/img/v3/sp/arrow_right_red.png" class="arrow">
-      </a>
+        <%= image_tag "prearrow.png" %>
+      <% end %>
     </aside>
   </section>
 
 
-    <section class="side-option pop-tag-photo">
-    <h2>関連するインテリア実例</h2>
+  <section class="side-option pop-tag-photo">
+    <h2>関連するインテリア実例<br>タグ機能実装後対応予定<br>とりあえずいいねの多い物順で表示</h2>
     <ul>
+      <% @clips_tag.each do |clip| %>
       <li>
-        <a href="/photo/cfno">
-          <img src="https://cdn4.roomclip.jp/v1/180/roomclip-bucket/img_180/13da24a1a7c9f2a8e6c119bf127e1d122dfc45c4.jpg" alt="玄関/入り口/RoomClip mag/10000人の暮らし/生協コープ/ミンネで購入…などのインテリア実例">
-        </a>
+        <%= link_to image_tag(clip.image),clip_path(clip), alt: "タグの内容・・玄関/入り口/ふくろう/梟/フクロウ/雑貨…などのインテリア実例"%>
       </li>
-      <li>
-        <a href="/photo/cf9O">
-          <img src="https://cdn3.roomclip.jp/v1/180/roomclip-bucket/img_180/f91e0040d1dab35931f8c8652abfc4abbfee2e1d.jpg" alt="IG→ami09211985/手作りの庭/幸せな時間/ガーデニング/植物…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cf9a">
-          <img src="https://cdn7.roomclip.jp/v1/180/roomclip-bucket/img_180/8155951f93f74b1c79addd2b0b147256153df1f5.jpg" alt="庭の花/見てくれてありがとうございます♥/いいね！ありがとうございます♪/グリーンのある暮らし…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cf5u">
-          <img src="https://cdn3.roomclip.jp/v1/180/roomclip-bucket/img_180/e6dab313b9a0bd9202d6260fedfd3de860a7ac51.jpg" alt="ウォールミラー/コンソールテーブル/ウォールアート/北欧/ランプ/間接照明…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cf5f">
-          <img src="https://cdn23.roomclip.jp/v1/180/roomclip-bucket/img_180/c7bc9de293fc9bc4452e2751ea0e8b83e5d85ce0.jpg" alt="IG→ami09211985/花のある暮らし/手作りの庭/ガーデニング/庭時間…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cf5l">
-          <img src="https://cdn2.roomclip.jp/v1/180/roomclip-bucket/img_180/09e31bdc3036b39981f16a5c624abc695c933a1c.jpg" alt="花のある暮らし/切花/種から育てる/季節を感じる暮らし/いつもいいねやコメントありがとう♡/帝王貝細工…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cwQF">
-          <img src="https://cdn4.roomclip.jp/v1/180/roomclip-bucket/img_180/576b2de4ffc763602dbed17e00d5b2f005230a3f.jpg" alt="IG→ami09211985/RC東海支部/マイガーデン/花のある暮らし/NO GREEN NO LIFE…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cwZN">
-          <img src="https://cdn15.roomclip.jp/v1/180/roomclip-bucket/img_180/99dccf9e6edb19a1f8a25ef2ad29976dc1b82fd8.jpg" alt="休みの前日はDIY♡/玄関/入り口/腰壁風壁紙/玄関はシンプルにしたい/ダイソー…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cwt0">
-          <img src="https://cdn20.roomclip.jp/v1/180/roomclip-bucket/img_180/db4c4f5424c6da24a35256a7b2f1cb8d7b039aa0.jpg" alt="イベントに参加します/再投稿です(　>　o　<　＊)ﾄﾎｯ/プチプラインテリア/ラベンダー…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cwhz">
-          <img src="https://cdn7.roomclip.jp/v1/180/roomclip-bucket/img_180/cb1662f9e42ac173a3937370708ccdeb46a827c4.jpg" alt="いつもいいねありがとう(*☻-☻*)/ラクマ→chii-soccer/LIMIA→ちぃ★…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cwho">
-          <img src="https://cdn7.roomclip.jp/v1/180/roomclip-bucket/img_180/8c5555cb70aad4f53f361dd867305bd8a90b39a6.jpg" alt="ベランダガーデン計画/下手くそpicですみません（≧∇≦）/植物のある暮らしに憧れる♪♪♪/フォロワーのみなさん♡感謝です♡…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cwhn">
-          <img src="https://cdn3.roomclip.jp/v1/180/roomclip-bucket/img_180/de7e4ab4a514d72e1efee98d7c7efaa258df19c1.jpg" alt="玄関アプローチ/こでまり/ナチュラルインテリア/ガーデニング/ナチュラルが好き/グリーンのある暮らし…などのインテリア実例">
-        </a>
-      </li>
+      <% end %>
     </ul>
   </section>
 
@@ -451,79 +346,23 @@
   <section class="side-option opt-daily">
     <h2>このインテリアが撮影された日の人気写真</h2>
     <ul>
+      <% @clips_day.each do |clip| %>
       <li>
-        <a href="/photo/cT0g">
-          <img src="https://cdn11.roomclip.jp/v1/180/roomclip-bucket/img_180/5c1b262d25ccca5da2811493c7495eb5c9e7f95a.jpg" alt="小鳥さん/セキセイインコ/オカメインコ/アスレチック/DIY/いつもいいね！押し逃げごめんなさい…などのインテリア実例">
-        </a>
+        <%= link_to image_tag(clip.image),clip_path(clip), alt: "タグの内容・・玄関/入り口/ふくろう/梟/フクロウ/雑貨…などのインテリア実例"%>
       </li>
-      <li>
-        <a href="/photo/cT46">
-          <img src="https://cdn3.roomclip.jp/v1/180/roomclip-bucket/img_180/6f7b8b576c3574613aa298c185f5d1fced84bbd0.jpg" alt="いいね❤300人感謝です❤/●今日のおすすめ30枚！⇒Thanks●/Daily roomclip1496❤…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cT3m">
-          <img src="https://cdn6.roomclip.jp/v1/180/roomclip-bucket/img_180/89adbd7ebbea9c337570dac4fa1efea57fe51825.jpg" alt="リビング/ヴィンテージ/珪藻土の壁/バリミ布教委員会/ミッドセンチュリー/ミッドセンチュリーモダン…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTAZ">
-          <img src="https://cdn10.roomclip.jp/v1/180/roomclip-bucket/img_180/7320cf6652e8594f4f53f036049a5f2a25372819.jpg" alt="リシェルSI/飛騨産業/ルイスポールセン/無印良品/ウッドデッキ/板張り天井…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTHX">
-          <img src="https://cdn19.roomclip.jp/v1/180/roomclip-bucket/img_180/b1daf5562b8cccd59f5d1a6578d78c127897538d.jpg" alt="コメントお構いなく♡/2018.6.11/押し逃げごめんなさい(´vωv`*)/今日もありがとぉ(*‘ω‘ *)♡…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTC4">
-          <img src="https://cdn15.roomclip.jp/v1/180/roomclip-bucket/img_180/8eea5d86b27cefed692b778f75f3cebd67b65705.jpg" alt="壁/天井/frame /Relaxing/くつろぎ空間/モノトーン/シンプルモダン…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cT4K">
-          <img src="https://cdn19.roomclip.jp/v1/180/roomclip-bucket/img_180/b5e04581048254ad84e874c8aa7ded8f62e06a49.jpg" alt="マリメッコ/戦利品/北欧ナチュラル/自己満足♡/花柄/北欧…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cT38">
-          <img src="https://cdn13.roomclip.jp/v1/180/roomclip-bucket/img_180/b8e20308b0720490b5df4053c3ce5ef35cf4cde6.jpg" alt="リビング/メタルラック/スチールラック/かご収納/山善/ペール缶スツール…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTcX">
-          <img src="https://cdn8.roomclip.jp/v1/180/roomclip-bucket/img_180/0bc748cf0a489ec97318c08f078e759e486169f6.jpg" alt="スパイダーマン/東方神起/KUFFS/DIY/机…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTB7">
-          <img src="https://cdn7.roomclip.jp/v1/180/roomclip-bucket/img_180/4650995372039a3a709dabc1048ff7f873efe392.jpg" alt="アルファベットタイル/ライダーとショッカーを探せ！！/S.H.フィギュアアーツ/仮面ライダー…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTBr">
-          <img src="https://cdn14.roomclip.jp/v1/180/roomclip-bucket/img_180/669687c7ae518477cdffa82f3bf4918f9c780838.jpg" alt="リビング/元和室をリビングに/スキレット♡/DIY/セルフリノベーション/カフェ風キッチン♡…などのインテリア実例">
-        </a>
-      </li>
-      <li>
-        <a href="/photo/cTau">
-          <img src="https://cdn10.roomclip.jp/v1/180/roomclip-bucket/img_180/e4e2232fdbb26e5b68696c0622d89c0c7b76c871.jpg" alt="ダイソー/フェイクグリーン/キャンドゥ/DIY/ホームエレクターヴィンテージ/無印良品…などのインテリア実例">
-        </a>
-      </li>
+      <% end %>
     </ul>
-    <!-- ほぼこのまま使う -->
     <aside class="more">
-      <a href="/daily/1496">
-        他のDaily RoomClipも見る
-        <img src="/assets/img/v3/sp/arrow_right_red.png" class="arrow">
-      </a>
+      <%= link_to user_path(@clip.user.id) do %>
+        他のDaily RoomClipも見る<br>今未対応画面のリンク
+        <%= image_tag "prearrow.png" %>
+      <% end %>
     </aside>
   </section>
 
 
   <section class="side-option pop-user-photo">
-    <h2>関連するタグの新着写真</h2>
+    <h2>関連するタグの新着写真<br>タグ機能実装後対応予定</h2>
       <div class="c-popular-tag-photo">
         <div class="c-popular-tag-photo__info">
           <div class="c-popular-tag-photo__tag">
@@ -598,38 +437,8 @@
 
 <!-- 他タスクで対応 -->
   <section class="">
-    <div class="p-category-links-wrap">
-      Hola!
-      サイドアコーディオン部分もレンダーで対応予定
-    </div>
+    <%= render partial: 'accordion' %>
   </section>
-
-
-<!-- グーグルの広告がここから -->
-  <div class="google-adsense">グーグル広告<style>
-      .google-adsense {
-        width: 100%;
-        text-align: center;
-        padding-top: 1.0rem;
-        padding-bottom: 1.0rem;
-       }
-       .google-adsense .adsbygoogle ~ .adsbygoogle {
-        padding-left: 20px;
-       }
-       .google-adsense div {
-        display: inline-block;
-       }
-    </style><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- photo_pc_side_4 -->
-  <ins class="adsbygoogle"
-       style="display:inline-block;width:300px;height:600px"
-       data-ad-client="ca-pub-3732446758258705"
-       data-ad-slot="5887712853"></ins>
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-  </script></div>
-
-  </div>
 
 
   <input type="hidden" id="params"

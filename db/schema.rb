@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180629073640) do
+
+ActiveRecord::Schema.define(version: 20180630100038) do
 
   create_table "clips", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id", null: false
@@ -29,6 +30,41 @@ ActiveRecord::Schema.define(version: 20180629073640) do
     t.index ["clip_id"], name: "index_likes_on_clip_id"
     t.index ["user_id", "clip_id"], name: "index_likes_on_user_id_and_clip_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "follower_id"
+    t.integer "follow_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
+    t.index ["follower_id", "follow_id"], name: "index_relationships_on_follower_id_and_follow_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "taggings", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "tag_id"
+    t.string "taggable_type"
+    t.integer "taggable_id"
+    t.string "tagger_type"
+    t.integer "tagger_id"
+    t.string "context", limit: 128
+    t.datetime "created_at"
+    t.index ["context"], name: "index_taggings_on_context"
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
+  end
+
+  create_table "tags", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", collation: "utf8_bin"
+    t.integer "taggings_count", default: 0
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

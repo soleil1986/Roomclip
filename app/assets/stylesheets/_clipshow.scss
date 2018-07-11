@@ -31,6 +31,8 @@
       .preview-image {
         width: 62rem;
         height: 62rem;
+        background-color: black;
+        object-fit: contain;
       }
       figcaption {
         height: 3.3rem;
@@ -38,11 +40,26 @@
         margin: .2rem 0 0 0;
         font-size: 1.2rem;
         color: #9b9994;
+        .delete-photo-button {
+          width: 20px;
+          height: 26px;
+          display: block;
+          float: left;
+          margin: 0 1rem 0 0;
+          cursor: pointer;
+          img {
+            width: 30px;
+            height: 30px;
+            background-repeat: no-repeat;
+            background-size: 100% 80%;
+            background-position: 50% 50%;
+          }
+        }
         aside {
           width: 22.6rem;
           height: 3.3rem;
           line-height: 3.3rem;
-          float: right
+          float: right;
           span {
             margin: 0 1rem 0 0;
             float: left;
@@ -120,29 +137,40 @@
       padding: 0 0 2rem 0;
       border-bottom: .1rem solid #cfc5b8;
       position: relative;
-      prev {
+      .prev {
         left: 3rem;
         span {
           left: -2rem;
           transform: scaleX(-1);
         }
       }
+      .next {
+        right: 3rem;
+        span {
+          right: -2rem;
+        }
+      }
       figure {
         padding: .2rem;
         position: absolute;
         top: 0;
-        span {
+        span.prearrow {
           position: absolute;
           top: 2rem;
-          background: url(/assets/img/v3/sprite/common.png) 0 -79px no-repeat;
-          width: 10px;
-          height: 16px;
+          background-image: url(prearrow.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-position: 50% 50%;
+          width: 18px;
+          height: 18px;
         }
         a {
           img {
             width: 5.6rem;
             height: 5.6rem;
             border: .2rem solid #fff;
+            background-color: black;
+            object-fit: contain;
             display: block;
           }
         }
@@ -247,18 +275,6 @@
     color: rgba(68, 51, 17, 0.6);
     background-color: #f6f5f4;
     background-color: #fff;
-  }
-  .delete-photo-button {
-    background-image: url(trash.png);
-    background-repeat: no-repeat;
-    background-size: 90% 90%;
-    background-position: 50% 50%;
-    width: 20px;
-    height: 26px;
-    display: block;
-    float: left;
-    margin: 0 1rem 0 0;
-    cursor: pointer;
   }
   .right {
     width: 29rem;
@@ -694,8 +710,10 @@
           }
           img {
             width: 100%;
+            height: 94.66px;
             border: .1rem solid #cfc5b8;
-            background: #fff;
+            background: black;
+            object-fit: contain;
             display: block;
           }
         }
@@ -705,6 +723,10 @@
         margin: 1rem 1rem 0 0;
         a {
           text-decoration: none;
+          img {
+            width: 20px;
+            height: 20px;
+          }
         }
       }
       .arrow {
