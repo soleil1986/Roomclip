@@ -6,8 +6,9 @@
   <article class="user-ful-tile" id="uid509107">
     <a href="/myroom/509107" target="_blank">
       <section>
+				<% @user.followers.each do |user| %>
         <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_user/2a25ca85ebbdb3616327e35ed882e4bb59601f42.jpg" alt="sena.masato.mamaさんのお部屋">
-        <div><h1>sena.masato.mama</h1></div>
+				<div><h1><%= @user.followers.name %></h1></div>
       </section>
       <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_320/1f0a3064b6c7847d9830a3f913b9b53d0d1d94ad.jpg" class="main" alt="sena.masato.mamaさんのお部屋写真 #1">
       <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_90/c94476ee1b190fc556f25aff0ab599e7b8fc16f0.jpg" class="sub" alt="sena.masato.mamaさんのお部屋写真 #2">
@@ -24,7 +25,7 @@
     <a href="/myroom/833365" target="_blank">
       <section>
         <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_user/6e9400412ca594ace5e17af8174ffc4461e618a6.jpg" alt="kuuさんのお部屋">
-        <div><h1>kuu</h1></div>
+        <div><h1><%= @user.followers.name %></h1></div>
       </section>
       <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_320/d38519de7955eae0818c9a8e09e23e05b9bb6a06.jpg" class="main" alt="kuuさんのお部屋写真 #1">
       <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_90/69489622ff1b9ad6185f1bf2cf3a089edb649fb4.jpg" class="sub" alt="kuuさんのお部屋写真 #2">
@@ -32,7 +33,6 @@
       <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_90/6fb1cf15a3322c5d18fb18eb6a1557878dd590bc.jpg" class="sub" alt="kuuさんのお部屋写真 #4">
       <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_90/8f3ae2d65634984ddb1d58a7c2ccd69191d2bb7d.jpg" class="sub" alt="kuuさんのお部屋写真 #5">
     </a>
-
 	    <button class="sendfollow color-light-middle" data-target_id="833365" data-user_id="3499430" data-on="フォロー解除" data-off="フォローする"><span class="plus"></span>フォローする</button>
 
  	 </article>
@@ -104,26 +104,10 @@
 	    <button class="sendfollow color-light-middle" data-target_id="224478" data-user_id="3499430" data-on="フォロー解除" data-off="フォローする"><span class="plus"></span>フォローする</button>
 
  	 </article>
-
-  <article class="user-ful-tile" id="uid2">
-    <a href="/myroom/2" target="_blank">
-      <section>
-        <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_user/75b72293210b96c7e4c225a74db0a47d3ae7afcd.jpg" alt="RoomClipJPさんのお部屋">
-        <div><h1>RoomClipJP</h1></div>
-      </section>
-      <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_320/48010df5dd50e7ce7f507110a538a2e92267bae6.jpg" class="main" alt="RoomClipJPさんのお部屋写真 #1">
-      <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_90/30c7b664e0537b9724c9eea05d1a9604543a2136.jpg" class="sub" alt="RoomClipJPさんのお部屋写真 #2">
-      <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_90/8fe916fc0523094d9f94f5e592ffff22b5c0fee1.jpg" class="sub" alt="RoomClipJPさんのお部屋写真 #3">
-      <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_90/a83072a35364de09c61caba84f9ca1c5545eb509.jpg" class="sub" alt="RoomClipJPさんのお部屋写真 #4">
-      <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_90/34a09a8d8f504e21362c412c68406709030b4122.jpg" class="sub" alt="RoomClipJPさんのお部屋写真 #5">
-    </a>
-
-	    <button class="sendfollow color-light" data-target_id="2" data-user_id="3499430" data-on="フォロー解除" data-off="フォローする"><span class="plus"></span>フォロー解除</button>
-
- 	 </article>
 <div id="infscr-loading" style="display: none;"><img alt="Loading..." src="/assets/img/loading/loading_bar.gif" style="display: none;"><div style="opacity: 1;">none</div></div></div>
 		<div id="page-nav" style="display: none;">
 			<a href="/?page=2"></a>
 		</div>
+		<% end %>
 	</section>
 </div>
