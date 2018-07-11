@@ -1,7 +1,6 @@
 class Clip < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
-ccdcc5d7a750e114612ad0055b4646cf8346f
   mount_uploader :image, ClipImageUploader
   acts_as_taggable
 
