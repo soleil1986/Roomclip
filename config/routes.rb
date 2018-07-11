@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   root "clips#index"
   resources :users, only: [:show] do
       member do
-       get :follow,:follower
+       get :follow,:follower,:photo_list
       end
   end
   resources :clips, only:[:index, :new, :create, :destroy, :show] do
 
   end
+
   resources :relationships, only: [:create, :destroy]
+
 end

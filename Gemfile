@@ -59,3 +59,5 @@ gem 'rmagick'
 gem "font-awesome-rails"
 gem 'jquery-rails'
 gem 'devise'
+gem 'acts-as-taggable-on'
+gem 'jquery-ui-rails'
