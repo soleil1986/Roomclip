@@ -12,4 +12,5 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, confirmation: true
   has_many :clips
+  has_many :likes, dependent: :destroy
 end
