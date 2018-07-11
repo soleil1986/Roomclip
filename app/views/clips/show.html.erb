@@ -153,16 +153,16 @@
     <div class="entry-tags">
       <ul>
         <% @clip.tags.each do |tag| %>
-          <li id="tag-id-91177">
-          <div class="tag-delete-button deletetag" data-clip_id="" data-tag_id="" data-user_id="">
+          <li id="tag-id-<%= tag.id %>">
+          <div class="tag-delete-button deletetag" data-clip_id="<%= @clip.id %>" data-tag_id="<%= tag.id %>" data-user_id="<%= @clip.user_id %>">
             <span>×</span>
           </div>
-          <a href="/tag/">
+          <a href="/clips/<%= @clip.id %>/lists/tags/<%= tag.id %>">
             <div>
               <%= tag %>
             </div>
           </a>
-          <input type="hidden" class="tag-params" data-tag_id="91177" data-tag_name="稼働棚">
+          <input type="hidden" class="tag-params" data-tag_id="<%= @clip.id %>" data-tag_name="<%= tag.name %>">
         </li>
         <% end %>
       </ul>
