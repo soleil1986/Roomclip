@@ -1,0 +1,98 @@
+#Search-result {
+    clear: both;
+    margin: 6.0rem 0 0 0;
+}
+#Search-result #Search-data {
+    position: relative;
+    overflow: auto;
+}
+.user-ful-tile {
+    float: left;
+    width: 23.8rem;
+    height: 40rem;
+    padding: 0 0 1.6rem 0;
+    text-align: center;
+    background: url(https://roomclip.jp/assets/img/v3/roofbox-search.png) no-repeat;
+}
+.user-ful-tile .color-light-middle {
+    background: #f3f0eb;
+}
+button {
+    border: none;
+    background: transparent;
+}
+.user-ful-tile button {
+    display: block;
+    position: relative;
+    width: 21.2rem;
+    height: 4rem;
+    margin: 0.6rem 0 0.8rem 1.2rem;
+    color: #6a6964;
+    text-align: center;
+    line-height: 100%;
+    float: left;
+    font-size: 1.6rem;
+    cursor: pointer;
+    -moz-border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    border-radius: 0.3rem;
+}
+.user-ful-tile a > section {
+    width: 22.2rem;
+    height: 4.0rem;
+    overflow: auto;
+    margin: 3rem auto 0;
+}
+.user-ful-tile a > section > img {
+    width: 4.0rem;
+    height: 4.0rem;
+    margin: 0 1rem 0 0.6rem;
+    float: left;
+}
+img {
+    border: 0;
+}
+.user-ful-tile a > section > div {
+    display: table-cell;
+    width: 16.0rem;
+    height: 4.0rem;
+    text-align: left;
+    vertical-align: middle;
+}
+.user-ful-tile a > section > div > h1 {
+    float: left;
+    width: 16.0rem;
+    word-wrap: break-word;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #362e2b;
+    overflow: hidden;
+}
+.user-ful-tile a .main {
+    width: 21.2rem;
+    height: 21.2rem;
+    margin: 0.6rem auto 0.6rem;
+}
+.user-ful-tile a .sub {
+    width: 5.0rem;
+    height: 5.0rem;
+    margin: 0 0 0 0.3rem;
+}
+#infscr-loading {
+    text-align: center;
+    z-index: 100;
+    padding: 10px;
+    background: transparent;
+    color: #eee;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+#Search-result #Search-data {
+    position: relative;
+    padding-bottom: 10rem;
+    overflow: auto;
+}
