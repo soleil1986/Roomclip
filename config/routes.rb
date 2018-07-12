@@ -13,9 +13,9 @@ Rails.application.routes.draw do
       end
   end
   resources :clips, only:[:index, :new, :create, :destroy, :show] do
-    namespace :lists do
-      resources :tags, param: :name, only: [:index, :show]
-    end
+  end
+  namespace :lists do
+  resources :tags, param: :name, only: [:index, :show]
   end
 
   resources :relationships, only: [:create, :destroy]
