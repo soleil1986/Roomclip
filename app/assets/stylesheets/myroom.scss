@@ -263,15 +263,43 @@ fieldset, img {
         font-size: 2rem;
         color: #362e2b;
       }
-      img {
-        width: 6rem;
-        height: 6rem;
-        position: absolute;
-        top: 0;
-        left: 0;
+          img {
+            width: 6rem;
+            height: 6rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 0.3rem;
+          }
+
+    //    .follow {
+    //     background-color: #bba180;
+    // }
+    .btn-primary{
+        background-color: #bba180;
+        width: 11.5rem;
+        height: 2.5rem;
+        color: #fff;
+        top: 3rem;
+        left: 7rem;
+        color: #fff;
+        cursor: pointer;
         border-radius: 0.3rem;
-      }
     }
+    button {
+    position: absolute;
+    top: 3rem;
+    left: 7rem;
+    cursor: pointer;
+    -moz-border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    border-radius: 0.3rem;
+}
+        }
+        button {
+            border: none;
+            background: transparent;
+        }
     #user-scores {
       width: 29rem;
       margin: 2rem 0 0 0;
@@ -383,7 +411,7 @@ tr {
     overflow: hidden;
   }
   #my-photos {
-    width: 98rem;
+    width: 99rem;
     padding: 0;
     margin: 6rem auto 0;
     overflow: auto;
