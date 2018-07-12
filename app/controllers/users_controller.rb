@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @clips = @user.clips
     @tag_count = @clips.tag_counts_on(:tags).count
+    @like_count = Like.where(user_id: @user.id).count
   end
 
   def follow
