@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
 # マージする前に不要な記述を削除する
   root "clips#index"
+
   resources :users, only: [:show] do
       member do
        get :follow,:follower,:photo_list
@@ -16,5 +17,8 @@ Rails.application.routes.draw do
   end
 
   resources :relationships, only: [:create, :destroy]
+
+  post '/clips/:clip_id/like' => 'likes#create', as: 'clip_like'
+  delete 'clips/:clip_id/unlike' => 'likes#destroy', as: 'clip_unlike'
 
 end
