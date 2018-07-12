@@ -21,16 +21,6 @@ ActiveRecord::Schema.define(version: 20180712103700) do
     t.index ["user_id"], name: "index_clips_on_user_id"
   end
 
-  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id", null: false
-    t.integer "clip_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["clip_id"], name: "index_likes_on_clip_id"
-    t.index ["user_id", "clip_id"], name: "index_likes_on_user_id_and_clip_id", unique: true
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "dailies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date "date", null: false
     t.datetime "created_at", null: false
@@ -45,6 +35,16 @@ ActiveRecord::Schema.define(version: 20180712103700) do
     t.datetime "updated_at", null: false
     t.index ["clip_id"], name: "index_dailyclips_on_clip_id"
     t.index ["daily_id"], name: "index_dailyclips_on_daily_id"
+  end
+
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id", null: false
+    t.integer "clip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clip_id"], name: "index_likes_on_clip_id"
+    t.index ["user_id", "clip_id"], name: "index_likes_on_user_id_and_clip_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
