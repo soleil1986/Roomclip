@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       end
   end
   resources :clips, only:[:index, :new, :create, :destroy, :show] do
-
+    namespace :lists do
+      resources :tags, param: :name, only: [:index, :show]
+    end
   end
 
   resources :relationships, only: [:create, :destroy]
@@ -22,3 +24,4 @@ Rails.application.routes.draw do
   delete 'clips/:clip_id/unlike' => 'likes#destroy', as: 'clip_unlike'
 
 end
+
