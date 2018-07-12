@@ -447,6 +447,8 @@ tr {
           width: 12.4rem;
           height: 12.4rem;
           display: block;
+          background-color: black;
+          object-fit: contain;
           &:hover {
             opacity: 0.7;
           }
