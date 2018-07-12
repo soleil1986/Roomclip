@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :photo_list]
+  before_action :set_user, only: [:show, :photo_list, :mytag]
 
   def set_user
     @user = User.find(params[:id])
@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @clips = @user.clips
     @tag_count = @clips.tag_counts_on(:tags).count
   end
@@ -27,4 +26,8 @@ class UsersController < ApplicationController
     render 'show_follower_all'
   end
 
+  def mytag
+    @clips = @user.clips
+    @tags = @clips.all_tags
+  end
 end

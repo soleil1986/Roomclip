@@ -1,3 +1,5 @@
+// 各タグに紐づく投稿一覧
+
 #l-top {
   background-color: #ffffff;
   width: 100%;
@@ -105,4 +107,49 @@
 }
 
 
-
+// 各ユーザーに紐づくタグ一覧
+.container {
+  width: 96rem;
+  margin: 0 auto;
+  overflow: hidden;
+  article {
+    margin: 0 0 4.0rem 0;
+    ul {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      overflow: hidden;
+      margin: 2.5rem 0 0 0;
+      li{
+        &:first-child {
+        padding-left: 0;
+        }
+        list-style-image: none;
+        list-style-type: none;
+        margin-left: 0;
+        white-space: nowrap;
+        float: left;
+        padding-left: 4px;
+        padding-right: 4px;
+        margin: 1.5rem 0 0 0;
+        padding: 0;
+        a {
+          display: inline-block;
+          font-size: 1.4rem;
+          text-decoration: none;
+          margin: 0 0.5rem;
+          span {
+            &:nth-child(1) {
+            display: inline-block;
+            color: #362e2b;
+            }
+            &:nth-child(2) {
+            display: inline-block;
+            color: #c5ae90;
+            }
+          }
+        }
+      }
+    }
+  }
+}
