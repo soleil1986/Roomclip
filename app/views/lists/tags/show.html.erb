@@ -1,0 +1,50 @@
+<div id="l-top" class="c-top">
+  <div class="c-top__container">
+    <div class="c-top__container-wrap">
+       <img class="c-top__eyecatch" src="https://cdn.roomclip.jp/v1/180/roomclip-bucket/img_180/b8f9dc132366a285e4c046ada559a9383c169cbc.jpg" alt="木彫のインテリア実例写真">
+         <h1 class="c-top__subject">
+        木彫のインテリア実例
+         </h1>
+        <aside class="c-top__info">
+        合計<span class="c-top__info-counter">51枚</span>
+        </aside>
+        <p class="c-top__description">
+  「木彫」が写っている部屋のインテリア写真は51枚あります。<a class="p-rel-tag-link" href="/tag/675">手作り</a>,<a class="p-rel-tag-link" href="/tag/3231">隠れ家</a>,<a class="p-rel-tag-link" href="/tag/1">Overview</a>,<a class="p-rel-tag-link" href="/tag/7">On Walls</a>,<a class="p-rel-tag-link" href="/tag/13">観葉植物</a>,<a class="p-rel-tag-link" href="/tag/3">Lounge</a>,<a class="p-rel-tag-link" href="/tag/235">水槽</a>,<a class="p-rel-tag-link" href="/tag/230">雑貨</a>,<a class="p-rel-tag-link" href="/tag/510">レトロ</a>,<a class="p-rel-tag-link" href="/tag/472">DIY</a>とよく一緒に使われています。他にも<a class="p-rel-tag-link" href="/tag/472">DIY</a>,<a class="p-rel-tag-link" href="/tag/230">雑貨</a>,<a class="p-rel-tag-link" href="/tag/409">ハンドメイド</a>,<a class="p-rel-tag-link" href="/tag/13">観葉植物</a>,<a class="p-rel-tag-link" href="/tag/231">アンティーク</a>,<a class="p-rel-tag-link" href="/tag/2151">フェイクグリーン</a>,<a class="p-rel-tag-link" href="/tag/886">多肉植物</a>,<a class="p-rel-tag-link" href="/tag/510">レトロ</a>,<a class="p-rel-tag-link" href="/tag/675">手作り</a>,<a class="p-rel-tag-link" href="/tag/183">植物</a>と関連しています。
+      </p>
+    </div>
+  </div>
+  <div class="c-top__container">
+    <div class="c-top__container-wrap">
+      <ul class="c-top__bar c-bread">
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <a href="/" class="c-bread__item-link" itemprop="url">
+            <span class="c-bread__item-label" itemprop="title">部屋の実例</span>
+          </a>
+        </li>
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <a href="/tag/5448" class="c-bread__item-link" itemprop="url">
+            <span class="c-bread__item-label" itemprop="title">木彫</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<section class="ranking-top">
+  <h2>
+    <%= @tag.name %>のオシャレなインテリア写真
+  </h2>
+  <div class="photos">
+    <ul>
+      <% @clips.each do |clip| %>
+      <li>
+        <div class="tag-tag">
+       <%= link_to image_tag(clip.image),clip_path(clip), alt: "タグ画像"%><!--         <a href="/photo/cPp4" onclick="RCApp.send_ga_event( 'Tag_pickup', 'click', '/tag/68454_by_3429048_photo_id_3769226_pc');">
+          <img src="https://cdn.roomclip.jp/v1/320/roomclip-bucket/img_320/0958459444ddb0a0dd73a0b6de2ca88e9752502e.jpg" alt="女性54歳の家族暮らし4LDK、ハインツに関するsuzyさんの実例写真"> -->
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
