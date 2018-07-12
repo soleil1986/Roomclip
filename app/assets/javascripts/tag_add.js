@@ -4,12 +4,14 @@ $(function() {
 
  function buildTag(tag) {
     var html =`
+
     <div class="tag-back radius-min" id=tag-back-${tag} data-tag="${tag}" >${tag}
     <span id="remove-icon" class="fontello tag-close" data-tag="${tag}">x</span></div>`
     return html
   }
 
   $(function() {
+
     $('#Tag-input-button').on('click',function() {
       var tag = $('#Tag-input').val();
       var addTag = buildTag(tag);
@@ -23,6 +25,7 @@ $(function() {
         var b = a + "," + tag
       }
       $('#tag-send').val(b);
+
       });
     })
 
