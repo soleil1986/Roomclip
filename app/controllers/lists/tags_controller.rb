@@ -6,6 +6,7 @@ class Lists::TagsController < ApplicationController
   end
 
   def show
-    @clip = Clip.tagged_with(params[:tag_name])
+    @tag = ActsAsTaggableOn::Tag.find_by(name: params[:name])
+    @clips = Clip.tagged_with(params[:name])
   end
 end

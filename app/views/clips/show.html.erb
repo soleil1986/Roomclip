@@ -157,7 +157,7 @@
           <div class="tag-delete-button deletetag" data-clip_id="<%= @clip.id %>" data-tag_id="<%= tag.id %>" data-user_id="<%= @clip.user_id %>">
             <span>×</span>
           </div>
-          <a href="/clips/<%= @clip.id %>/lists/tags/<%= tag.id %>">
+          <a href="/clips/<%= @clip.id %>/lists/tags/<%= tag.name %>">
             <div>
               <%= tag %>
             </div>

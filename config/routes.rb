@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
   resources :clips, only:[:index, :new, :create, :destroy, :show] do
     namespace :lists do
-      resources :tags, param: :tag_id, only: [:index, :show]
+      resources :tags, param: :name, only: [:index, :show]
     end
   end
 
