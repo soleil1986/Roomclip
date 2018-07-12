@@ -9,13 +9,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
       member do
-       get :follow,:follower,:photo_list
+       get :follow,:follower,:photo_list,:mytag
       end
   end
   resources :clips, only:[:index, :new, :create, :destroy, :show] do
-    namespace :lists do
-      resources :tags, param: :name, only: [:index, :show]
-    end
+  end
+  namespace :lists do
+  resources :tags, param: :name, only: [:index, :show]
   end
 
   resources :relationships, only: [:create, :destroy]
