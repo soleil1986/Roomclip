@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
       member do
        get :follow,:follower,:photo_list,:mytag
+    resources :myphoto, param: :name, only: [:index, :show]
       end
   end
   resources :clips, only:[:index, :new, :create, :destroy, :show] do
