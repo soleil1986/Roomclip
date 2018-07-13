@@ -153,3 +153,60 @@
     }
   }
 }
+
+// ユーザーの各プロフィールタグに紐づく投稿一覧
+#main {
+  width: 98rem;
+  padding: 0;
+  overflow: hidden;
+  margin: 0 auto;
+  .entry-photo-list {
+    margin: 3.0rem 0 0 0;
+    padding: 0 0 1rem 0;
+    height: auto;
+    overflow-y: auto;
+    position: relative;
+    article {
+      float: left;
+      margin: 0 2.5rem 0 0;
+      .month {
+        display: table-cell;
+        vertical-align: bottom;
+        height: 3rem;
+        margin: 0 0 0 0.5rem;
+        padding: 0 0 1.0rem 0;
+        font-size: 1.4rem;
+        color: #74615b;
+        font-weight: bold;
+      }
+      .entry-photo {
+      width: 17.6rem;
+      height: 17.6rem;
+      margin: 0.4rem 0 0 0;
+      background: #fff;
+      -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
+      filter: progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=0, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=90, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=180, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=270, strength=3, enabled=true);
+        img {
+          width: 16.8rem;
+          height: 16.8rem;
+          margin: 0.4rem;
+        }
+      }
+    }
+    #infscr-loading {
+    text-align: center;
+    z-index: 100;
+    padding: 10px;
+    background: transparent;
+    color: #eee;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    }
+  }
+}

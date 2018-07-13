@@ -27,10 +27,22 @@
         </li>
                 <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
           <a href="/myphoto/3429048?tag_id=2" class="c-bread__item-link" itemprop="url">
-            <span class="c-bread__item-label" itemprop="title">natsu0728の「My Desk」</span>
+            <span class="c-bread__item-label" itemprop="title">natsu0728の「<%= @tag.name %>」</span>
           </a>
         </li>
               </ul>
     </div>
   </div>
+</div>
+<div id="main">
+  <section class="entry-photo-list" style="padding-bottom: 10px;">
+  <article>
+    <div class="month">2018年7月</div>
+      <% @clips.each do |clip| %>
+      <section class="entry-photo" id="pid3775264">
+        <%= link_to image_tag(clip.image),clip_path(clip), alt: "タグ画像"%>
+      <% end %>
+    </section>
+  </article>
+<div id="infscr-loading" style="display: none;"><img alt="Loading..." src="/assets/img/loading/loading_bar.gif" style="display: none;"><div style="opacity: 1;">none</div></div></section>
 </div>

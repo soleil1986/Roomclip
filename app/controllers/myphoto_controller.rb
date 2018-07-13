@@ -3,6 +3,7 @@ class MyphotoController < ApplicationController
   def show
     # @myphoto = ActsAsTaggableOn::Tag.find_by(name: params[:name])
     @tag = ActsAsTaggableOn::Tag.find_by(name: params[:name])
+    @clips = Clip.tagged_with(params[:name])
     # @clips = Clip.tagged_with(params[:name])
     # @users = User.find(user_params)
   end
