@@ -54,10 +54,34 @@
   </ul>
 </nav>
 
-    <ul>
-      <% @dailyphoto.each do |clip| %>
-      <li>
+<ul id="dailyclipmain">
+  <div id="masonry-container" style="position: relative; width: 960px; height: 3200px;">
+    <li class="box_p1 entry-tile volume-cell" >
+      <div style="background-color: rgb(81, 180, 204);">
+        <div style="background-color: rgb(81, 180, 204);">
+          Daily RoomClip
+          <span class="vol">vol. <span class="num"><%= @daily.id %></span></span>
+          <span class="vol-date"><%= @daily.date %></span>
+        </div>
+      </div>
+    </li>
+    <li class="box_p1 entry-tile twitter-cell" >
+      <div>
+        <span class="tw-logo"></span>
+        「ピックアップ」の更新情報をお届け！
+        <font class="tw-account">@RoomClipJP</font>
+        <a href="https://twitter.com/RoomClipJP"><button><span></span>フォローする</button></a>
+      </div>
+    </li>
+    <% @dailyphoto.each do |clip| %>
+    <li class="box_p1 ">
+      <div>
         <%= link_to image_tag(clip.image),clip_path(clip) %>
-      </li>
-      <% end %>
-    </ul>
+      </div>
+    </li>
+    <% end %>
+  </div>
+</ul>
+<ul id="dailyclip-photo">
+</ul>
+
