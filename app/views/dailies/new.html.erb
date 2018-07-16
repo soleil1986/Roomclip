@@ -1,1 +1,38 @@
-MAHALO!
+<!doctype html>
+
+<div id="admin-screen">管理者専用画面
+  <div id="daily-newentry">DailyClip登録
+  </div>
+</div>
+
+<%= form_for @daily do |f| %>
+  <div class="dailies-date">
+    <%= f.label :date, '登録日' %>
+    <%= f.date_field :date %>
+  </div>
+  <div class="dailyclip-date">
+    <div class="daily-photo-no1">
+      <%= f.fields_for :dailyclips do |d| %>
+        <%= d.label "NO_01" %>
+        <%= d.number_field :num %>
+        <%= d.number_field :clip_id %>
+      <% end %>
+    </div>
+    <div class="daily-photo-no2">
+      <%= f.fields_for :dailyclips do |d| %>
+        <%= d.label "NO_02" %>
+        <%= d.number_field :num %>
+        <%= d.number_field :clip_id %>
+      <% end %>
+    </div>
+    <div class="daily-photo-no3">
+      <%= f.fields_for :dailyclips do |d| %>
+        <%= d.label "NO_03" %>
+        <%= d.number_field :num %>
+        <%= d.number_field :clip_id %>
+      <% end %>
+    </div>  </div>
+  <div id="dailyclip-submit-button">
+    <%= f.submit "登録", :class => 'radius-min button-color-red' %>
+
+<% end %>
