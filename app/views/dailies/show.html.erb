@@ -35,17 +35,22 @@
 <nav id="volume-top">
   <ul>
     <li class="prev">
-      <a href="/daily/1525">
-        <span class="arrow"></span>
-        vol.1525 <span class="date">(2018/07/13)</span>
-      </a>
+      <% if @daily.previous.present? %>
+        <%= link_to daily_path(@daily.previous) do%>
+          <span class="arrow"></span>
+          vol.<%= @daily.previous.id %>
+          <span class="date">(<%= @daily.previous.date %>)</span>
+        <% end %>
+      <% end %>
     </li>
     <li class="next">
-      <a href="/daily/1527">
-        <span class="arrow"></span>
-        vol.1527 <span class="date">(2018/07/15)</span>
-      </a>
-    </li>
+      <% if @daily.next.present? %>
+        <%= link_to daily_path(@daily.next) do%>
+          <span class="arrow"></span>
+          vol.<%= @daily.next.id %>
+          <span class="date">(<%= @daily.next.date %>)</span>
+        <% end %>
+      <% end %>
   </ul>
 </nav>
 
