@@ -32,6 +32,26 @@
         <%= d.number_field :clip_id %>
       <% end %>
     </div>  </div>
+    <div class="daily-photo-no4">
+      <%= f.fields_for :dailyclips do |d| %>
+        <%= d.label "NO_04" %>
+        <%= d.number_field :num %>
+        <%= d.number_field :clip_id %>
+      <% end %>
+    </div>
+    <div class="daily-photo-no5">
+      <%= f.fields_for :dailyclips do |d| %>
+        <%= d.label "NO_05" %>
+        <%= d.number_field :num %>
+        <%= d.number_field :clip_id %>
+      <% end %>
+    </div>
+   <div class="daily-photo-no6">
+      <%= f.fields_for :dailyclips do |d| %>
+        <%= d.label "NO_06" %>
+        <%= d.number_field :num %>
+        <%= d.number_field :clip_id %>
+      <% end %>
   <div id="dailyclip-submit-button">
     <%= f.submit "登録", :class => 'radius-min button-color-red' %>
 
