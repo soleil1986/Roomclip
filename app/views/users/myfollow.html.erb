@@ -1,0 +1,60 @@
+<div id="l-top" class="c-top">
+  <div class="c-top__container">
+    <div class="c-top__container-wrap">
+      <h1 class="c-top__subject">
+        <%= "#{@user.name}ののフォロー一覧" %>
+      </h1>
+    </div>
+  </div>
+<div class="c-top__container">
+	<div class="c-top__container-wrap">
+		<ul class="c-top__bar c-bread">
+			<li class="c-bread__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+				<%= link_to root_path, class: "c-bread__item-link" do %>
+					<span class="c-bread__item-label" itemprop="title">部屋の実例</span>
+					<% end %>
+				</a>
+			</li>
+			<li class="c-bread__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+				<%= link_to user_path(@user), class: "c-bread__item-link" do %>
+					<span class="c-bread__item-label" itemprop="title"><%= "#{@user.name}の部屋" %></span>
+					<% end %>
+				</a>
+			</li>
+			<li class="c-bread__item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+					<%= link_to follow_user_path(@user), class: "c-bread__item-link" do %>
+					<span class="c-bread__item-label" itemprop="title"><%= "#{@user.name}のフォロー一覧" %></span>
+					<% end %>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+<div class="container">
+	<section id="Search-result">
+		<div id="Search-status"></div>
+		<div id="Search-data" style="padding-bottom: 100px;">
+	<% @follows.each do |follow| %>
+	<article class="user-ful-tile">
+		<%= link_to follow do %>
+			<section>
+				<img src="<%= follow.image %>" alt="">
+				<div><h1><%= follow.name %></h1></div>
+			</section>
+			<img src="<%= follow.clips[0].image %>" class="main" alt="<%= follow.name %>さんのお部屋写真 #1">
+			<img src="<%= follow.clips[1].image %>" class="sub" alt="<%= follow.name %>さんのお部屋写真 #2">
+			<img src="<%= follow.clips[2].image %>" class="sub" alt="<%= follow.name %>さんのお部屋写真 #3">
+			<img src="<%= follow.clips[3].image %>" class="sub" alt="<%= follow.name %>さんのお部屋写真 #4">
+			<img src="<%= follow.clips[4].image %>" class="sub" alt="<%= follow.name %>さんのお部屋写真 #5">
+		<% end %>
+			<button class="sendfollow color-light-middle"><%= render 'follow_form_index',locals: {user: follow} %></button>
+	 </article>
+	<% end %>
+
+<div id="infscr-loading" style="display: none;"><img alt="Loading..." src="/assets/img/loading/loading_bar.gif" style="display: none;"><div style="opacity: 1;">none</div></div></div>
+		<div id="page-nav" style="display: none;">
+			<a href="/?page=2"></a>
+		</div>
+	</section>
+</div>
