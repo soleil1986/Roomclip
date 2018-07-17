@@ -1,20 +1,15 @@
 class MyphotoController < ApplicationController
 
   def show
-    # @myphoto = ActsAsTaggableOn::Tag.find_by(name: params[:name])
+    @user = User.find(params[:id])
     @tag = ActsAsTaggableOn::Tag.find_by(name: params[:name])
-    @clips = Clip.tagged_with(params[:name])
-    # @clips = Clip.tagged_with(params[:name])
-    # @users = User.find(user_params)
+    @clips = @user.clips.tagged_with(params[:name])
   end
 
   private
 
   def myphoto_params
-    params.required(:tag).permit(:name)
+    myphoto_params.required(:tag).permit(:name)
   end
 
-  # def user_params
-  #   params.require(:user).permit(:name)
-  # end
 end
