@@ -1,0 +1,7 @@
+  <div>
+    <% if current_user.follow?(@user) || current_user.id == @user.id %>
+      <%= render 'unfollow_index' %>
+    <% else %>
+      <%= render 'follow_index' %>
+    <% end %>
+  </div>

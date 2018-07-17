@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def new
     @user = User.new
   end
@@ -17,15 +16,15 @@ class UsersController < ApplicationController
   end
 
   def follow
-    @user  = User.find(params[:id])
-    @users = @user.follows
-    render 'show_follow_all'
+    @user = User.find(params[:id])
+    @follows = @user.follows
+    render 'myfollow'
   end
 
   def follower
-    @user  = User.find(params[:id])
-    @users = @user.followers
-    render 'show_follower_all'
+    @user = User.find(params[:id])
+    @followers = @user.followers
+    render 'myfollower'
   end
 
   def mytag

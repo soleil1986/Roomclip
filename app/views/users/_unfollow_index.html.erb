@@ -1,0 +1,5 @@
+<%= form_for(current_user.active_relationships.build) do |f| %>
+  <div><%= hidden_field_tag :follow_id, @user.id %></div>
+  <%= f.submit "フォローを解除", class: "sendfollow color-light-middle" %>
+  <span class="fa fa-close fa-lg"></span>
+<% end %>

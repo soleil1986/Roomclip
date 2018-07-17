@@ -41,6 +41,7 @@ gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'jquery-ui-rails'
 
+
 group :production do
   gem 'unicorn'
 end
@@ -59,6 +60,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'activeadmin'
+  gem 'devise'
 end
 
 group :development do

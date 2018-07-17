@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20180630100038) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
+  end
+
   create_table "taggings", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "tag_id"
     t.string "taggable_type"

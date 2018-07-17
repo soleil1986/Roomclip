@@ -34,9 +34,7 @@ src="https://www.facebook.com/tr?id=235060970222367&ev=PageView&noscript=1"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
-
 </header>
-
 
 <div id="l-top" class="c-top">
   <div class="c-top__container">
@@ -75,8 +73,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </div>
-
-
 
 <div id="main">
   <div class="left">
@@ -209,11 +205,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section id="user-image">
       <h2><%= @user.name %></h2>
 
-      <img src="http://kai-you.net/r/img_words/844302/c688x516/b3e3e393c77e35a4a3f3cbd1e429b5dc.jpg" alt="HiroakiSanoさんのお部屋">
+      <img src="<%= @user.image %>" alt="HiroakiSanoさんのお部屋">
 
 			<!-- <div class="follow-button"> -->
 				<!-- if logged_in? -->
-			<button class="follow"><%= render 'follow_form'%></button>
+			<button><%= render 'follow_form',locals: {user: @user} %></button>
 
 			<!-- <script type="text/template" id="follow-tpl">
             <button class="follow sendfollow" data-target_id="2" data-user_id="1"><span></span>フォローする</button>
