@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20180630100038) do
     t.index ["user_id"], name: "index_clips_on_user_id"
   end
 
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id", null: false
+    t.integer "clip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clip_id"], name: "index_likes_on_clip_id"
+    t.index ["user_id", "clip_id"], name: "index_likes_on_user_id_and_clip_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "follower_id"
     t.integer "follow_id"
@@ -29,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180630100038) do
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
     t.index ["follower_id", "follow_id"], name: "index_relationships_on_follower_id_and_follow_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
 
   create_table "taggings", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "tag_id"

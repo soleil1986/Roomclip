@@ -39,6 +39,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="l-top" class="c-top">
   <div class="c-top__container">
     <div class="c-top__container-wrap">
+
       <h1 class="c-top__subject">
         <%= "#{@user.name}の部屋" %>
       </h1>
@@ -217,7 +218,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <button class="unfollow sendfollow" data-target_id="2" data-user_id="1"><span></span>フォロー解除</button>
           </script>
       </div> -->
-                        </section>
+    </section>
 
     <table id="user-scores">
       <caption>HiroakiSanoさんの撮影した写真数、フォロー数、フォロワー数、クリップ数、いいね数などをまとめたテーブルです。</caption>
@@ -255,13 +256,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </tr>
       <tr>
         <td class="key">
-          <a href="/mytag/3464798">
-          タグ
-          </a>
+          <%= link_to "タグ", mytag_user_path(@user) %>
         </td>
         <td class="value">
-          <a href="/mytag/3464798">
-          0
+          <a href="/users/<%= @user.id %>/mytag">
+          <%= @tag_count %>
           </a>
         </td>
       </tr>
@@ -273,7 +272,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </td>
         <td class="value">
           <a href="/mylike/3464798">
-          0
+          <%= @like_count %>
           </a>
         </td>
       </tr>

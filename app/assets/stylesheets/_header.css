@@ -462,17 +462,20 @@ fieldset, img {
     background-image: url(/assets/img/v3/bg.png);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px inset;
 }
+.container-daily .daily {
+    width: 96rem;
+    padding: 2.5rem 1rem 3rem;
+    margin: 0 auto;
+    overflow: auto;
+}
 .container-daily .daily > h1 {
     margin: 0 0 2.5rem 0;
     font-size: 2rem;
     font-weight: bold;
     color: #443311;
 }
-.container-daily .daily {
-    width: 96rem;
-    padding: 2.5rem 1rem 3rem;
-    margin: 0 auto;
-    overflow: auto;
+a {
+    cursor: pointer !important;
 }
 .container-daily .daily .latest {
     width: 94.2rem;
@@ -489,6 +492,9 @@ fieldset, img {
     filter: progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=0, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=90, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=180, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=270, strength=3, enabled=true);
     z-index: 90;
 }
+.container-daily .daily .latest:hover {
+    border-color: #CD5C5C;
+}
 .container-daily .daily .latest h2 {
     font-size: 1.6rem;
     font-weight: bold;
@@ -497,6 +503,18 @@ fieldset, img {
     position: absolute;
     bottom: 0;
     right: 10rem;
+}
+.container-daily .daily .latest h2 span {
+    font-size: 1.8rem;
+}
+.container-daily .daily .latest .mid:nth-child(4n-1) {
+    margin: 0;
+}
+.container-daily .daily .latest .mid {
+    width: 23.1rem;
+    height: 23.1rem;
+    margin: 0 0 0 0.6rem;
+    float: left;
 }
 .container-daily .daily .latest aside {
     font-size: 1.2rem;
@@ -541,6 +559,40 @@ user agent stylesheet
 article, aside, footer, header, hgroup, main, nav, section {
     display: block;
 }
+.container-daily .daily .recently:hover {
+        border-color: #CD5C5C;
+}
+.container-daily .daily .recently h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #443311;
+    line-height: 2rem;
+    position: absolute;
+    bottom: 0;
+    right: 10rem;
+}
+.container-daily .daily .recently .mid {
+    width: 9.6rem;
+    height: 9.6rem;
+    margin: 0 0.5rem 0 0;
+    float: left;
+}
+.container-daily .daily .recently .mid:nth-child(3n-1) {
+    margin: 0;
+}
+.container-daily .daily .recently aside {
+    font-size: 1.2rem;
+    color: #908270;
+    line-height: 2rem;
+    position: absolute;
+    bottom: 0;
+    right: 1.5rem;
+}
+.container-daily .daily .recently .corner {
+    position: absolute;
+    bottom: -0.6rem;
+    right: -0.6rem;
+}
 .container-daily .daily .last {
     margin: 1.5rem 0 2rem 0;
 }
@@ -552,4 +604,13 @@ article, aside, footer, header, hgroup, main, nav, section {
     line-height: 100%;
     font-size: 1.5rem;
     color: #d9462a;
+}
+.container-daily .daily .next .arrow {
+    position: absolute;
+    right: 0;
+    background: url(/assets/img/v3/sprite/common.png) 0 -44px no-repeat;
+    width: 12px;
+    height: 16px;
+    width: 12px;
+    height: 16px;
 }
