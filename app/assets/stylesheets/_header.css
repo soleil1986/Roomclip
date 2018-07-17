@@ -528,6 +528,8 @@ a {
     height: 23.1rem;
     margin: 0 0 0 0.6rem;
     float: left;
+    background-color: black;
+    object-fit: contain;
 }
 .container-daily .daily .latest .today-badge {
     position: absolute;
@@ -576,6 +578,8 @@ article, aside, footer, header, hgroup, main, nav, section {
     height: 9.6rem;
     margin: 0 0.5rem 0 0;
     float: left;
+    background-color: black;
+    object-fit: contain;
 }
 .container-daily .daily .recently .mid:nth-child(3n-1) {
     margin: 0;
