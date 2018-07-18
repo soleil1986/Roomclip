@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180712103700) do
+
+ActiveRecord::Schema.define(version: 20180717124511) do
 
   create_table "clips", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id", null: false
@@ -35,6 +36,18 @@ ActiveRecord::Schema.define(version: 20180712103700) do
     t.datetime "updated_at", null: false
     t.index ["clip_id"], name: "index_dailyclips_on_clip_id"
     t.index ["daily_id"], name: "index_dailyclips_on_daily_id"
+  end
+
+  create_table "folder_clips", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "folder_id"
+    t.integer "clip_id"
+  end
+
+  create_table "folders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
