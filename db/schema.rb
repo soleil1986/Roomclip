@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20180717124511) do
 
   create_table "clips", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -68,8 +67,6 @@ ActiveRecord::Schema.define(version: 20180717124511) do
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
     t.index ["follower_id", "follow_id"], name: "index_relationships_on_follower_id_and_follow_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
-  end
-
   end
 
   create_table "taggings", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
