@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20180717124511) do
     t.index ["user_id"], name: "index_clips_on_user_id"
   end
 
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "comment"
+    t.bigint "clip_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clip_id"], name: "index_comments_on_clip_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "dailies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date "date", null: false
     t.datetime "created_at", null: false
@@ -113,6 +123,8 @@ ActiveRecord::Schema.define(version: 20180717124511) do
   end
 
   add_foreign_key "clips", "users"
+  add_foreign_key "comments", "clips"
+  add_foreign_key "comments", "users"
   add_foreign_key "dailyclips", "clips"
   add_foreign_key "dailyclips", "dailies"
 end
