@@ -369,7 +369,7 @@
       }
       .folder-button {
         float: left;
-        .folder {
+        .btn-primary {
           color: #fff;
           margin: 0;
           background: #d9462a;
@@ -775,9 +775,155 @@
             }
           }
         }
+        .panel {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color:rgba(0, 0, 0, 0.6);
+        }
+        .visible {
+          visibility: visible;
+        }
+        .modal-dialog {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          width: 400px;
+          height: 400px;
+        }
+        .modal-content {
+          background: rgba(249, 249, 247, 0.9);
+          z-index: 110;
+          display: block;
+          box-sizing: border-box;
+          position: fixed;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 100;
+          padding: 50px 10px;
+        }
+        .bbm-modal--open {
+          box-shadow: rgba(0, 0, 0, 0.3) 2px 3px 15px 0px;
+          background-color: white;
+        }
+        .modal-header {
+          height: 7.8rem;
+          border: none;
+          margin: 0 auto;
+          padding: 0;
+          position: relative;
+          background: white;
+        }
+        .selected-photo-img {
+          width: 4.6rem;
+          height: 4.6rem;
+          margin: 1.6rem;
+        }
+        .modal-title {
+          font-size: 1.8rem;
+          line-height: 1em;
+          color: #362e2b;
+          position: absolute;
+          left: 7rem;
+          top: 3rem;
+          padding: 0;
+        }
+        
+        .input-accordion {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        .text-area {
+        display: none;
+        background-color: #eae7e2;
+        height: 10.8rem;
+          span {
+            float: left;
+            padding: 1.6rem 0 0.4rem 1.6rem;
+            font-size: 14px;
+            color: #443311;
+          }
+          .close-btn {
+            float: right;
+            margin: 2.2rem 1.6rem 1.2rem 0;
+            cursor: pointer;
+            box-shadow: none;
+            border-radius: 0;
+            width: 16px;
+            height: 16px;
+            text-indent: -119988px;
+            overflow: hidden;
+            text-align: left;
+            text-transform: capitalize;
+          }
+          .alart-label {
+            display: none;
+            padding-left: 1.6rem;
+            font-size: 12px;
+            color: #dc3c36;
+          }
+        }
+        .close-name-field {
+          padding: 1.5rem 0 1.5rem 25%;
+        }
+        .createfolder {
+          width: 100%;
+          height: 5.4rem;
+          text-align: center;
+          line-height: 1.5;
+          font-size: 18px;
+          background-color: #dc3c36;
+          color: #fff;
+          cursor: pointer;
+          box-sizing: border-box;
+          span {
+            width: 2.7rem;
+            height: 2.3rem;
+            float: left;
+          }
+          span {
+            height: 2.3rem;
+            float: left;
+            margin-left: 0.5rem;
+          }
+        }
+        .modal-footer {
+          padding: 0;
+          font-size: 1.6rem;
+          color: #5b5142;
+          line-height: 0;
+          background: #fff;
+          height: 26.6rem;
+        }
+        .no-contents {
+          #eye-catch {
+            width: 12.8rem;
+            display: block;
+            margin: 5rem auto 2.4rem;
+          }
+          h2 {
+            line-height: 1;
+            font-size: 18px;
+            text-align: center;
+            color: #443311;
+          }
+          p {
+            margin-top: 1.6rem;
+            line-height: 1.5;
+            font-size: 13px;
+            text-align: center;
+            color: #443311;
+          }
+        }
       }
     }
   }
 }
-
-
