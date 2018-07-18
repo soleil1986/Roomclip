@@ -1,10 +1,14 @@
 class ClipsController < ApplicationController
 
   def index
+      @daily_today = Daily.order(date: :DESC).first
+      @daily_yesterday = Daily.order(date: :DESC).second
+      @daily_3daysago = Daily.order(date: :DESC).third
+      @daily_4daysago = Daily.order(date: :DESC).fourth
+
     if @daily_today.blank?
       render "dailies/new" and return
     else
-      @daily_today = Daily.order(date: :DESC).first
       @dailyclips_t = @daily_today.dailyclips
       @clip_t = @dailyclips_t.pluck(:clip_id)
       @dailyphoto_t = Clip.where(id: @clip_t)
@@ -13,7 +17,6 @@ class ClipsController < ApplicationController
     if @daily_yesterday.blank?
       render "dailies/new" and return
     else
-      @daily_yesterday = Daily.order(date: :DESC).second
       @dailyclips_y = @daily_yesterday.dailyclips
       @clip_y = @dailyclips_y.pluck(:clip_id)
       @dailyphoto_y = Clip.where(id: @clip_y)
@@ -22,7 +25,6 @@ class ClipsController < ApplicationController
     if @daily_3daysago.blank?
       render "dailies/new" and return
     else
-      @daily_3daysago = Daily.order(date: :DESC).third
       @dailyclips_3 = @daily_3daysago.dailyclips
       @clip_3 = @dailyclips_3.pluck(:clip_id)
       @dailyphoto_3 = Clip.where(id: @clip_3)
@@ -31,7 +33,6 @@ class ClipsController < ApplicationController
     if @daily_4daysago.blank?
       render "dailies/new" and return
     else
-      @daily_4daysago = Daily.order(date: :DESC).fourth
       @dailyclips_4 = @daily_4daysago.dailyclips
       @clip_4 = @dailyclips_4.pluck(:clip_id)
       @dailyphoto_4 = Clip.where(id: @clip_4)
