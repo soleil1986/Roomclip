@@ -229,9 +229,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
         </td>
         <td class="value">
-          <a href="/myphoto/3464798">
-            <%= @user.clips.count %>
-          </a>
+          <%= link_to @user.clips.count, photo_list_user_path(@user.id) %>
         </td>
       </tr>
       <tr>

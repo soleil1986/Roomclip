@@ -1,0 +1,218 @@
+#volume-top {
+  width: 96rem;
+  height: 4rem;
+  line-height: 4rem;
+  padding: 0 1.5rem;
+  margin: 2rem auto 1.5rem;
+  ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    width: 100%;
+    background: #e9e4de;
+    li:first-child {
+      padding-left: 0;
+    }
+    li > a:visited {
+      color: #362e2b;
+    }
+    li > a {
+      display: inline-block;
+      height: 100%;
+      color: inherit;
+      text-decoration: inherit;
+      cursor: inherit;
+      color: inherited;
+      cursor: pointer;
+    }
+    li {
+      list-style-image: none;
+      list-style-type: none;
+      margin-left: 0;
+      white-space: nowrap;
+      float: left;
+      padding-left: 4px;
+      padding-right: 4px;
+      width: 50%;
+      height: 4rem;
+      margin: 0;
+      padding: 0;
+      font-size: 1.6rem;
+      color: #0f0e0d;
+      .date {
+        color: #362e2b;
+        font-size: 1.2rem;
+      }
+    }
+    .prev {
+      .arrow {
+      background: url(https://roomclip.jp/assets/img/v3/sprite/common.png) 0 -28px no-repeat;
+      width: 12px;
+      height: 16px;
+      float: left;
+      margin: 1.2rem 1rem 0 1rem;
+      }
+    }
+    li:last-child {
+      padding-right: 0;
+    }
+    .next {
+      text-align: right;
+      .arrow {
+        background: url(https://roomclip.jp/assets/img/v3/sprite/common.png) 0 -44px no-repeat;
+        width: 12px;
+        height: 16px;
+        float: right;
+        margin: 1.2rem 1rem 0 1rem;
+      }
+    }
+  }
+}
+
+@keyframes my-fade-in {
+  from {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    // position: absolute;
+    // left: -100vw;
+    top: -100vw;
+    transform: translate( -100%);
+  }
+  to {
+    opacity: 1;
+    width: 960px;
+    height: 3200px;
+    // position: relative;
+    // left: 0;
+    top: 0;
+    transform: translate( 0%);
+   }
+}
+
+
+#dailyclipmain {
+  border: 0;
+  width: 96rem;
+  padding: 0 1rem;
+  overflow: visible;
+  margin: 4rem auto 8rem !important;
+  animation-name: my-fade-in;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  li:first-child {
+    padding: 0 !important;
+  }
+  .box_p1 {
+    width: 24rem;
+    height: 24rem;
+  }
+  .box_p1 > div {
+    width: 21.8rem;
+    height: 21.8rem;
+    margin: .6rem;
+    padding: .5rem;
+    background: #fff;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
+  }
+  li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    white-space: nowrap;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      object-fit: contain;
+    }
+  }
+  li.volume-cell > div {
+    -moz-border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    border-radius: 0.3rem;
+    background: #fff;
+    font-size: 2.4rem;
+    color: #fff;
+  }
+  li.volume-cell > div > div {
+    background: #fff;
+    margin: 4rem auto 0;
+    display: table;
+    line-height: 3rem;
+    .vol {
+      font-size: 3rem;
+      margin: 2rem 0;
+      .num {
+        font-size: 4.5rem;
+        display: inline;
+      }
+    }
+    span {
+      display: block;
+    }
+    .vol-date {
+      font-size: 3rem;
+    }
+  }
+  li.twitter-cell > div {
+    -moz-border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    border-radius: 0.3rem;
+    background: #72b6e9;
+    color: #fff;
+    font-size: 1.2rem;
+    .tw-logo {
+      background: url(https://roomclip.jp/assets/img/v3/sprite/daily.png) 0 -72px no-repeat;
+      width: 36px;
+      height: 30px;
+      display: block;
+      margin: 3rem auto 2rem;
+    }
+    .tw-account {
+      font-size: 2.2rem;
+      display: block;
+      margin: 1rem 0;
+      text-align: center;
+    }
+    a {
+      color: inherit;
+      text-decoration: inherit;
+      cursor: inherit;
+    }
+    button {
+      position: relative;
+      background: #e0e5e7;
+      color: #4198c2;
+      text-align: center;
+      width: 200px;
+      height: 3.5rem;
+      line-height: 2.5rem;
+      font-size: 1.5rem;
+      margin: 2rem auto 0;
+      cursor: pointer;
+      display: block;
+      -moz-border-radius: 0.3;
+      -webkit-border-radius: 0.3;
+      border-radius: 0.3;
+    }
+    button > span {
+      position: absolute;
+      left: 1rem;
+      top: 1.1rem;
+      display: inline;
+      background: url(/assets/img/v3/sprite/daily.png) 0 -60px no-repeat;
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
