@@ -1,6 +1,5 @@
 class LikesController < ApplicationController
   def create
-    # binding.pry
     @clip = Clip.find(params[:clip_id])
     @like = Like.create(user_id: current_user.id, clip_id: @clip.id)
     @clip.reload
