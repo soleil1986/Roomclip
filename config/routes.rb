@@ -24,5 +24,7 @@ Rails.application.routes.draw do
   post '/clips/:clip_id/like' => 'likes#create', as: 'clip_like'
   delete 'clips/:clip_id/unlike' => 'likes#destroy', as: 'clip_unlike'
 
+  resources :dailies, only:[:new, :create, :show, :edit, :update, :destroy, ]
+
 end
 

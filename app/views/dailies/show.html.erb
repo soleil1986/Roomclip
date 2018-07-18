@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<div id="l-top" class="c-top">
+  <div class="c-top__container">
+    <div class="c-top__container-wrap">
+      <h1 class="c-top__subject">
+        Daily RoomClip vol.<%= @daily.id %>（<%= @daily.date %>）
+      </h1>
+    </div>
+  </div>
+
+  <div class="c-top__container">
+    <div class="c-top__container-wrap">
+      <ul class="c-top__bar c-bread">
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <%= link_to root_path, class: "c-bread__item-link", itemprop: "url" do %>
+            <span class="c-bread__item-label" itemprop="title">部屋の実例</span>
+          <% end %>
+        </li>
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <%= link_to daily_path(@daily), class: "c-bread__item-link", itemprop: "url" do %>
+            <span class="c-bread__item-label" itemprop="title">Daily RoomClip アーカイブ<%= @daily.date %></span>
+          <% end %>
+        </li>
+        <li class="c-bread__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <%= link_to daily_path(@daily), class: "c-bread__item-link" do %>
+            <span class="c-bread__item-label" itemprop="title">Daily RoomClip vol.<%= @daily.id %></span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<nav id="volume-top">
+  <ul>
+    <li class="prev">
+      <% if @daily.previous.present? %>
+        <%= link_to daily_path(@daily.previous) do%>
+          <span class="arrow"></span>
+          vol.<%= @daily.previous.id %>
+          <span class="date">(<%= @daily.previous.date %>)</span>
+        <% end %>
+      <% end %>
+    </li>
+    <li class="next">
+      <% if @daily.next.present? %>
+        <%= link_to daily_path(@daily.next) do%>
+          <span class="arrow"></span>
+          vol.<%= @daily.next.id %>
+          <span class="date">(<%= @daily.next.date %>)</span>
+        <% end %>
+      <% end %>
+  </ul>
+</nav>
+
+<ul id="dailyclipmain">
+  <div id="masonry-container" style="position: relative; width: 960px; height: 3200px;">
+    <li class="box_p1 entry-tile volume-cell" >
+      <div style="background-color: rgb(81, 180, 204);">
+        <div style="background-color: rgb(81, 180, 204);">
+          Daily RoomClip
+          <span class="vol">vol. <span class="num"><%= @daily.id %></span></span>
+          <span class="vol-date"><%= @daily.date %></span>
+        </div>
+      </div>
+    </li>
+    <li class="box_p1 entry-tile twitter-cell" >
+      <div>
+        <span class="tw-logo"></span>
+        「ピックアップ」の更新情報をお届け！
+        <font class="tw-account">@RoomClipJP</font>
+        <a href="https://twitter.com/RoomClipJP"><button><span></span>フォローする</button></a>
+      </div>
+    </li>
+    <% @dailyphoto.each do |clip| %>
+    <li class="box_p1 ">
+      <div>
+        <%= link_to image_tag(clip.image),clip_path(clip) %>
+      </div>
+    </li>
+    <% end %>
+  </div>
+</ul>
+
+<ul id="sns-share">
+  <li class="twitter" onclick="RCApp.send_ga_event( 'DailyRC_share', 'click', 'web_tw_1523_by_3429062');">
+    <a href="http://twitter.com/share?count=horizontal&amp;url=http://roomclip.jp/daily/1523&amp;text=Daily RoomClip vol. 1523&amp;" onclick="window.open(this.href, 'TWwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+      <span class="icon"></span>
+      <span class="sns-name">Twitter</span>
+      <span class="sns-action">ツイートする</span>
+  </a>
+  </li>
+  <li class="facebook" onclick="RCApp.send_ga_event( 'DailyRC_share', 'click', 'web_fb_1523_by_3429062');">
+    <a href="http://www.facebook.com/share.php?u=http://roomclip.jp/daily/1523" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+      <span class="icon"></span>
+      <span class="sns-name">facebook</span>
+      <span class="sns-action">いいね！</span>
+  </a>
+  </li>
+  <li class="hatena" onclick="RCApp.send_ga_event( 'DailyRC_share', 'click', 'web_hb_1523_by_3429062');">
+    <a target="_blank" href="http://b.hatena.ne.jp/entry.touch/http://roomclip.jp/daily/1523" onclick="window.open(this.href, 'TWwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+      <span class="icon"></span>
+      <span class="sns-name">はてな</span>
+      <span class="sns-action">ブックマークする</span>
+  </a>
+  </li>
+</ul>
+
+<nav id="volume-bottom">
+  <ul>
+    <li class="prev">
+      <a href="/daily/1522">
+        <span class="arrow"></span>
+        vol.1522 <span class="date">(2018/07/10)</span>
+      </a>
+    </li>
+    <li class="archive">
+      <a href="/daily/archive/">過去のアーカイブをすべて見る</a>
+    </li>
+    <li class="next">
+      <a href="/daily/1524">
+        <span class="arrow"></span>
+        vol.1524 <span class="date">(2018/07/12)</span>
+      </a>
+    </li>
+  </ul>
+</nav>

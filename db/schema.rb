@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180630100038) do
+ActiveRecord::Schema.define(version: 20180712103700) do
 
   create_table "clips", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id", null: false
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(version: 20180630100038) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_clips_on_user_id"
+  end
+
+  create_table "dailies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date "date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dailyclips", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "daily_id", null: false
+    t.integer "num", null: false
+    t.bigint "clip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clip_id"], name: "index_dailyclips_on_clip_id"
+    t.index ["daily_id"], name: "index_dailyclips_on_daily_id"
   end
 
   create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -87,4 +103,6 @@ ActiveRecord::Schema.define(version: 20180630100038) do
   end
 
   add_foreign_key "clips", "users"
+  add_foreign_key "dailyclips", "clips"
+  add_foreign_key "dailyclips", "dailies"
 end
