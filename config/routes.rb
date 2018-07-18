@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
 
+  resources :folder, only: [:create, :destroy, :new]
+
+
   post '/clips/:clip_id/like' => 'likes#create', as: 'clip_like'
   delete 'clips/:clip_id/unlike' => 'likes#destroy', as: 'clip_unlike'
 
