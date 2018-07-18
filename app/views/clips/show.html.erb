@@ -138,9 +138,9 @@
       </span>
     </div>
     <div class="folder-button">
-      <button class="folder show-folder-modal">
-        <span class="far fa-folder folder"></span>保存する
-      </button>
+      <span >
+        <%= render partial:'folders/folder_links', locals: { clip: @clip } %>
+      </span>
     </div>
     <aside>
       <span id="like-list"><%= @clip.likes_count %></span>
@@ -440,5 +440,6 @@
 {"@context":"http:\/\/schema.org","@type":"BlogPosting","headline":"稼働棚\/シューズクローゼット\/玄関棚\/玄関収納\/下駄箱\/初投稿…などのインテリア実例 -2018-06-14 14:33:17","image":{"@type":"ImageObject","url":"https:\/\/cdn4.roomclip.jp\/v1\/640\/roomclip-bucket\/img_750\/61da32d1b0ef35a461eab70a240a42e5058d1525.jpg","height":640,"width":640},"datePublished":"2018-06-14 14:33:17","dateModified":"2018-06-14 14:33:23","author":{"@type":"Person","name":"HideOnu"},"publisher":{"@type":"Organization","name":"RoomClip","logo":{"@type":"ImageObject","url":"https:\/\/roomclip.jp\/assets\/img\/v3\/logo\/logo-pc-login.png","width":269,"height":61}},"description":"3LDKの稼働棚\/シューズクローゼット\/玄関棚\/玄関収納\/下駄箱\/初投稿…などについてのインテリア実例を紹介。(この写真は 2018-06-14 14:33:17 に共有されました)","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/roomclip.jp"}}
 </script>
 
+<div class="modal fade" id="folder-of-<%= @clip.id %>" tabindex="-1" ></div>
 </body>
 </html>
