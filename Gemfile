@@ -40,6 +40,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'jquery-ui-rails'
+gem 'bootstrap', '~> 4.1.1'
 
 
 group :production do
