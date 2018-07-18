@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+      <!-- <button class="unfolder show-folder-modal">
+        <span class="fas fa-folder"></span>保存<br>を取り消す
+      </button> -->
+  <%= link_to new_folder_path, method: :get, remote: true do %>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#clips-modal">
+      <span class="far fa-folder folder"></span>保存する
+    </button>
+  <% end %>
+<% else %>
+  <% link_to new_user_session_path do %>
+    <button class="folder show-folder-modal">
+      <span class="far fa-folder folder"></span>保存する
+    </button>
+  <% end %>
+<% end %>
+
+
+
