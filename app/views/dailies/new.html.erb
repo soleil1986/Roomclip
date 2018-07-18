@@ -5,6 +5,7 @@
   </div>
 </div>
 
+<% @daily = Daily.new unless @daily %>
 <%= form_for @daily do |f| %>
   <div class="dailies-date">
     <%= f.label :date, '登録日' %>
