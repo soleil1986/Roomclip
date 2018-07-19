@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @clips = @user.clips
+    @most_used_tags = @clips.all_tags.most_used(10)
     @tag_count = @clips.tag_counts_on(:tags).count
     @like_count = Like.where(user_id: @user.id).count
   end

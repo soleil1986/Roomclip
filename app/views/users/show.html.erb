@@ -437,16 +437,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <td class="value-wide">
             <div class="entry-tags">
               <ul>
-                <li><a href="/tag/472"><div>DIY</div></a></li>
-                <li><a href="/tag/10016"><div>DIY板壁</div></a></li>
-                <li><a href="/tag/43402"><div>NO GREEN NO LIFE</div></a></li>
-                <li><a href="/tag/73"><div>照明</div></a></li>
-                <li><a href="/tag/513"><div>セルフリフォーム</div></a></li>
-                <li><a href="/tag/39127"><div>好きなようにごちゃごちゃDIY</div></a></li>
-                <li><a href="/tag/3595"><div>足場板</div></a></li>
-                <li><a href="/tag/3685"><div>ベビースペース</div></a></li>
-                <li><a href="/tag/4977"><div>ベビーベッド</div></a></li>
-                <li><a href="/tag/231"><div>アンティーク</div></a></li>
+                <% @most_used_tags.each do |most_used_tag| %>
+                <li><a href="/tag/<%= most_used_tag.id %>"><div><%= most_used_tag.name %></div></a></li>
+                <% end %>
               </ul>
             </div>
           </td>
