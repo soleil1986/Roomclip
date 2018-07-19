@@ -77,60 +77,125 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="main">
   <div class="left">
     <div id="profile-photos">
-      <a href="/users/<%= @user.id %>/myphoto/部屋全体">
-        <figure>
-          <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「部屋全体」についてのインテリア実例">
-        <figcaption>部屋全体</figcaption>
-        </figure>
-      </a>
-      <a href="/users/<%= @user.id %>/myphoto/机">
-        <figure>
-          <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「机」についてのインテリア実例">
-        <figcaption>机</figcaption>
+
+      <%if @clips.tagged_with('机').exists? %>
+        <a href="/users/<%= @user.id %>/myphoto/部屋全体">
+          <figure>
+            <img src="<%= @clips.tagged_with('部屋全体').last.image %>" >
+          <% else %>
+            <a href="/users/<%= @user.id %>">
+          <figure>
+            <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「部屋全体」についてのインテリア実例">
+          <% end %>
+          <figcaption>部屋全体</figcaption>
+          </figure>
+        </a>
+
+      <%if @clips.tagged_with('机').exists? %>
+        <a href="/users/<%= @user.id %>/myphoto/机">
+          <figure>
+            <img src="<%= @clips.tagged_with('机').last.image %>" >
+          <% else %>
+            <a href="/users/<%= @user.id %>">
+          <figure>
+            <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「机」についてのインテリア実例">
+          <% end %>
+          <figcaption>机</figcaption>
+          </figure>
+        </a>
       </figure>
       </a>
-      <a href="/users/<%= @user.id %>/myphoto/リビング">
-        <figure>
-          <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「リビング」についてのインテリア実例">
-        <figcaption>リビング</figcaption>
-        </figure>
-      </a>
-      <a href="/users/<%= @user.id %>/myphoto/ベッド周り">
-        <figure>
-          <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「ベッド周り」についてのインテリア実例">
-        <figcaption>ベッド周り</figcaption>
-      </figure>
-      </a>
-      <a href="/users/<%= @user.id %>/myphoto/棚">
-        <figure>
-          <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「棚」についてのインテリア実例">
-        <figcaption>棚</figcaption>
-      </figure>
-      </a>
-      <a href="/users/<%= @user.id %>/myphoto/キッチン">
-        <figure>
-          <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「キッチン」についてのインテリア実例">
-        <figcaption>キッチン</figcaption>
-      </figure>
-      </a>
-      <a href="/users/<%= @user.id %>/myphoto/壁・天井">
-        <figure>
-          <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「壁/天井」についてのインテリア実例">
-        <figcaption>壁・天井</figcaption>
-      </figure>
-      </a>
-      <a href="/users/<%= @user.id %>/myphoto/玄関・入り口">
-        <figure>
-          <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「玄関/入り口」についてのインテリア実例">
-        <figcaption>玄関・入り口</figcaption>
-      </figure>
-      </a>
-      <a href="/users/<%= @user.id %>/myphoto/バス・トイレ">
-        <figure>
-        <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「バス/トイレ」についてのインテリア実例">
-        <figcaption>バストイレ</figcaption>
-      </figure>
-      </a>
+
+       <%if @clips.tagged_with('リビング').exists? %>
+        <a href="/users/<%= @user.id %>/myphoto/リビング">
+          <figure>
+            <img src="<%= @clips.tagged_with('リビング').last.image %>" >
+          <% else %>
+            <a href="/users/<%= @user.id %>">
+          <figure>
+            <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「リビング」についてのインテリア実例">
+          <% end %>
+          <figcaption>リビング</figcaption>
+          </figure>
+        </a>
+
+       <%if @clips.tagged_with('ベッド周り').exists? %>
+        <a href="/users/<%= @user.id %>/myphoto/ベッド周り">
+          <figure>
+            <img src="<%= @clips.tagged_with('ベッド周り').last.image %>" >
+          <% else %>
+            <a href="/users/<%= @user.id %>">
+          <figure>
+            <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「ベッド周り」についてのインテリア実例">
+          <% end %>
+          <figcaption>ベッド周り</figcaption>
+          </figure>
+        </a>
+
+       <%if @clips.tagged_with('棚').exists? %>
+        <a href="/users/<%= @user.id %>/myphoto/棚">
+          <figure>
+            <img src="<%= @clips.tagged_with('棚').last.image %>" >
+          <% else %>
+            <a href="/users/<%= @user.id %>">
+          <figure>
+            <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「棚」についてのインテリア実例">
+          <% end %>
+          <figcaption>棚</figcaption>
+          </figure>
+        </a>
+
+       <%if @clips.tagged_with('キッチン').exists? %>
+        <a href="/users/<%= @user.id %>/myphoto/キッチン">
+          <figure>
+            <img src="<%= @clips.tagged_with('キッチン').last.image %>" >
+          <% else %>
+            <a href="/users/<%= @user.id %>">
+          <figure>
+            <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「キッチン」についてのインテリア実例">
+          <% end %>
+          <figcaption>キッチン</figcaption>
+          </figure>
+        </a>
+
+       <%if @clips.tagged_with('壁・天井').exists? %>
+        <a href="/users/<%= @user.id %>/myphoto/壁・天井">
+          <figure>
+            <img src="<%= @clips.tagged_with('壁・天井').last.image %>" >
+          <% else %>
+            <a href="/users/<%= @user.id %>">
+          <figure>
+            <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「壁・天井」についてのインテリア実例">
+          <% end %>
+          <figcaption>壁・天井</figcaption>
+          </figure>
+        </a>
+
+       <%if @clips.tagged_with('玄関・入り口').exists? %>
+        <a href="/users/<%= @user.id %>/myphoto/玄関・入り口">
+          <figure>
+            <img src="<%= @clips.tagged_with('玄関・入り口').last.image %>" >
+          <% else %>
+            <a href="/users/<%= @user.id %>">
+          <figure>
+            <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「玄関・入り口」についてのインテリア実例">
+          <% end %>
+          <figcaption>玄関・入り口</figcaption>
+          </figure>
+        </a>
+
+       <%if @clips.tagged_with('バス・トイレ').exists? %>
+        <a href="/users/<%= @user.id %>/myphoto/バス・トイレ">
+          <figure>
+            <img src="<%= @clips.tagged_with('バス・トイレ').last.image %>" >
+          <% else %>
+            <a href="/users/<%= @user.id %>">
+          <figure>
+            <img src="https://s3-ap-northeast-1.amazonaws.com/roomclip-bucket/img_640/nocoverphoto.png" alt="男性の、1DK、一人暮らしの「バス・トイレ」についてのインテリア実例">
+          <% end %>
+          <figcaption>バス・トイレ</figcaption>
+          </figure>
+
     </div>
     <section id="items-list">
       <h2>アイテムリスト</h2>
