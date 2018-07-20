@@ -70,6 +70,7 @@
   }
 }
 
+//
 @keyframes my-fade-in {
   from {
     opacity: 0;
@@ -90,7 +91,20 @@
     transform: translate( 0%);
    }
 }
-
+@mixin animationValue( $name, $duration, $function, $delay, $count, $state){
+    -webkit-animation: $name $duration+s $function $delay+s $count $state;
+    animation: $name $duration+s $function $delay+s $count $state;
+}
+@-webkit-keyframes example {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes example {
+  100% {
+    opacity: 1;
+  }
+}
 
 #dailyclipmain {
   border: 0;
@@ -107,6 +121,16 @@
   .box_p1 {
     width: 24rem;
     height: 24rem;
+    opacity: 0;
+  }
+  @for $cnt from 1 through 20{
+    // ↓nth-child の中の数字を #{$cnt} として現在の繰り返しているカウント数にします
+    .box_p1:nth-child(#{$cnt}){
+        // ↓ include で animation プロパティを定義した mixin を呼び出す。
+        // ↓現在のカウント数（$cnt）に少数値をかけた値を $delay
+        // ↓に指定することで時間差をつけることができる
+        @include animationValue(example, 0.1, ease, $cnt * 0.1 , 1, forwards);
+    }
   }
   .box_p1 > div {
     width: 21.8rem;
