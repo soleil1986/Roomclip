@@ -51,6 +51,7 @@
           <span class="date">(<%= @daily.next.date %>)</span>
         <% end %>
       <% end %>
+    </li>
   </ul>
 </nav>
 
@@ -110,19 +111,27 @@
 <nav id="volume-bottom">
   <ul>
     <li class="prev">
-      <a href="/daily/1522">
-        <span class="arrow"></span>
-        vol.1522 <span class="date">(2018/07/10)</span>
-      </a>
+      <% if @daily.previous.present? %>
+        <%= link_to daily_path(@daily.previous) do%>
+          <span class="arrow"></span>
+          vol.<%= @daily.previous.id %>
+          <span class="date">(<%= @daily.previous.date %>)</span>
+        <% end %>
+      <% end %>
     </li>
-    <li class="archive">
-      <a href="/daily/archive/">過去のアーカイブをすべて見る</a>
+    <li class="archive-old">
+      <%= link_to daily_path(@daily) do %>
+        過去のアーカイブをすべて見る
+      <% end %>
     </li>
     <li class="next">
-      <a href="/daily/1524">
-        <span class="arrow"></span>
-        vol.1524 <span class="date">(2018/07/12)</span>
-      </a>
+      <% if @daily.next.present? %>
+        <%= link_to daily_path(@daily.next) do%>
+          <span class="arrow"></span>
+          vol.<%= @daily.next.id %>
+          <span class="date">(<%= @daily.next.date %>)</span>
+        <% end %>
+      <% end %>
     </li>
   </ul>
 </nav>
