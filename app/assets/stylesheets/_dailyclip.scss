@@ -240,3 +240,91 @@
     }
   }
 }
+
+#sns-share {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  width: 96rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    white-space: nowrap;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 31.8rem;
+    height: 6rem;
+    margin: 0 0 0 .3rem;
+    padding: 0;
+    position: relative;
+    color: #fff;
+    -moz-border-radius: 0.3;
+    -webkit-border-radius: 0.3;
+    border-radius: 0.3;
+    a {
+      text-decoration: none;
+      color: #FFFFFF;
+      display: inline-block;
+      width: 318px;
+      height: 60px;
+      .icon {
+        position: absolute;
+        left: 1.5rem;
+        top: 1.5rem;
+      }
+      .sns-name {
+        position: absolute;
+        left: 6rem;
+        top: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.6rem;
+      }
+      .sns-action {
+        position: absolute;
+        right: 1.5rem;
+        top: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+  li:first-child {
+    margin: 0;
+    padding-left: 0;
+  }
+  li:last-child {
+    padding-right: 0;
+  }
+  .twitter {
+    background: #72b6e9;
+    .icon {
+    background: url(https://roomclip.jp/assets/img/v3/sprite/daily.png) 0 -72px no-repeat;
+    width: 36px;
+    height: 30px;
+    }
+  }
+  .facebook {
+    background: #5675b8;
+    .icon {
+      background: url(https://roomclip.jp/assets/img/v3/sprite/daily.png) 0 0 no-repeat;
+      width: 17px;
+      height: 32px;
+      left: 2.5rem;
+    }
+  }
+  .hatena {
+    background: #5ca9d3;
+    .icon {
+      background: url(https://roomclip.jp/assets/img/v3/sprite/daily.png) 0 -32px no-repeat;
+      width: 32px;
+      height: 28px;
+    }
+  }
+}
