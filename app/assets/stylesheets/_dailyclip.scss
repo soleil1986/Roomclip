@@ -123,7 +123,7 @@
     height: 24rem;
     opacity: 0;
   }
-  @for $cnt from 1 through 20{
+  @for $cnt from 1 through 30{
     // ↓nth-child の中の数字を #{$cnt} として現在の繰り返しているカウント数にします
     .box_p1:nth-child(#{$cnt}){
         // ↓ include で animation プロパティを定義した mixin を呼び出す。
@@ -408,18 +408,18 @@
       width: 32.5rem;
     }
   }
-  .archive {
+  .archive-old {
     width: 31rem;
     height: 4rem;
     background: #9a3020;
-    color: #fff;
+    color: #fff !important;
     text-align: center;
     font-size: 1.6rem;
     a {
       display: inline-block;
       width: 310px;
       height: 40px;
-      color: #fff;
+      color: #fff !important;
     }
   }
 }
