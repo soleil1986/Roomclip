@@ -1,4 +1,4 @@
 class FolderClip < ApplicationRecord
   has_many :clips
-  belogs_to :folder
+  belongs_to :folder
 end

@@ -45,10 +45,10 @@ $(function() {
       $(`#main-tag-${mainTag}`).remove();
       console.log(this);
     });
-});
+  });
+
 
 // プロフィールタグ追加処理
-
 $(function() {
 
  function buildProfileTag(profileTag) {
@@ -57,6 +57,8 @@ $(function() {
     <span id="remove-profileicon" class="fontello tag-close" data-tag="${profileTag}">x</span></div>`
     return html
   }
+  var x = ""
+
   $(function() {
     $('.tag-back,radius-min,tag-insert').on('click',function() {
       var profileTag = $(this).attr('data-tag');
@@ -64,29 +66,25 @@ $(function() {
       $('#before-input').css('display', 'none');
       $('.profile,tag-back,radius-min').remove();
       $('#Tag-input-list').append(addTag);
+      if (x == "") {
+        var d = $('#tag-send').val();
+        if (d == "") {
+          var e = profileTag
+        } else {
+          var e = d + "," + profileTag
+        }
+        $('#tag-send').val(e);
+        x = profileTag
+      } else {
+      var x = profileTag
       var d = $('#tag-send').val();
       if (d == "") {
-        var e = profileTag
+        var e = x
       } else {
-        var e = d + "," + profileTag
+        var e = d + "," + x
       }
-      $('#tag-send').val(e);
-    });
-  })
-
-     $(document).on('click','#remove-profileicon', function() {
-      var profileTag = $(this).parent().attr('data-tag');
-      var d = $('#tag-send').val();
-      if (d.match(profileTag + ","))
-        var e = profileTag + ","
-      else if (d.match("," + profileTag)) {
-        var e = "," + profileTag
-      } else {
-        var e = profileTag
+      $('#tag-send').val(x,e);
       }
-      var f = d.replace(e, "")
-      $('#tag-send').val(f)
-      $('.profile,tag-back,radius-min').remove();
     });
+  });
 });
-

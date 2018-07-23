@@ -180,16 +180,16 @@
         font-weight: bold;
       }
       .entry-photo {
-      width: 17.6rem;
-      height: 17.6rem;
-      margin: 0.4rem 0 0 0;
-      background: #fff;
-      float: left;
-      margin: 0 2.5rem 0 0;
-      -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
-      box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
-      filter: progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=0, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=90, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=180, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=270, strength=3, enabled=true);
+        width: 17.6rem;
+        height: 17.6rem;
+        margin: 0.4rem 0 0 0;
+        background: #fff;
+        float: left;
+        margin: 0 2.5rem 0 0;
+        -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.6rem 0;
+        filter: progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=0, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=90, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=180, strength=3, enabled=true), progid:DXImageTransform.Microsoft.Shadow(color=#dddddd, direction=270, strength=3, enabled=true);
         img {
           width: 16.8rem;
           height: 16.8rem;
@@ -198,17 +198,17 @@
       }
     }
     #infscr-loading {
-    text-align: center;
-    z-index: 100;
-    padding: 10px;
-    background: transparent;
-    color: #eee;
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+      text-align: center;
+      z-index: 100;
+      padding: 10px;
+      background: transparent;
+      color: #eee;
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
     }
   }
 }
