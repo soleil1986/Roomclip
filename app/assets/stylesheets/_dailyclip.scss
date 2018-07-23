@@ -70,6 +70,7 @@
   }
 }
 
+//
 @keyframes my-fade-in {
   from {
     opacity: 0;
@@ -90,7 +91,20 @@
     transform: translate( 0%);
    }
 }
-
+@mixin animationValue( $name, $duration, $function, $delay, $count, $state){
+    -webkit-animation: $name $duration+s $function $delay+s $count $state;
+    animation: $name $duration+s $function $delay+s $count $state;
+}
+@-webkit-keyframes example {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes example {
+  100% {
+    opacity: 1;
+  }
+}
 
 #dailyclipmain {
   border: 0;
@@ -107,6 +121,16 @@
   .box_p1 {
     width: 24rem;
     height: 24rem;
+    opacity: 0;
+  }
+  @for $cnt from 1 through 30{
+    // ↓nth-child の中の数字を #{$cnt} として現在の繰り返しているカウント数にします
+    .box_p1:nth-child(#{$cnt}){
+        // ↓ include で animation プロパティを定義した mixin を呼び出す。
+        // ↓現在のカウント数（$cnt）に少数値をかけた値を $delay
+        // ↓に指定することで時間差をつけることができる
+        @include animationValue(example, 0.1, ease, $cnt * 0.1 , 1, forwards);
+    }
   }
   .box_p1 > div {
     width: 21.8rem;
@@ -213,6 +237,189 @@
       background: url(/assets/img/v3/sprite/daily.png) 0 -60px no-repeat;
       width: 12px;
       height: 12px;
+    }
+  }
+}
+
+#sns-share {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  width: 96rem;
+  height: 6rem;
+  margin: 0 auto;
+  padding: 5rem 1rem 0rem 1rem;
+  li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    white-space: nowrap;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 31.8rem;
+    height: 6rem;
+    margin: 0 0 0 .3rem;
+    padding: 0;
+    position: relative;
+    color: #fff;
+    -moz-border-radius: 0.3;
+    -webkit-border-radius: 0.3;
+    border-radius: 0.3;
+    a {
+      text-decoration: none;
+      color: #FFFFFF;
+      display: inline-block;
+      width: 318px;
+      height: 60px;
+      .icon {
+        position: absolute;
+        left: 1.5rem;
+        top: 1.5rem;
+      }
+      .sns-name {
+        position: absolute;
+        left: 6rem;
+        top: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.6rem;
+      }
+      .sns-action {
+        position: absolute;
+        right: 1.5rem;
+        top: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+  li:first-child {
+    margin: 0;
+    padding-left: 0;
+  }
+  li:last-child {
+    padding-right: 0;
+  }
+  .twitter {
+    background: #72b6e9;
+    .icon {
+    background: url(https://roomclip.jp/assets/img/v3/sprite/daily.png) 0 -72px no-repeat;
+    width: 36px;
+    height: 30px;
+    }
+  }
+  .facebook {
+    background: #5675b8;
+    .icon {
+      background: url(https://roomclip.jp/assets/img/v3/sprite/daily.png) 0 0 no-repeat;
+      width: 17px;
+      height: 32px;
+      left: 2.5rem;
+    }
+  }
+  .hatena {
+    background: #5ca9d3;
+    .icon {
+      background: url(https://roomclip.jp/assets/img/v3/sprite/daily.png) 0 -32px no-repeat;
+      width: 32px;
+      height: 28px;
+    }
+  }
+}
+
+#volume-bottom {
+  width: 96rem;
+  height: 4rem;
+  line-height: 4rem;
+  padding: 0 1.5rem;
+  margin: 1rem auto 1.5rem;
+  height: auto;
+  margin: 1rem auto 3rem;
+  ul {
+    padding: 1.5rem 0;
+    margin: 0;
+    border: 0;
+    overflow: hidden;
+    width: 100%;
+    background: #e9e4de;
+    li {
+      list-style-image: none;
+      list-style-type: none;
+      margin-left: 0;
+      white-space: nowrap;
+      float: left;
+      padding-left: 4px;
+      padding-right: 4px;
+      width: 50%;
+      height: 4rem;
+      margin: 0;
+      padding: 0;
+      font-size: 1.6rem;
+      color: #0f0e0d;
+      .date {
+       color: #362e2b;
+       font-size: 1.2rem;
+      }
+    }
+    li > a:visited {
+      color: #362e2b;
+    }
+    li > a {
+      display: inline-block;
+      height: 100%;
+      color: inherit;
+      text-decoration: inherit;
+      cursor: inherit;
+      color: inherited;
+      cursor: pointer;
+    }
+    li:first-child {
+      padding-left: 0;
+    }
+    li:last-child {
+      padding-right: 0;
+    }
+    .prev {
+      text-align: left;
+      width: 32.5rem;
+      .arrow {
+        background: url(https://roomclip.jp/assets/img/v3/sprite/common.png) 0 -28px no-repeat;
+        width: 12px;
+        height: 16px;
+        float: left;
+        margin: 1.2rem 1rem 0 1rem;
+      }
+    }
+    .next {
+      text-align: right;
+      width: 32.5rem;
+      .arrow {
+        background: url(https://roomclip.jp/assets/img/v3/sprite/common.png) 0 -44px no-repeat;
+        width: 12px;
+        height: 16px;
+        float: right;
+        margin: 1.2rem 1rem 0 1rem;
+      }
+    }
+    .prev, #volume-bottom .next {
+      width: 32.5rem;
+    }
+  }
+  .archive-old {
+    width: 31rem;
+    height: 4rem;
+    background: #9a3020;
+    color: #fff !important;
+    text-align: center;
+    font-size: 1.6rem;
+    a {
+      display: inline-block;
+      width: 310px;
+      height: 40px;
+      color: #fff !important;
     }
   }
 }
